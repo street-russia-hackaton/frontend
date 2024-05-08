@@ -20,13 +20,12 @@
 
 ```javascript
 npm ci
-npm run start
+npm run dev
 ```
 
 ### Запуск приложения в production mode
 ```javascript
-npm run predeploy
-npm run deploy
+npm run build
 ```
 
 ### Стек технологий
@@ -36,6 +35,7 @@ npm run deploy
 * Redux Toolkit
 
 ### Сторонние библиотеки
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
 
 
 ### Ключевые точки для media queries
