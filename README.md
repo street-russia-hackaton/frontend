@@ -1,17 +1,18 @@
-# frontend
-Frontend for Street Russia
+# Frontend for Street Russia
 
-## О проекте
+### О проекте
 События и мероприятия уличных дисциплин по всем направлениям
 
-## Опубликованное приложение
+### Опубликованное приложение
 **тут-будет-ссылка**
+
+
+### Команда проекта
 
 ---
 
-## Команда проекта
-- [Максим](https://github.com/MaxRMNK) [@MaxRMNK](https://t.me/MaxRMNK)
-- [Мария](https://github.com/Plugopanka) [@plugopanka](https://t.me/plugopanka)
+- [Максим](https://github.com/MaxRMNK) tg: [@MaxRMNK](https://t.me/MaxRMNK)
+- [Мария](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
 
 ---
 
