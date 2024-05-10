@@ -1,41 +1,30 @@
-# Frontend for Street Russia
+# React + TypeScript + Vite
 
-### О проекте
-События и мероприятия уличных дисциплин по всем направлениям
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### Опубликованное приложение
-[**Ссылка на сайт**](https://street-russia.vercel.app/)
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Команда проекта
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- [Максим](https://github.com/MaxRMNK) tg: [@MaxRMNK](https://t.me/MaxRMNK)
-- [Мария](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
+- Configure the top-level `parserOptions` property like this:
 
----
-
-### Запуск приложения в dev mode
-
-```javascript
-npm ci
-npm run dev
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
 ```
 
-### Запуск приложения в production mode
-```javascript
-npm run build
-```
-
-### Стек технологий
-* HTML 5
-* SCSS modules
-* React 18
-* Redux Toolkit
-
-### Сторонние библиотеки
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-
-
-### Ключевые точки для media queries
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

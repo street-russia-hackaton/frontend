@@ -1,0 +1,26 @@
+@import url(./vendor/normalize.css);
+
+.page {
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: #000;
+    background-color: #fff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#root {
+    padding: 0;
+    max-width: 375px;
+    overflow: hidden;
+}
