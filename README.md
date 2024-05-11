@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Frontend for Street Russia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### О проекте
+События и мероприятия уличных дисциплин по всем направлениям
 
-Currently, two official plugins are available:
+### Опубликованное приложение
+**[Ссылка на сайт](https://street-russia.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### Команда проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+- [Ольга Панкрашина](https://github.com/Olyaolya13) tg: [@@olyaolya2713](https://t.me/olyaolya2713)
+- [Мария Ионова](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+---
+
+### Запуск приложения в dev mode
+
+```javascript
+npm ci
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Запуск приложения в production mode
+```javascript
+npm run build
+```
+
+### Стек технологий
+* HTML 5
+* SCSS modules
+* TypeScript
+* React 18
+* Redux Toolkit
+
+### Сторонние библиотеки
+- [Vite.js](https://vitejs.dev/)
+- [Material UI](https://mui.com/)
+
+### Ключевые точки для media queries
