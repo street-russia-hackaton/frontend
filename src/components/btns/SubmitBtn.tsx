@@ -13,6 +13,8 @@ interface SubmitButtonProps {
   hoverBackgroundColor?: string;
   focusBackgroundColor?: string;
   disabled?: boolean;
+  textTransform?: string;
+  lineHeight?: string;
   onClick?: () => void;
 }
 
@@ -21,8 +23,7 @@ const styles = {
     textTransform: 'none'
   },
   title: {
-    fontFamily: 'Inter',
-    lineHeight: '1.25'
+    fontFamily: 'Bahnschrift',
   },
   icon: {
     marginRight: '8px',
@@ -43,6 +44,8 @@ export default function SubmitButton({
   color,
   hoverBackgroundColor,
   focusBackgroundColor,
+  textTransform,
+  lineHeight,
   onClick
 }: SubmitButtonProps) {
   return (
@@ -51,10 +54,13 @@ export default function SubmitButton({
       disableElevation
       sx={{
         ...styles.container,
-        backgroundColor: backgroundColor ? backgroundColor : '#168E2C',
-        width: width ? width : '299px',
+        p: 0,
+        lineHeight: lineHeight ? lineHeight : '1.5',
+        textTransform: textTransform ? textTransform : 'capitalize',
+        backgroundColor: backgroundColor ? backgroundColor : '#fff',
+        width: width ? width : 'auto',
         height: height ? height : '44px',
-        borderRadius: borderRadius ? borderRadius : '16px',
+        borderRadius: borderRadius ? borderRadius : '0',
         '&:hover': {
           backgroundColor: hoverBackgroundColor ? hoverBackgroundColor : '#0A771E'
         },
