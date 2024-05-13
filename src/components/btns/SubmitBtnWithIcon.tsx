@@ -1,44 +1,47 @@
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
+import { ReactNode } from 'react';
 
-interface SubmitButtonProps {
+interface SubmitBtnWithIconProps {
     title?: string;
     width?: string;
     height?: string;
     fontSize?: string;
     disabled?: boolean;
-    margin?: string;
     onClick?: () => void;
+    icon?: ReactNode;
 }
 
 const styles = {
     container: {
-        backgroundColor: '#000',
+        backgroundColor: '#fff',
+        border: '1px solid #000',
         borderRadius: '0',
     },
     title: {
         lineHeight: '1.25',
         fontWeight: '400',
+        color: '#000',
     },
 };
 
-export default function SubmitButton({ title, width, height, fontSize, disabled, margin, onClick }: SubmitButtonProps) {
+export default function SubmitBtnWithIcon({ title, width, height, fontSize, disabled, onClick, icon }: SubmitBtnWithIconProps) {
     return (
         <Button
             variant="contained"
             disableElevation
+            startIcon={icon}
             sx={{
                 ...styles.container,
                 width: width ? width : '553px',
                 height: height ? height : '54px',
                 '&:hover': {
-                    backgroundColor: '#000',
+                    backgroundColor: '#fff',
                     opacity: '0.9',
                 },
                 '&:focus': {
-                    backgroundColor: '#000',
+                    backgroundColor: '#fff',
                 },
-                margin: margin ? margin : '0',
             }}
             disabled={disabled}
             onClick={onClick}

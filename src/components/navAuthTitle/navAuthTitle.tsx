@@ -1,36 +1,45 @@
-import { useState } from 'react';
-import { Typography, Box } from '@mui/material';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-interface NavAuthTitleProps {
-    title?: string;
-}
+import { Tab, Tabs } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const styles = {
-    container: { display: 'flex', justifyContent: 'space-between' },
-    text: { fontSize: '24px', fontWeight: '400' },
-    link: { textDecoration: 'none', color: '#000' },
+    link: { width: '276px' },
 };
 
-export default function NavAuthTitle({ title }: NavAuthTitleProps) {
-    const [isLogin, setIsLogin] = useState(true);
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#000',
+        },
+    },
+});
 
-    const toggleForm = () => {
-        setIsLogin(!isLogin);
+export default function NavAuthTitle() {
+    const [activeLink, setActiveLink] = useState('');
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+        if (window.location.pathname === '/register') {
+            setActiveLink('/register');
+            setValue(0);
+        } else if (window.location.pathname === '/login') {
+            setActiveLink('/login');
+            setValue(1);
+        }
+    }, []);
+
+    const handleLinkClick = (link: string, index: number) => {
+        setActiveLink(link);
+        setValue(index);
     };
 
     return (
-        <Box sx={styles.container}>
-            <Typography component="p" sx={styles.text}>
-                <Link to="/register" onClick={toggleForm} style={styles.link}>
-                    Регистрация
-                </Link>
-            </Typography>
-            <Typography component="p" sx={styles.text}>
-                <Link to="/login" onClick={toggleForm} style={styles.link}>
-                    Вход
-                </Link>
-            </Typography>
-        </Box>
+        <ThemeProvider theme={theme}>
+            <Tabs value={value} aria-label="basic tabs example" textColor="primary" indicatorColor="primary">
+                <Tab label="Регистрация" component={Link} to="/register" onClick={() => handleLinkClick('/register', 0)} sx={{ ...styles.link, color: activeLink === '/register' ? '#000' : '#D2D1D0' }} disableRipple />
+                <Tab label="Вход" component={Link} to="/login" onClick={() => handleLinkClick('/login', 1)} sx={{ ...styles.link, color: activeLink === '/login' ? '#000' : '#D2D1D0' }} disableRipple />
+            </Tabs>
+        </ThemeProvider>
     );
 }
