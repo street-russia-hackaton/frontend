@@ -10,6 +10,7 @@ interface SubmitButtonProps {
   backgroundColor?: string;
   color?: string;
   borderRadius?: string;
+  border?: string;
   hoverBackgroundColor?: string;
   focusBackgroundColor?: string;
   disabled?: boolean;
@@ -41,6 +42,7 @@ export default function SubmitButton({
   backgroundColor,
   disabled,
   borderRadius,
+  border,
   color,
   hoverBackgroundColor,
   focusBackgroundColor,
@@ -54,6 +56,8 @@ export default function SubmitButton({
       disableElevation
       sx={{
         ...styles.container,
+        transition: 'none',
+        border: border ? border : 'none',
         p: 0,
         lineHeight: lineHeight ? lineHeight : '1.5',
         textTransform: textTransform ? textTransform : 'capitalize',

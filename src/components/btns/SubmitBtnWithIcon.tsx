@@ -22,6 +22,7 @@ const styles = {
         lineHeight: '1.25',
         fontWeight: '400',
         color: '#000',
+        textTransform:'uppercase',
     },
 };
 
