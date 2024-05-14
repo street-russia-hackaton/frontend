@@ -1,20 +1,22 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.module.scss';
 import { Route, Routes } from 'react-router-dom';
 import { Main, About, Login, Register } from './components/pages';
+import { ThemeProvider } from '@emotion/react';
+import theme from './vendor/theme.tsx';
 
 function App() {
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <Routes>
                 <Route path="/main" element={<Main />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login onLogin={() => {}} />} />
+                <Route path="/register" element={<Register onRegister={() => {}} />} />
             </Routes>
-        </>
+        </ThemeProvider>
     );
 }
 

@@ -1,12 +1,11 @@
-import { Typography } from "@mui/material";
-import React from "react";
 import Header from '../../common/header/Header';
+import AboutUs from './aboutUs/AboutUs';
 
 export default function Main() {
     return (
         <>
-        <Header />
-            <Typography>Hello</Typography>
+            <Header />
+            <AboutUs />
         </>
     );
 }
