@@ -4,6 +4,8 @@ import Background from '../../../../assets/images/main-page-background.png';
 import Logo from '../../../../assets/images/logo-main.png';
 import SubmitButton from '../../../btns/SubmitBtn';
 
+//TODO: переход по якорной ссылке вступить, стиль бегущих строк
+
 export default function Intro() {
     const handleClick = () => {
         // TODO: click
@@ -11,7 +13,7 @@ export default function Intro() {
 
     return (
         <>
-            <Container sx={{position: 'relative', background: `no-repeat center url(${Background})`, backgroundSize: 'cover',  height: '852px', objectFit: 'cover', maxWidth: { lg: '100%' }, p: { sm: 0 } }}>
+            <Container sx={{position: 'relative', marginBottom: '18px', background: `no-repeat center url(${Background})`, backgroundSize: 'cover',  height: '852px', objectFit: 'cover', maxWidth: { lg: '100%' }, p: { sm: 0 } }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '1350px', gap: '183px', alignItems: 'end', margin: '0 auto', p: '173px 112px 0 0', boxSizing: 'border-box' }}>
                     <Box sx={{alignSelf: 'start'}}>
                         <img src={Logo} alt="Логотип." />

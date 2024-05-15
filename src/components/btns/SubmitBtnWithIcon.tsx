@@ -23,6 +23,7 @@ const styles = {
         fontWeight: '400',
         color: '#000',
         textTransform:'uppercase',
+        whiteSpace: 'nowrap'
     },
 };
 
