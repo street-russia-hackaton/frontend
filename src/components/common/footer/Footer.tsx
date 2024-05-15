@@ -4,7 +4,7 @@ import Logo from '../../../assets/images/logo-main.png';
 import vkIcon from '../../../assets/images/vk-icon.svg';
 import youTubeIcon from '../../../assets/images/youtube-icon.svg';
 import style from './Footer.module.scss';
-import SubmitBtnWithIcon from '../../btns/SubmitBtnWithIcon';
+import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 
 //TODO: иконки сайтов типизировать, настроить переход по ссылкам сайта и на карту,
 // реализовать функционал формы рассылки
@@ -16,7 +16,7 @@ interface FooterProps {
 
 type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
     icon?: string;
-}
+};
 
 const privacy = 'https://streetrussia.ru/static/files/privacy.pdf';
 
@@ -32,7 +32,7 @@ const addresses = [
 ];
 const sites = [
     { id: 1, icon: '../../../assets/images/vk-icon.svg', item: 'Youtube' },
-    { id: 2, icon: {vkIcon}, item: 'Вконтакте' },
+    { id: 2, icon: { vkIcon }, item: 'Вконтакте' },
 ];
 
 const styles = {
@@ -81,7 +81,7 @@ const styles = {
     },
 };
 
-export default function Footer({ backgroundColor, backdropFilter }: FooterProps, {icon}: ImageProps) {
+export default function Footer({ backgroundColor, backdropFilter }: FooterProps, { icon }: ImageProps) {
     const handleSubmit = () => {
         //TODO: подписка
     };
@@ -120,7 +120,7 @@ export default function Footer({ backgroundColor, backdropFilter }: FooterProps,
                                     Адреса
                                 </Typography>
                                 {addresses.map(({ id, item }) => (
-                                    <ListItem key={id} sx={{ ...styles.listItem, '&:last-of-type': {marginBottom: '8px'} }}>
+                                    <ListItem key={id} sx={{ ...styles.listItem, '&:last-of-type': { marginBottom: '8px' } }}>
                                         <Typography sx={{ ...styles.text, fontSize: 16 }}>{item}</Typography>
                                     </ListItem>
                                 ))}
@@ -133,7 +133,7 @@ export default function Footer({ backgroundColor, backdropFilter }: FooterProps,
                                 {sites.map(({ id, icon, item }) => (
                                     <ListItem key={id} sx={{ ...styles.listItem }}>
                                         <img className={style.icon} src={youTubeIcon} alt="Иконка приложения." />
-                                        <Typography sx={{ ...styles.text, ...styles.link,  }}>{item}</Typography>
+                                        <Typography sx={{ ...styles.text, ...styles.link }}>{item}</Typography>
                                     </ListItem>
                                 ))}
                             </List>
