@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import NavAuthTitle from '../../common/navAuthTitle/navAuthTitle';
 import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
-import SubmitBtnBlack from '../../common/btns/SubmitBtnBlack';
+import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
 
 interface LoginProps {
     onLogin: (email: string, password: string) => void;

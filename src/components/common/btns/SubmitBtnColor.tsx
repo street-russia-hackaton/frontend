@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 interface SubmitBtnBlackProps {
     title?: string;
     width?: string;
+    backgroundColor?: string;
+    color?: string;
     height?: string;
     fontSize?: string;
     disabled?: boolean;
@@ -22,7 +24,7 @@ const styles = {
     },
 };
 
-export default function SubmitBtnBlack({ title, width, height, fontSize, disabled, margin, onClick }: SubmitBtnBlackProps) {
+export default function SubmitBtnColor({ title, width, height, backgroundColor, color, fontSize, disabled, margin, onClick }: SubmitBtnBlackProps) {
     return (
         <Button
             variant="contained"
@@ -31,12 +33,14 @@ export default function SubmitBtnBlack({ title, width, height, fontSize, disable
                 ...styles.container,
                 width: width ? width : '553px',
                 height: height ? height : '54px',
+                backgroundColor: backgroundColor ? backgroundColor : '#000',
+                color: color ? color : '#fff',
                 '&:hover': {
-                    backgroundColor: '#000',
+                    backgroundColor: 'transparent',
                     opacity: '0.9',
                 },
                 '&:focus': {
-                    backgroundColor: '#000',
+                    backgroundColor: 'transparent',
                 },
                 margin: margin ? margin : '0',
             }}

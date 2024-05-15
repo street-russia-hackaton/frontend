@@ -17,5 +17,5 @@ interface SubmitButtonProps {
 }
 
 export default function SubmitButton({ width, title, height, fontSize, disabled, lineHeight, onClick }: SubmitButtonProps) {
-    return <Button width={width} title={title} height={height} fontSize={fontSize} fontWeigth="400" backgroundColor="#fff" disabled={disabled} color='#222' hoverBackgroundColor='#F2F3F5' focusBackgroundColor='#F2F3F5' textTransform='uppercase' lineHeight={lineHeight} onClick={onClick} />;
+    return <Button width={width} title={title} height={height} fontSize={fontSize} fontWeigth="400" backgroundColor="#fff" disabled={disabled} color="#222" hoverBackgroundColor="#F2F3F5" focusBackgroundColor="#F2F3F5" textTransform="uppercase" lineHeight={lineHeight} onClick={onClick} />;
 }

@@ -9,7 +9,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import SubmitBtnWithIcon from '../../common/btns/SubmitBtnWithIcon';
 import GosUslugiLogo from '../../../assets/GosUslugiLogo.svg?react';
-import SubmitBtnBlack from '../../common/btns/SubmitBtnBlack';
+import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
