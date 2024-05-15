@@ -1,8 +1,10 @@
 .marquee {
     display: flex;
     overflow: hidden;
+    position: relative;
     height: 54px;
     align-items: center;
+    z-index: 10;
 }
 
 .marquee__text_first, .marquee__text_second {
