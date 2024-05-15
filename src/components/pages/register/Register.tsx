@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Typography, Container, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-import NavAuthTitle from '../../navAuthTitle/navAuthTitle';
-import SubmitBtn from '../../btns/SubmitBtn';
-import TextFieldAuth from '../../textfieldAuth/textfieldAuth';
-import SelectAuth from '../../selectAuth/selectAuth';
+import NavAuthTitle from '../../common/navAuthTitle/navAuthTitle';
+import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
+import SelectAuth from '../../common/selectAuth/selectAuth';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import SubmitBtnWithIcon from '../../btns/SubmitBtnWithIcon';
+import SubmitBtnWithIcon from '../../common/btns/SubmitBtnWithIcon';
 import GosUslugiLogo from '../../../assets/GosUslugiLogo.svg?react';
+import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
@@ -90,7 +90,7 @@ export default function Register({ onRegister }: RegisterProps) {
                             {id === 'name' && <SelectAuth label="Выберите город" />}
                         </React.Fragment>
                     ))}
-                    <SubmitBtn title="Зарегистрироваться" margin="16px 0 0 0 " />
+                    <SubmitBtnBlack title="Зарегистрироваться" margin="16px 0 0 0 " />
                 </form>
                 <Typography component="p" sx={styles.text}>
                     Нажимая на эту кнопку, я даю своё согласие ВОО “Улицы России” на обработку моих персональных данных согласно &nbsp;

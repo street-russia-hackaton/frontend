@@ -3,12 +3,12 @@ import { Typography, Container, Box } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import NavAuthTitle from '../../navAuthTitle/navAuthTitle';
-import SubmitBtn from '../../btns/SubmitBtn';
-import TextFieldAuth from '../../textfieldAuth/textfieldAuth';
+import NavAuthTitle from '../../common/navAuthTitle/navAuthTitle';
+import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
+import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
 
 interface LoginProps {
-    onRegister: (name: string, email: string, password: string) => void;
+    onLogin: (email: string, password: string) => void;
 }
 
 interface LoginForm {
@@ -67,7 +67,7 @@ export default function Login({ onLogin }: LoginProps) {
                     <Typography variant="body2" style={{ marginTop: '1rem' }}>
                         Если вы являетесь членом организации, можете найти свой пароль на почте, которую указывали при вступлении.
                     </Typography>
-                    <SubmitBtn title="Войти" margin="16px 0 0  0" />
+                    <SubmitBtnBlack title="Войти" margin="16px 0 0  0" />
                 </form>
             </Box>
         </Container>
