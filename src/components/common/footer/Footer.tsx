@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Box, Container, List, ListItem, ListItemButton, ListItemText, TextField, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../../../assets/images/logo-main.png';
@@ -12,11 +13,8 @@ import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 interface FooterProps {
     backgroundColor?: string;
     backdropFilter?: string;
+    icon?: ReactNode;
 }
-
-type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
-    icon?: string;
-};
 
 const privacy = 'https://streetrussia.ru/static/files/privacy.pdf';
 
@@ -31,8 +29,8 @@ const addresses = [
     { id: 3, item: 'г. Москва, ул. Новосибирская, строение 3' },
 ];
 const sites = [
-    { id: 1, icon: '../../../assets/images/vk-icon.svg', item: 'Youtube' },
-    { id: 2, icon: { vkIcon }, item: 'Вконтакте' },
+    { id: 1, icon: youTubeIcon, item: 'Youtube' },
+    { id: 2, icon: vkIcon, item: 'Вконтакте' },
 ];
 
 const styles = {
@@ -81,7 +79,7 @@ const styles = {
     },
 };
 
-export default function Footer({ backgroundColor, backdropFilter }: FooterProps, { icon }: ImageProps) {
+export default function Footer({ backgroundColor, backdropFilter }: FooterProps) {
     const handleSubmit = () => {
         //TODO: подписка
     };
@@ -132,7 +130,7 @@ export default function Footer({ backgroundColor, backdropFilter }: FooterProps,
                                 </Typography>
                                 {sites.map(({ id, icon, item }) => (
                                     <ListItem key={id} sx={{ ...styles.listItem }}>
-                                        <img className={style.icon} src={youTubeIcon} alt="Иконка приложения." />
+                                        <img className={style.icon} src={icon} alt="Иконка приложения." />
                                         <Typography sx={{ ...styles.text, ...styles.link }}>{item}</Typography>
                                     </ListItem>
                                 ))}
