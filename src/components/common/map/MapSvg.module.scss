@@ -1,0 +1,12 @@
+.svg {
+    transform: scale(0.95);
+}
+
+.g {
+    pointer-events: bounding-box;
+    cursor: pointer;
+    fill: #F3F3F3;
+&:hover {
+    fill: #D2D1D0;
+}
+}
