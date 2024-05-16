@@ -13,6 +13,7 @@ import Logo from '../../../assets/images/logo-white.png';
 import { useNavigate } from 'react-router-dom';
 import ListItemLink from '../links/ListItemLink';
 import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
+import PopupAuthForm from '../popupAuthForm/PopupAuthForm';
 
 interface HeaderProps {
     backgroundColor?: string;
@@ -23,17 +24,10 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
     const navigate = useNavigate();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
     const [isLogin, setIsLogin] = React.useState<boolean | HTMLElement>(false);
-
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
+    console.log(isLogin);
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
-    };
-
-    const handleLogin = () => {
-        navigate('/login', { replace: false });
     };
 
     const handleSubscription = () => {
@@ -47,6 +41,16 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
     const handleLogout = () => {
         // TODO: to logout
         setIsLogin(false);
+    };
+
+    const [openPopup, setOpenPopup] = React.useState(false);
+
+    const handleOpenPopup = () => {
+        setOpenPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setOpenPopup(false);
     };
 
     return (
@@ -66,9 +70,11 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
                         <SubmitBtnWithIcon width="138px" title="Поддержать" height="40" fontSize="16px" disabled={false} onClick={handleSubscription} />
 
                         <Box sx={{}}>
-                            <IconButton onClick={isLogin ? handleOpenUserMenu : handleLogin} sx={{ p: 0 }}>
-                                <img src={ProfileIcon} alt="" />
+                            <IconButton onClick={handleOpenPopup} sx={{ p: 0 }}>
+                                <img src={ProfileIcon} alt="Profile" />
                             </IconButton>
+                            <PopupAuthForm open={openPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
+
                             <Menu
                                 sx={{ mt: '45px' }}
                                 id="menu-appbar"
