@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import './App.module.scss';
 import { Route, Routes } from 'react-router-dom';
-import { Main, About, Login, Register } from './components/pages';
+import { Main, About } from './components/pages';
 import { ThemeProvider } from '@emotion/react';
 import theme from './vendor/theme.tsx';
 
@@ -13,8 +13,6 @@ function App() {
             <Routes>
                 <Route path="/main" element={<Main />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/login" element={<Login onLogin={() => {}} />} />
-                <Route path="/register" element={<Register onRegister={() => {}} />} />
             </Routes>
         </ThemeProvider>
     );

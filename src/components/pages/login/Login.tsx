@@ -58,8 +58,6 @@ export default function Login({ onLogin }: LoginProps) {
     return (
         <Container maxWidth="sm">
             <Box mt={4} textAlign="center">
-                <NavAuthTitle />
-
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
                     {input.map(({ id, label, placeholder, value, onChange }) => (
                         <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} />
