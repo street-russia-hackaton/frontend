@@ -78,7 +78,7 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
                 </g>
 
                 {mapData.map(({ id, name, path, isHere }) => (
-                    <Link className={style.link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to={`/regional/${id}`}>
+                    <Link key={id} className={style.link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to={`/regional/${id}`}>
                         <g key={id} className={style.g} style={isHere ? { fill: '#D2D1D0' } : { fill: '#f3f3f3' }} data-id={id} data-name={name} data-objects={objects.length} data-events={events.length} data-cities={cities} data-here={isHere}>
                             {path.map((item) => (
                                 <path key={item} fillRule="evenodd" clipRule="evenodd" d={item} />
