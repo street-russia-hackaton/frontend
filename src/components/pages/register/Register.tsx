@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Container, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-import NavAuthTitle from '../../common/navAuthTitle/navAuthTitle';
+
 import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
 import SelectAuth from '../../common/selectAuth/selectAuth';
 import { useForm } from 'react-hook-form';
@@ -82,7 +82,6 @@ export default function Register({ onRegister }: RegisterProps) {
     return (
         <Container maxWidth="sm">
             <Box mt={4} textAlign="center">
-                <NavAuthTitle />
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
                     {input.map(({ id, label, placeholder, value, onChange }) => (
                         <React.Fragment key={id}>

@@ -15,9 +15,7 @@ export default function Main() {
             <Marquee color="#fff" background="#AA433A" content={contentArr[0]} rotate="rotate(8.1deg)" marginTop="-116px" />
             <Marquee color="#222" background="#D2D1D0" content={contentArr[1]} rotate="rotate(-4.9deg)" marginTop="-10px" />
             <Map />
-            <div style={{height: '1228px'}}>
-                <AboutUs />
-            </div>
+            <AboutUs />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
         </>
     );
