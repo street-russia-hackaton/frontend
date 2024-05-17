@@ -1,12 +1,78 @@
 .svg {
     transform: scale(0.95);
+    position: relative;
+}
+
+.link {
+    background-image: url("../../../assets/images/background-map.svg");
+    background-color: #222;
 }
 
 .g {
+    position: relative;
     pointer-events: bounding-box;
     cursor: pointer;
-    fill: #F3F3F3;
-&:hover {
-    fill: #D2D1D0;
+
+    &__container {
+        position: absolute;
+        left: 230px;
+        top: -80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 230px;
+        height: 80px;
+        // opacity: 0;
+        transition: 0.2s;
+        // z-index: 0;
+    }
+
+    &__text {
+        content: attr(data-tooltip);
+        position: absolute;
+        z-index: 10;
+        width: 190px;
+        height: 20px;
+        text-align: center;
+        padding: 0 0 10px 0;
+        color: #1b1b1b;
+        font-size: 12px;
+        line-height: 16px;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+    &:hover ~ &__container {
+        opacity: 1;
+    }
 }
+
+.info {
+    background: #fff;
+    color: #222;
+    position: absolute;
+    display: 'none';
+    font-weight: 400;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+
+    &__region {
+        font-family: Benzin;
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: 0.02em;
+        margin: 0 0 8px 0;
+    }
+
+    &__text {
+        font-family: Bahnschrift;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0;
+        margin: 0;
+        list-style-position: inside;
+    }
 }

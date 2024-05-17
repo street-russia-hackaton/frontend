@@ -16,12 +16,13 @@ const styles = {
 };
 
 export default function Map() {
+
     return (
-        <Container component="section" sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', p: { sm: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
+        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: { sm: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
             <Typography variant="h2" sx={{ ...styles.h, fontSize: '36px', mb: '20px' }}>
                 улицы начинаются с{' '}
                 <Box component="span" sx={{ color: '#2E5B97', position: 'relative' }}>
-                    <img src={Background} alt='Фон для текста.' className={style.bgImg} />
+                    <img src={Background} alt="Фон для текста." className={style.bgImg} />
                     тебя
                 </Box>
             </Typography>
