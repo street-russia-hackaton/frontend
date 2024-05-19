@@ -6,7 +6,7 @@ import DisceplineCard from '../../../common/desciplineCard/DescoplineCard';
 import { DesciplineCardData } from '../../../../utils/constants';
 
 const styles = {
-    container: { position: 'relative', marginTop: '-150px', height: '1228px' },
+    container: { position: 'relative', marginTop: '-150px', height: '1100px' },
     background: { position: 'absolute', top: '178px', right: '60px', width: '363px', height: '436px' },
     cardContainer: {
         display: 'grid',
