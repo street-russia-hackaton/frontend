@@ -16,7 +16,7 @@ interface SubmitButtonProps {
     textTransform?: string;
     lineHeight?: string;
     onClick?: () => void;
-    margin: string;
+    margin?: string;
 }
 
 const styles = {

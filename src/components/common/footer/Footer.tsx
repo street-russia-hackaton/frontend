@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Box, Container, List, ListItem, ListItemButton, ListItemText, TextField, Typography } from '@mui/material';
+import { Box, Container, List, ListItem, ListItemButton, TextField, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../../../assets/images/logo-main.png';
 import vkIcon from '../../../assets/images/vk-icon.svg';
