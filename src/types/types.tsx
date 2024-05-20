@@ -21,3 +21,8 @@ export interface CardEvent {
     text: string | JSX.Element;
     height: string;
 }
+
+export interface SelectFaq {
+    title: string;
+    subtitle: string;
+}
