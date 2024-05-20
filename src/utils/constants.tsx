@@ -21,6 +21,8 @@ import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 
 import { DesciplineCard } from '../types/types';
 
+export const MIN_LAPTOP_DISPLAY = 1024;
+
 export const AboutUsData = [
     { id: 'mission', title: 'Миссия', text: 'Создать условия для успешной реализации потенциала каждого связанного с уличными дисциплинами в духовной и профессиональной сфере.' },
     { id: 'idea', title: 'Идея', text: 'Идея создания единого сообщества улиц в разных регионах нашей страны появилась на основе уличных субкультур, которые объединяли тысячи людей из разных городов и стран.' },
