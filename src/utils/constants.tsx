@@ -43,6 +43,13 @@ export const AboutUsImgSize = {
     woman: { width: '427px', height: '552px', top: '353px', left: '953px' },
 };
 
+export const BenefitsHeightData = [
+    { id: 'sport', height: '236px' },
+    { id: 'school', height: '206px' },
+    { id: 'parents', height: '206px' },
+    { id: 'students', height: '236px' },
+];
+
 export const DesciplineCardData: DesciplineCard[] = [
     {
         title: 'Street art',
@@ -147,7 +154,7 @@ export const newsCardData = [
         subtitle: 'СпортБаза — курс, который подготовит тебя для новых побед в спортивной деятельности.',
         imageSrc: SportbaseImg,
     },
-]
+];
 
 export const cities = [
     { id: 0, name: 'Владивосток' },

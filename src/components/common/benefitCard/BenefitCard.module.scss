@@ -1,0 +1,20 @@
+.benefit {
+    margin: 0;
+
+    &__link {
+        margin: 0;
+        margin-top: 16px;
+        list-style: none;
+        padding-left: 10px;
+    }
+    &__text {
+        font-size: 20px;
+        width: 95%;
+    }
+    &__link,
+    &__text::before {
+        content: '—';
+        position: relative;
+        left: -5px;
+    }
+}

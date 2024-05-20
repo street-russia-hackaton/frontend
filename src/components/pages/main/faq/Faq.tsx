@@ -12,7 +12,7 @@ const styles = {
 export default function Events() {
     return (
         <Box sx={styles.container}>
-            <Title title="Faq" background={BackgrounFaqTitle} margin="0 0 0 0" width="193px" height="226px" padding="0 0 0 12px  " />
+            <Title title="Faq" background={BackgrounFaqTitle} margin="0 0 0 -20px" width="220px" height="226px" padding="10px 0 0 20px  " />
             <Box sx={styles.selectContainer}>
                 {FaqSelectData.select.map((data, index) => (
                     <FaqSelect key={index} select={data} />

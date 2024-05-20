@@ -1,8 +1,10 @@
-import { CardAboutUsSize, AboutUsImgSize } from '../utils/constants';
+import { CardAboutUsSize, AboutUsImgSize, BenefitsHeightData } from '../utils/constants';
 
 export type CardAboutUsId = keyof typeof CardAboutUsSize;
 
 export type ImgAboutUsId = keyof typeof AboutUsImgSize;
+
+export type HeightBenefit = keyof typeof BenefitsHeightData;
 
 export interface DesciplineCard {
     title: string;
@@ -25,4 +27,9 @@ export interface CardEvent {
 export interface SelectFaq {
     title: string;
     subtitle: string;
+}
+
+export interface CardBenefit {
+    title: string;
+    text: string[];
 }
