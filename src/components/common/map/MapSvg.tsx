@@ -22,9 +22,6 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
     });
 
     const element = React.useRef({});
-    const styles = {};
-
-    React.useEffect(() => {}, []);
 
     React.useEffect(() => {
         function handler(e: MouseEvent<HTMLButtonElement>) {
@@ -46,7 +43,7 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
         const evt = e.target.closest('g').dataset.events;
         const ct = e.target.closest('g').dataset.cities;
         setTarget(true);
-        console.log(ct)
+        console.log(ct);
         !!e.target.closest('g').dataset.here
             ? setData({
                   region: p,
@@ -90,14 +87,18 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
             {target && (
                 <div className={style.info} ref={element}>
                     <h4 className={style.info__region}>{data.region}</h4>
-                    {!!data.city ? (<p className={style.info__text}>
-                        {data.object} объекта, {data.event} события
-                    </p>) : (<p className={style.info__text}>
-                        0 объектов
-                    </p>)}
+                    {!!data.city ? (
+                        <p className={style.info__text}>
+                            {data.object} объекта, {data.event} события
+                        </p>
+                    ) : (
+                        <p className={style.info__text}>0 объектов</p>
+                    )}
                     <p className={style.info__text}>{data.noCity}</p>
                     {!!data.city && (
-                        <ul className={style.info__text}> Города:
+                        <ul className={style.info__text}>
+                            {' '}
+                            Города:
                             {data.city.map((item: string) => (
                                 <li key={item} className={style.info__text}>
                                     {item}
