@@ -11,3 +11,13 @@ export interface DesciplineCard {
     videoSrc: string;
     imageSrc: string;
 }
+
+export interface CardEvent {
+    image: string;
+    country: string;
+    subtitle: string;
+    date: string;
+    title: string | JSX.Element;
+    text: string | JSX.Element;
+    height: string;
+}

@@ -1,27 +1,76 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import ArrowRightWithoutRound from '../../../assets/images/ArrowRightWithoutRound.svg?react';
+import LocationIcon from '../../../assets/images/LocationIcon.svg?react';
+import { CardEvent } from '../../../types/types';
 
-export default function MediaCard() {
+interface EventCardProps {
+    data: CardEvent;
+    onClick: () => void;
+}
+
+const styles = {
+    container: { display: 'flex', maxWidth: '630px', marginTop: '64px' },
+    image: { height: '100%', width: '315px' },
+    cardContainer: { display: 'flex', flexDirection: 'column', backgroundColor: 'transparent', marginLeft: '20px', justifyContent: 'space-between', boxShadow: 'none' },
+    cardContent: { padding: '0' },
+    textContainer: { display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff', maxWidth: 'fit-content', padding: '6px 12px 6px' },
+    icon: { paddingRight: '6px' },
+    subtitle: { paddingTop: '2px', whiteSpace: 'nowrap' },
+    date: { paddingTop: '8px', color: '#fff' },
+    title: { paddingTop: '16px', color: '#fff', textTransform: 'uppercase', fontSize: '20px', width: '250px', fontFamily: 'Benzin' },
+    text: {
+        paddingTop: '8px',
+        color: '#fff',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        WebkitBoxOrient: 'vertical',
+        WebkitLineClamp: 2,
+        marginTop: '0',
+    },
+    linkText: { color: '#fff', display: 'flex', alignItems: 'center' },
+    arrow: { paddingLeft: '8px' },
+};
+
+export default function EventCard({ data, onClick }: EventCardProps) {
+    const { image, country, subtitle, date, title, text, height } = data;
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia sx={{ height: 140 }} image="/static/images/cards/contemplative-reptile.jpg" title="green iguana" />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Lizard
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
+        <Box sx={{ ...styles.container, height: height ? height : '100%' }}>
+            <CardMedia sx={styles.image} component="img" src={image} />
+            <Card sx={styles.cardContainer}>
+                <CardContent sx={styles.cardContent}>
+                    <Box sx={{ display: 'flex', flexDirection: subtitle.length <= 10 ? 'row' : 'column' }}>
+                        <Box sx={{ ...styles.textContainer, marginRight: '12px' }}>
+                            <LocationIcon style={styles.icon} />
+                            <Typography component="p" sx={styles.subtitle}>
+                                {country}
+                            </Typography>
+                        </Box>
+                        <Box sx={{ ...styles.textContainer, backgroundColor: '#AA433A', marginTop: subtitle.length <= 10 ? '0' : '12px' }}>
+                            <Typography component="p" sx={{ ...styles.subtitle, color: '#fff' }}>
+                                {subtitle}
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Typography component="p" sx={styles.date}>
+                        {date}
+                    </Typography>
+                    <Typography component="p" sx={styles.title}>
+                        {title}
+                    </Typography>
+                    <Typography component="p" sx={styles.text}>
+                        {text}
+                    </Typography>
+                </CardContent>
+                <CardContent sx={{ padding: '0' }}>
+                    <Box onClick={onClick}>
+                        <Typography component="p" sx={styles.linkText}>
+                            Подробнее <ArrowRightWithoutRound style={styles.arrow} />
+                        </Typography>
+                    </Box>
+                </CardContent>
+            </Card>
+        </Box>
     );
 }

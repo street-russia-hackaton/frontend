@@ -11,6 +11,10 @@ import BmxImg from '../assets/images/BmxImg.svg';
 import ParkourImg from '../assets/images/ParkourImg.svg';
 import SkateboardImg from '../assets/images/SkateboardImg.svg';
 import ScootImg from '../assets/images/ScootImg.svg';
+import SkateboardManEvent from '../assets/images/SkateboardManEvent.svg';
+import FenixCampEvent from '../assets/images/FenixCampEvent.svg';
+import SkateboardWomanEvent from '../assets/images/SkateboardWomanEvent.svg';
+import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 
 import { DesciplineCard } from '../types/types';
 
@@ -129,4 +133,69 @@ export const disciplines = [
     { id: 8, name: 'Bmx' },
     { id: 9, name: 'Skateboarding' },
     { id: 10, name: 'Scoot' },
+];
+
+export const EventCardData = [
+    {
+        height: '338px',
+        image: SkateboardManEvent,
+        country: 'Москва',
+        subtitle: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Паркур соревнования
+                <br />
+                на скорость
+                <br />
+                «Забег
+                <br /> за подарками»
+            </>
+        ),
+        text: (
+            <>
+                Море рационального перемещения, в виде соревнований по прохождению заданной трассы на время,
+                <br />
+                излюбленные всеми паркур-челленджи, еда и напитки в кругу единомышленников, а ещё вас
+                <br />
+                ждут призы от наших спонсоров и денежный призовой фонд.
+            </>
+        ),
+    },
+
+    {
+        height: '290px',
+        image: SkateboardWomanEvent,
+        country: 'Санкт-Петербург',
+        subtitle: 'Hip-Hop Dance',
+        date: '12-15 октября 2024 г',
+        title: (
+            <>
+                Скейт <br />
+                соревнования
+            </>
+        ),
+        text: <>Творческо-спортивные сборы по скейт катанию.</>,
+    },
+    { height: '264px', image: FenixCampEvent, country: 'Санкт-Петербург', subtitle: 'Hip-Hop Dance', date: '12-15 октября 2024 г', title: <>FENIX CAMP 2024</>, text: <>Творческо-спортивные сборы по хип-хопу, брейкингу, стрит-арту (граффити) и музыке (диджеинг)</> },
+    {
+        height: '362px',
+        image: EducationForumEvent,
+        country: 'Москва',
+        subtitle: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Образователь
+                <br />
+                ный форум уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
+        text: (
+            <>
+                Образовательный форум
+                <br /> уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
+    },
 ];
