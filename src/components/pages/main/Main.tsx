@@ -6,7 +6,7 @@ import AboutUs from './aboutUs/AboutUs';
 import Disciplines from './disciplines/Disciplines';
 import Map from './map/Map';
 import News from './news/News';
-
+import Events from './events/Events';
 
 const contentArr = [`• доступность • общность • здоровье • открытость • новаторство • доступность • общность • здоровье • открытость • новаторство `, '• RAP • BREAKING • SKATEBOARDING • BMX • SCOOT • STREET ART • PARKOUR • WORKOUT • RAP • BREAKING • SKATEBOARDING • BMX • SCOOT • STREET ART • PARKOUR • WORKOUT '];
 
@@ -20,6 +20,7 @@ export default function Main() {
             <Map />
             <AboutUs />
             <Disciplines />
+            <Events />
             <News />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
         </>
