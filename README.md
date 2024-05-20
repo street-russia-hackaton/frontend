@@ -4,15 +4,15 @@
 События и мероприятия уличных дисциплин по всем направлениям
 
 ### Опубликованное приложение
-**[Ссылка на сайт](https://street-russia.vercel.app/)**
+**тут-будет-ссылка**
 
 
 ### Команда проекта
 
 ---
 
-- [Ольга Панкрашина](https://github.com/Olyaolya13) tg: [@@olyaolya2713](https://t.me/olyaolya2713)
-- [Мария Ионова](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
+- [Максим](https://github.com/MaxRMNK) tg: [@MaxRMNK](https://t.me/MaxRMNK)
+- [Мария](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
 
 ---
 
@@ -31,12 +31,11 @@ npm run build
 ### Стек технологий
 * HTML 5
 * SCSS modules
-* TypeScript
 * React 18
 * Redux Toolkit
 
 ### Сторонние библиотеки
-- [Vite.js](https://vitejs.dev/)
-- [Material UI](https://mui.com/)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+
 
 ### Ключевые точки для media queries
