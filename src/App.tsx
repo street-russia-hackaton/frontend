@@ -1,18 +1,21 @@
 // import { useState } from 'react';
 import './App.module.scss';
-import { Route, Routes } from 'react-router-dom';
-import { Main, About } from './components/pages';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { Main, About, News, Events, Regions } from './components/pages';
 import { ThemeProvider } from '@emotion/react';
 import theme from './vendor/theme.tsx';
 
 function App() {
-    // const [count, setCount] = useState(0);
 
     return (
         <ThemeProvider theme={theme}>
             <Routes>
+            <Route path="*" element={<Navigate to='/main' />} />
                 <Route path="/main" element={<Main />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/regional" element={<Regions />} />
             </Routes>
         </ThemeProvider>
     );

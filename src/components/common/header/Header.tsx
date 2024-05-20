@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import ListItemLink from '../links/ListItemLink';
 import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import PopupAuthForm from '../popupAuthForm/PopupAuthForm';
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
     backgroundColor?: string;
@@ -54,55 +55,60 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
     };
 
     return (
-        <AppBar position="fixed" sx={{ height: 72, display: 'flex', alignItems: 'center', boxShadow: 'none', transition: 'none', backgroundColor: backgroundColor || '#222', backdropFilter: backdropFilter || 'none' }}>
-            <Container sx={{ width: '91%', height: '100%', maxWidth: { lg: 1312 }, p: { xs: 0, lg: 0 } }}>
-                <Toolbar disableGutters sx={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
-                    <img src={Logo} alt="Логотип." />
+        <>
+            <AppBar position="fixed" sx={{ height: 72, display: 'flex', alignItems: 'center', boxShadow: 'none', transition: 'none', backgroundColor: backgroundColor || '#222', backdropFilter: backdropFilter || 'none', border: 'none' }}>
+                <Container sx={{ width: '91%', height: '100%', maxWidth: { lg: 1312 }, p: { xs: 0, lg: 0 } }}>
+                    <Toolbar disableGutters sx={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
+                        <Link to="/main">
+                        <img src={Logo} alt="Логотип." />
+                        </Link>
 
-                    <List sx={{ display: 'flex', gap: '32px', justifyContent: 'center', width: 'auto', p: 0 }}>
-                        <ListItemLink to="/about" primary="О нас" />
-                        <ListItemLink to="/news" primary="Новости" />
-                        <ListItemLink to="/events" primary="Мероприятия" />
-                        <ListItemLink to="/regional" primary="Региональные отделения" />
-                    </List>
+                        <List sx={{ display: 'flex', gap: '32px', justifyContent: 'center', width: 'auto', p: 0 }}>
+                            <ListItemLink to="/about" primary="О нас" />
+                            <ListItemLink to="/news" primary="Новости" />
+                            <ListItemLink to="/events" primary="Мероприятия" />
+                            <ListItemLink to="/regional" primary="Региональные отделения" />
+                        </List>
 
-                    <Box sx={{ display: 'flex', gap: '20px' }}>
-                        <SubmitBtnWithIcon width="138px" title="Поддержать" height="40" fontSize="16px" disabled={false} onClick={handleSubscription} />
+                        <Box sx={{ display: 'flex', gap: '20px' }}>
+                            <SubmitBtnWithIcon width="138px" title="Поддержать" height="40" fontSize="16px" disabled={false} onClick={handleSubscription} />
 
-                        <Box sx={{}}>
-                            <IconButton onClick={handleOpenPopup} sx={{ p: 0 }}>
-                                <img src={ProfileIcon} alt="Profile" />
-                            </IconButton>
-                            <PopupAuthForm open={openPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
+                            <Box sx={{}}>
+                                <IconButton onClick={handleOpenPopup} sx={{ p: 0 }}>
+                                    <img src={ProfileIcon} alt="Profile" />
+                                </IconButton>
+                                <PopupAuthForm open={openPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
 
-                            <Menu
-                                sx={{ mt: '45px' }}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                <MenuItem onClick={handleProfile}>
-                                    <Typography textAlign="center">Мой профиль</Typography>
-                                </MenuItem>
-                                <MenuItem onClick={handleLogout}>
-                                    <Typography textAlign="center">Выйти</Typography>
-                                </MenuItem>
-                            </Menu>
+                                <Menu
+                                    sx={{ mt: '45px' }}
+                                    id="menu-appbar"
+                                    anchorEl={anchorElUser}
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    open={Boolean(anchorElUser)}
+                                    onClose={handleCloseUserMenu}
+                                >
+                                    <MenuItem onClick={handleProfile}>
+                                        <Typography textAlign="center">Мой профиль</Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleLogout}>
+                                        <Typography textAlign="center">Выйти</Typography>
+                                    </MenuItem>
+                                </Menu>
+                            </Box>
                         </Box>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+            <Toolbar sx={{ height: 72, background: '#222', border: 'none'}}/>
+        </>
     );
 }
 export default Header;
