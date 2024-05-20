@@ -3,9 +3,9 @@ import { Typography, Container, Box } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import NavAuthTitle from '../../common/navAuthTitle/navAuthTitle';
-import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
-import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
+import NavAuthTitle from '../navAuthTitle/navAuthTitle.tsx';
+import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
+import SubmitBtnBlack from '../btns/SubmitBtnColor.tsx';
 
 interface LoginProps {
     onLogin: (email: string, password: string) => void;

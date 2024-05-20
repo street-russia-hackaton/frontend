@@ -108,3 +108,25 @@ export const DesciplineCardData: DesciplineCard[] = [
         imageSrc: ScootImg,
     },
 ];
+
+export const cities = [
+    { id: 0, name: 'Владивосток' },
+    { id: 1, name: 'Москва' },
+    { id: 2, name: 'Санкт-Петербург' },
+    { id: 3, name: 'Екатеринбург' },
+    { id: 4, name: 'Казань' },
+];
+
+export const disciplines = [
+    { id: 0, name: 'Street Art' },
+    { id: 1, name: 'Parkour' },
+    { id: 2, name: 'Workout' },
+    { id: 3, name: 'Freerun' },
+    { id: 4, name: 'Hip-hop dance' },
+    { id: 5, name: 'Tricking' },
+    { id: 6, name: 'Rap' },
+    { id: 7, name: 'Breaking' },
+    { id: 8, name: 'Bmx' },
+    { id: 9, name: 'Skateboarding' },
+    { id: 10, name: 'Scoot' },
+];

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Typography, Container, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import TextFieldAuth from '../../common/textfieldAuth/textfieldAuth';
-import SelectAuth from '../../common/selectAuth/selectAuth';
+import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
+import FilterAuth from '../filterAuth/FilterAuth.tsx';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import SubmitBtnWithIcon from '../../common/btns/SubmitBtnWithIcon';
+import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon.tsx';
 import GosUslugiLogo from '../../../assets/GosUslugiLogo.svg?react';
-import SubmitBtnBlack from '../../common/btns/SubmitBtnColor.tsx';
+import SubmitBtnBlack from '../btns/SubmitBtnColor.tsx';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
@@ -86,7 +86,7 @@ export default function Register({ onRegister }: RegisterProps) {
                     {input.map(({ id, label, placeholder, value, onChange }) => (
                         <React.Fragment key={id}>
                             <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} />
-                            {id === 'name' && <SelectAuth label="Выберите город" />}
+                            {id === 'name' && <FilterAuth />}
                         </React.Fragment>
                     ))}
                     <SubmitBtnBlack title="Зарегистрироваться" margin="16px 0 0 0 " />

@@ -1,6 +1,6 @@
 import Main from './main';
 import About from './about';
-import Login from './login';
-import Register from './register';
+import Login from '../common/login';
+import Register from '../common/register';
 
 export { Main, About, Login, Register };
