@@ -7,9 +7,7 @@ import { Container } from '@mui/material';
 import Background from '../../../assets/images/background-newsgrid.svg';
 import BreadcrumbsComponent from '../../common/breadcrumbs/Breadcrumbs';
 
-//TODO: открытие отдельной новости, фильтрация
-
-export default function News() {
+export default function New() {
     return (
         <>
             <Header backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
