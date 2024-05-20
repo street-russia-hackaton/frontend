@@ -8,6 +8,7 @@ import Map from './map/Map';
 import NewsCarousel from '../../common/newsCarousel/NewsCarousel';
 import Events from './events/Events';
 import BackgroundTitle from '../../../assets/images/background-news-title.svg';
+import Faq from './faq/Faq';
 
 const contentArr = [`• доступность • общность • здоровье • открытость • новаторство • доступность • общность • здоровье • открытость • новаторство `, '• RAP • BREAKING • SKATEBOARDING • BMX • SCOOT • STREET ART • PARKOUR • WORKOUT • RAP • BREAKING • SKATEBOARDING • BMX • SCOOT • STREET ART • PARKOUR • WORKOUT '];
 
@@ -23,6 +24,7 @@ export default function Main() {
             <Disciplines />
             <Events />
             <NewsCarousel title="Новости" margin="0 0 6px -60px" width='340px' height='160px' padding='0 0 12px 60px' background={BackgroundTitle}/>
+            <Faq />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
         </>
     );
