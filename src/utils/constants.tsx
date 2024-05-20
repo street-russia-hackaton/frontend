@@ -11,6 +11,10 @@ import BmxImg from '../assets/images/BmxImg.svg';
 import ParkourImg from '../assets/images/ParkourImg.svg';
 import SkateboardImg from '../assets/images/SkateboardImg.svg';
 import ScootImg from '../assets/images/ScootImg.svg';
+import SkateboardManEvent from '../assets/images/SkateboardManEvent.svg';
+import FenixCampEvent from '../assets/images/FenixCampEvent.svg';
+import SkateboardWomanEvent from '../assets/images/SkateboardWomanEvent.svg';
+import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 
 import { DesciplineCard } from '../types/types';
 
@@ -106,5 +110,92 @@ export const DesciplineCardData: DesciplineCard[] = [
         text: 'SCOOT – экстремальный вид спорта, заключающийся в катании и исполнении трюков на специальном трюковом самокате. Имеет широкое распространение по всему миру, существуют профессиональные команды, проводятся соревнования и другие мероприятия. Наиболее распространён среди подростков, образует уличную культуру скут-райдеров.',
         videoSrc: 'https://www.youtube.com/embed/6keisP5M6w8?si=MYDA85qEjfYr136a',
         imageSrc: ScootImg,
+    },
+];
+
+export const cities = [
+    { id: 0, name: 'Владивосток' },
+    { id: 1, name: 'Москва' },
+    { id: 2, name: 'Санкт-Петербург' },
+    { id: 3, name: 'Екатеринбург' },
+    { id: 4, name: 'Казань' },
+];
+
+export const disciplines = [
+    { id: 0, name: 'Street Art' },
+    { id: 1, name: 'Parkour' },
+    { id: 2, name: 'Workout' },
+    { id: 3, name: 'Freerun' },
+    { id: 4, name: 'Hip-hop dance' },
+    { id: 5, name: 'Tricking' },
+    { id: 6, name: 'Rap' },
+    { id: 7, name: 'Breaking' },
+    { id: 8, name: 'Bmx' },
+    { id: 9, name: 'Skateboarding' },
+    { id: 10, name: 'Scoot' },
+];
+
+export const EventCardData = [
+    {
+        height: '338px',
+        image: SkateboardManEvent,
+        country: 'Москва',
+        subtitle: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Паркур соревнования
+                <br />
+                на скорость
+                <br />
+                «Забег
+                <br /> за подарками»
+            </>
+        ),
+        text: (
+            <>
+                Море рационального перемещения, в виде соревнований по прохождению заданной трассы на время,
+                <br />
+                излюбленные всеми паркур-челленджи, еда и напитки в кругу единомышленников, а ещё вас
+                <br />
+                ждут призы от наших спонсоров и денежный призовой фонд.
+            </>
+        ),
+    },
+
+    {
+        height: '290px',
+        image: SkateboardWomanEvent,
+        country: 'Санкт-Петербург',
+        subtitle: 'Hip-Hop Dance',
+        date: '12-15 октября 2024 г',
+        title: (
+            <>
+                Скейт <br />
+                соревнования
+            </>
+        ),
+        text: <>Творческо-спортивные сборы по скейт катанию.</>,
+    },
+    { height: '264px', image: FenixCampEvent, country: 'Санкт-Петербург', subtitle: 'Hip-Hop Dance', date: '12-15 октября 2024 г', title: <>FENIX CAMP 2024</>, text: <>Творческо-спортивные сборы по хип-хопу, брейкингу, стрит-арту (граффити) и музыке (диджеинг)</> },
+    {
+        height: '362px',
+        image: EducationForumEvent,
+        country: 'Москва',
+        subtitle: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Образователь
+                <br />
+                ный форум уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
+        text: (
+            <>
+                Образовательный форум
+                <br /> уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
     },
 ];
