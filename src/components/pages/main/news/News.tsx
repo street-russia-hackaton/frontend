@@ -5,6 +5,7 @@ import BackgroundTitle from '../../../../assets/images/background-news-title.svg
 import Background from '../../../../assets/images/background-news-main.svg';
 import NewsCard from '../../../common/newsCard/NewsCard';
 import { newsCardData } from '../../../../utils/constants';
+import { useNavigate } from 'react-router-dom';
 
 const styles = {
     background: { position: 'absolute', top: '178px', right: '60px', width: '363px', height: '436px' },
@@ -26,10 +27,10 @@ const styles = {
 };
 
 export default function News() {
-    const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
+    const navigate = useNavigate();
 
-    const handleCardClick = (index: number) => {
-        setExpandedCardIndex(expandedCardIndex === index ? null : index);
+    const handleCardClick = (id: number) => {
+        navigate(`/regional/${id}`);
     };
     return (
         <Container component="section" sx={{ background: `url(${Background}) no-repeat right -5% bottom 60%`, p: { sm: '120px 0 60px' }, m: '0', width: '100%', maxWidth: {lg: '100%'} }}>
