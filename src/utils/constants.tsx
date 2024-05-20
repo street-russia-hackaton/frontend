@@ -11,6 +11,10 @@ import BmxImg from '../assets/images/BmxImg.svg';
 import ParkourImg from '../assets/images/ParkourImg.svg';
 import SkateboardImg from '../assets/images/SkateboardImg.svg';
 import ScootImg from '../assets/images/ScootImg.svg';
+import GraffitiImg from '../assets/images/news-graffiti.png';
+import AgreementImg from '../assets/images/news-agreement.png';
+import SportbaseImg from '../assets/images/news-sportbase.png';
+
 
 import { DesciplineCard } from '../types/types';
 
@@ -108,3 +112,36 @@ export const DesciplineCardData: DesciplineCard[] = [
         imageSrc: ScootImg,
     },
 ];
+
+export const newsCardData = [
+    {
+        tag: 'Street art',
+        date: '12.05.2024',
+        duration: '5',
+        views: '1321',
+        title: 'ТОП фильмов про граффити',
+        text: '1. Выход через суверенную лавку (2010) (комедия, документальный, история/ рейтинг 7.9)',
+        subtitle: '1. Выход через суверенную лавку (2010) (комедия, документальный, история/ рейтинг 7.9)',
+        imageSrc: GraffitiImg,
+    },
+    {
+        tag: 'Community',
+        date: '12.05.2024',
+        duration: '5',
+        views: '1321',
+        title: 'Улицы России и Молодежь Южного Урала подписали соглашение о развитии уличной культуры и спорта!',
+        text: 'В 2024-м году в Челябинске ожидается проведение регионального этапа Международной конкурс-премии уличной культуры и спорта КАРДО.',
+        subtitle: 'В 2024-м году в Челябинске ожидается проведение регионального этапа Международной конкурс-премии уличной культуры и спорта КАРДО.',
+        imageSrc: AgreementImg,
+    },
+    {
+        tag: 'Community',
+        date: '12.05.2024',
+        duration: '5',
+        views: '1321',
+        title: 'Запускаем мощный проект в сфере спорта',
+        text: 'СпортБаза — курс, который подготовит тебя для новых побед в спортивной деятельности.',
+        subtitle: 'СпортБаза — курс, который подготовит тебя для новых побед в спортивной деятельности.',
+        imageSrc: SportbaseImg,
+    },
+]
