@@ -1,8 +1,7 @@
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 
-interface SubmitBtnBlackProps {
-    border?: string;
+interface SubmitBtnProps {
     title?: string;
     width?: string;
     backgroundColor?: string;
@@ -25,7 +24,7 @@ const styles = {
     },
 };
 
-export default function SubmitBtn({ title, width, height, backgroundColor, color, fontSize, disabled, margin, onClick, border }: SubmitBtnBlackProps) {
+export default function SubmitBtn({ title, width, height, backgroundColor, color, fontSize, disabled, margin, onClick }: SubmitBtnProps) {
     return (
         <Button
             variant="contained"
@@ -36,7 +35,6 @@ export default function SubmitBtn({ title, width, height, backgroundColor, color
                 height: height ? height : '54px',
                 backgroundColor: backgroundColor ? backgroundColor : '#fff',
                 color: color ? color : '#222',
-                border: border ? border : 'none',
                 '&:hover': {
                     backgroundColor: '#fff',
                     opacity: '0.9',

@@ -3,9 +3,9 @@ import { Typography, Container, Box } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import NavAuthTitle from '../navAuthTitle/navAuthTitle.tsx';
 import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
-import SubmitBtnBlack from '../btns/SubmitBtnColor.tsx';
+import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
+import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
 
 interface LoginProps {
     onLogin: (email: string, password: string) => void;
@@ -51,21 +51,27 @@ export default function Login({ onLogin }: LoginProps) {
         setPassword(e.target.value);
     };
     const input = [
-        { id: 'email', label: 'Электронная почта', placeholder: 'Введите Email', value: email, onChange: handleEmailChange },
-        { id: 'password', label: 'Пароль', placeholder: 'Введите Пароль', value: password, onChange: handlePasswordChange },
+        { id: 'email', label: 'Электронная почта', placeholder: 'Введи электронную почту', value: email, onChange: handleEmailChange },
+        { id: 'password', label: 'Пароль', placeholder: 'Придумай пароль, минимум 6 символов', value: password, onChange: handlePasswordChange },
     ];
+
+    const styles = {
+        container: { marginTop: '32px' },
+        text: { fontSize: '16px', marginTop: '16px', fontFamily: 'Roboto', textAlign: 'start' },
+    };
 
     return (
         <Container maxWidth="sm">
-            <Box mt={4} textAlign="center">
+            <Box sx={styles.container}>
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
                     {input.map(({ id, label, placeholder, value, onChange }) => (
-                        <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} />
+                        <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} margin="16px 0 0 0" />
                     ))}
-                    <Typography variant="body2" style={{ marginTop: '1rem' }}>
-                        Если вы являетесь членом организации, можете найти свой пароль на почте, которую указывали при вступлении.
+                    <Typography component="p" sx={styles.text}>
+                        Если ты являешься членом организации, можешь найти свой пароль на почте, которую указывал при вступлении.
                     </Typography>
-                    <SubmitBtnBlack title="Войти" margin="16px 0 0  0" />
+                    <SubmitBtnColor title="Войти" margin="16px 0 0  0" />
+                    <TextPersonalData />
                 </form>
             </Box>
         </Container>

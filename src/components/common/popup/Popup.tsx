@@ -13,14 +13,15 @@ interface PopupProps {
 const styles = {
     container: {
         position: 'absolute',
-        top: '52%',
-        left: '51%',
+        top: '47%',
+        left: '48%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         transform: 'translate(-50%, -50%)',
-        width: '649px',
-        height: '900px',
         backgroundColor: 'rgba(255, 255, 255, 0.27)',
         backdropFilter: 'blur(27px)',
-        padding: '20px',
+        padding: '60px 48px 48px',
         zIndex: 1,
     },
     closeIcon: {

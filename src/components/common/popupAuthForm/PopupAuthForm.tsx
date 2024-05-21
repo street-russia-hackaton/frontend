@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Popup from '../popup/Popup';
 import NavAuthTitle from '../navAuthTitle/navAuthTitle';
-import { Login, Register } from '../../pages';
+import Login from '../login/Login';
+import Register from '../register';
 
 interface PopupProps {
     open: boolean;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FilterSelect from '../filterSelect/FilterSelect';
-import { SelectChangeEvent } from '@mui/material';
+import { Box, SelectChangeEvent } from '@mui/material';
 import { cities } from '../../../utils/constants';
 
 export default function SelectAuth() {
@@ -10,5 +10,9 @@ export default function SelectAuth() {
         setSelectedCity(event.target.value);
     };
 
-    return <FilterSelect label="Город" value={selectedCity} onChange={handleCityChange} items={cities} title="Выберите город" />;
+    return (
+        <Box sx={{ marginTop: '16px' }}>
+            <FilterSelect label="Выбери город" value={selectedCity} onChange={handleCityChange} items={cities} title="Выбери город" margin="8px 0 0 0" width="100%" />
+        </Box>
+    );
 }

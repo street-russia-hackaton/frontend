@@ -15,6 +15,10 @@ const theme = createTheme({
     },
 });
 
+const styles = {
+    title: { fontFamily: 'Benzin', fontSize: '24px', color: 'rgba(255, 255, 255, 0.5)' },
+};
+
 export default function NavAuthTitle({ onRegister, onLogin }: NavAuthTitleProps) {
     const [value, setValue] = useState(0);
 
@@ -24,8 +28,8 @@ export default function NavAuthTitle({ onRegister, onLogin }: NavAuthTitleProps)
     return (
         <ThemeProvider theme={theme}>
             <Tabs value={value} onChange={handleChange} aria-label="auth navigation">
-                <Tab label="Регистрация" onClick={onRegister} />
-                <Tab label="Вход" onClick={onLogin} />
+                <Tab label="Вход" onClick={onLogin} sx={{ ...styles.title, marginRight: '47px' }} />
+                <Tab label="Регистрация" onClick={onRegister} sx={styles.title} />
             </Tabs>
         </ThemeProvider>
     );
