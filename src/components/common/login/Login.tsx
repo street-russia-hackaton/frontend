@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Typography, Container, Box } from '@mui/material';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
@@ -18,17 +17,14 @@ interface LoginForm {
 
 const schema = yup.object().shape({
     email: yup.string().email('Введите адрес почты вида Ivan@mail.ru').required('Введите адрес почты вида Ivan@mail.ru'),
-    password: yup.string().required('Введите пароль не менее 6 символов').min(6),
+    password: yup.string().required('Введите пароль не менее 6 символов').min(6, 'Введите пароль не менее 6 символов'),
 });
 
 export default function Login({ onLogin }: LoginProps) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
     const {
-        // register,
         handleSubmit,
-        formState: { isValid },
+        control,
+        formState: { errors, isValid },
     } = useForm<LoginForm>({
         resolver: yupResolver(schema),
         mode: 'onChange',
@@ -36,24 +32,12 @@ export default function Login({ onLogin }: LoginProps) {
 
     const onSubmit = (data: LoginForm) => {
         if (!isValid) {
-            console.error('Ошибка валидации:');
+            console.error('Ошибка валидации:', errors);
         } else {
             console.log('вход:', data);
             onLogin(data.email, data.password);
         }
     };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-    const input = [
-        { id: 'email', label: 'Электронная почта', placeholder: 'Введи электронную почту', value: email, onChange: handleEmailChange },
-        { id: 'password', label: 'Пароль', placeholder: 'Придумай пароль, минимум 6 символов', value: password, onChange: handlePasswordChange },
-    ];
 
     const styles = {
         container: { marginTop: '32px' },
@@ -64,13 +48,12 @@ export default function Login({ onLogin }: LoginProps) {
         <Container maxWidth="sm">
             <Box sx={styles.container}>
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-                    {input.map(({ id, label, placeholder, value, onChange }) => (
-                        <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} margin="16px 0 0 0" />
-                    ))}
+                    <Controller name="email" control={control} render={({ field }) => <TextFieldAuth label="Электронная почта" placeholder="Введи электронную почту" {...field} error={!!errors.email} helperText={errors.email ? errors.email.message : ''} margin="16px 0 0 0" />} />
+                    <Controller name="password" control={control} render={({ field }) => <TextFieldAuth label="Пароль" placeholder="Введи пароль" type="password" {...field} error={!!errors.password} helperText={errors.password ? errors.password.message : ''} margin="16px 0 0 0" />} />
                     <Typography component="p" sx={styles.text}>
                         Если ты являешься членом организации, можешь найти свой пароль на почте, которую указывал при вступлении.
                     </Typography>
-                    <SubmitBtnColor title="Войти" margin="16px 0 0  0" />
+                    <SubmitBtnColor title="Войти" margin="16px 0 0 0" />
                     <TextPersonalData />
                 </form>
             </Box>
