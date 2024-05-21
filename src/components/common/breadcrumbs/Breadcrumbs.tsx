@@ -7,7 +7,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const breadcrumbNameMap: { [key: string]: string } = {
     '/news': 'Все новости',
-    '/news/{id}': 'Новость',
+    '/news/:id': 'Новость',
     '/about': 'О нас',
     '/events': 'Все мероприятия',
     '/regional': 'Региональные отделения',

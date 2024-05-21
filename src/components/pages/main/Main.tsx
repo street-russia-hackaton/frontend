@@ -24,7 +24,6 @@ export default function Main() {
             <AboutUs />
             <Disciplines />
             <Events />
-            <News />
             <NewsCarousel title="Новости" margin="0 0 6px -60px" width='340px' height='160px' padding='0 0 12px 60px' background={BackgroundTitle}/>
             <Benefits />
             <Faq />

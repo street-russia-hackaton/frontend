@@ -25,6 +25,7 @@ const styles = {
 };
 
 interface DataProps {
+    id: number;
     imageSrc: string;
     tag: string;
     date: string;
@@ -41,7 +42,7 @@ interface NewsProps {
 
 export default function NewsCard({ data, onClick }: NewsProps) {
     return (
-        <Card sx={{ position: 'relative', maxWidth: 426, height: 614, display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(255,255,255, 0.27)', backdropFilter: 'blur(10px)' }}>
+        <Card sx={{ position: 'relative', width: 426, height: 614, display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(255,255,255, 0.27)', backdropFilter: 'blur(10px)' }}>
             <Typography sx={{ ...styles.text, ...styles.small, ...styles.tag, position: 'absolute', top: '20px', left: '20px' }}>{data.tag}</Typography>
             <CardMedia component="img" alt="Изображение новости." height="300" image={data.imageSrc} />
             <CardContent sx={{ p: '24px', height: 266, display: 'flex', flexDirection: 'column' }}>
