@@ -43,12 +43,12 @@ export const AboutUsImgSize = {
     woman: { width: '427px', height: '552px', top: '353px', left: '953px' },
 };
 
-export const BenefitsHeightData = [
-    { id: 'sport', height: '236px' },
-    { id: 'school', height: '206px' },
-    { id: 'parents', height: '206px' },
-    { id: 'students', height: '236px' },
-];
+export const BenefitsHeightData = {
+    sport: { height: '236px' },
+    school: { height: '206px' },
+    parents: { height: '206px' },
+    students: { height: '236px' },
+};
 
 export const DesciplineCardData: DesciplineCard[] = [
     {
@@ -266,4 +266,24 @@ export const FaqSelectData = {
             subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
     ],
+};
+
+export const BenefitsData = {
+    sport: {
+        title: 'Для деятелей искусства и спорта',
+        text: ['Участие в федеральных и международных мероприятиях.', 'Вступление в состав сборной страны.', 'Подписание контрактов с известными брендами.', 'Бесплатное участие в мастер-классах от топовых деятелей с мировым именем.'],
+    },
+    school: {
+        height: '200px',
+        title: 'Для школьников',
+        text: ['Баллы к ЕГЭ.', 'Возможности для самореализации и новые знакомства.', 'Участие в спортивных и культурных мероприятиях в качестве участника или волонтера.'],
+    },
+    parents: {
+        title: 'Для молодых родителей',
+        text: ['Близкое знакомство с уличной культурой.', 'Обучающие программы экспертного состава «Улицы Росии».', 'Возможность качественно организовать досуг ребенка и развить его как сильную личность.'],
+    },
+    students: {
+        title: 'Для Студентов',
+        text: [' Прохождение учебной или производственной практики.', 'Обучение и стажировки.', 'Опыт работы с крупными объединениями и кейс по содействию в подготовке масштабных событий + рекомендательное письмо с характеристикой.'],
+    },
 };

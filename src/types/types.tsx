@@ -4,7 +4,7 @@ export type CardAboutUsId = keyof typeof CardAboutUsSize;
 
 export type ImgAboutUsId = keyof typeof AboutUsImgSize;
 
-export type HeightBenefit = keyof typeof BenefitsHeightData;
+export type CardBenefitId = keyof typeof BenefitsHeightData;
 
 export interface DesciplineCard {
     title: string;

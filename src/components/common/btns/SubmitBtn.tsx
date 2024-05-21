@@ -1,57 +1,48 @@
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 
-interface SubmitButtonProps {
+interface SubmitBtnBlackProps {
+    border?: string;
     title?: string;
     width?: string;
-    height?: string;
-    fontSize?: string;
-    fontWeigth?: string;
     backgroundColor?: string;
     color?: string;
-    borderRadius?: string;
-    hoverBackgroundColor?: string;
-    focusBackgroundColor?: string;
+    height?: string;
+    fontSize?: string;
     disabled?: boolean;
-    textTransform?: string;
-    lineHeight?: string;
-    onClick?: () => void;
     margin?: string;
+    onClick?: () => void;
 }
 
 const styles = {
     container: {
-        textTransform: 'none',
+        borderRadius: '0',
+        padding: '0',
     },
     title: {
-        fontFamily: 'Bahnschrift',
-    },
-    icon: {
-        marginRight: '8px',
-        width: '20px',
-        height: '22px',
+        lineHeight: '1.25',
+        fontWeight: '400',
     },
 };
 
-export default function SubmitButton({ title, width, height, fontSize, fontWeigth, backgroundColor, disabled, borderRadius, color, hoverBackgroundColor, focusBackgroundColor, textTransform, lineHeight, onClick, margin }: SubmitButtonProps) {
+export default function SubmitBtn({ title, width, height, backgroundColor, color, fontSize, disabled, margin, onClick, border }: SubmitBtnBlackProps) {
     return (
         <Button
             variant="contained"
             disableElevation
             sx={{
                 ...styles.container,
-                p: 0,
-                lineHeight: lineHeight ? lineHeight : '1.5',
-                textTransform: textTransform ? textTransform : 'capitalize',
+                width: width ? width : '553px',
+                height: height ? height : '54px',
                 backgroundColor: backgroundColor ? backgroundColor : '#fff',
-                width: width ? width : 'auto',
-                height: height ? height : '44px',
-                borderRadius: borderRadius ? borderRadius : '0',
+                color: color ? color : '#222',
+                border: border ? border : 'none',
                 '&:hover': {
-                    backgroundColor: hoverBackgroundColor ? hoverBackgroundColor : '#0A771E',
+                    backgroundColor: '#fff',
+                    opacity: '0.9',
                 },
                 '&:focus': {
-                    backgroundColor: focusBackgroundColor ? focusBackgroundColor : '#0A771E',
+                    backgroundColor: '#fff',
                 },
                 margin: margin ? margin : '0',
             }}
@@ -62,9 +53,7 @@ export default function SubmitButton({ title, width, height, fontSize, fontWeigt
                 component="h2"
                 sx={{
                     ...styles.title,
-                    fontSize: fontSize ? fontSize : '16px',
-                    fontWeight: fontWeigth ? fontWeigth : '500',
-                    color: color ? color : '#fff',
+                    fontSize: fontSize ? fontSize : '20px',
                 }}
             >
                 {title}
