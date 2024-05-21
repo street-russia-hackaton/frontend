@@ -15,8 +15,8 @@ interface SubmitBtnBlackProps {
 
 const styles = {
     container: {
-        backgroundColor: '#000',
         borderRadius: '0',
+        padding: '0',
     },
     title: {
         lineHeight: '1.25',
@@ -33,14 +33,14 @@ export default function SubmitBtnColor({ title, width, height, backgroundColor, 
                 ...styles.container,
                 width: width ? width : '553px',
                 height: height ? height : '54px',
-                backgroundColor: backgroundColor ? backgroundColor : '#000',
+                backgroundColor: backgroundColor ? backgroundColor : '#2E5B97',
                 color: color ? color : '#fff',
                 '&:hover': {
-                    backgroundColor: 'transparent',
+                    backgroundColor: '#2E5B97',
                     opacity: '0.9',
                 },
                 '&:focus': {
-                    backgroundColor: 'transparent',
+                    backgroundColor: '#2E5B97',
                 },
                 margin: margin ? margin : '0',
             }}
