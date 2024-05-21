@@ -5,8 +5,9 @@ import Footer from '../../common/footer/Footer';
 import AboutUs from './aboutUs/AboutUs';
 import Disciplines from './disciplines/Disciplines';
 import Map from './map/Map';
-import News from './news/News';
+import NewsCarousel from '../../common/newsCarousel/NewsCarousel';
 import Events from './events/Events';
+import BackgroundTitle from '../../../assets/images/background-news-title.svg';
 import Faq from './faq/Faq';
 import Benefits from './benefits/Benefits';
 
@@ -24,6 +25,7 @@ export default function Main() {
             <Disciplines />
             <Events />
             <News />
+            <NewsCarousel title="Новости" margin="0 0 6px -60px" width='340px' height='160px' padding='0 0 12px 60px' background={BackgroundTitle}/>
             <Benefits />
             <Faq />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
