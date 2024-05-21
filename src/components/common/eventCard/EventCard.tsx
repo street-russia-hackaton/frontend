@@ -1,3 +1,4 @@
+import style from './EventCard.module.scss';
 import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
 import ArrowRightWithoutRound from '../../../assets/images/ArrowRightWithoutRound.svg?react';
 import LocationIcon from '../../../assets/images/LocationIcon.svg?react';
@@ -6,6 +7,7 @@ import { CardEvent } from '../../../types/types';
 interface EventCardProps {
     data: CardEvent;
     onClick: () => void;
+    cardStyle?: React.CSSProperties;
 }
 
 const styles = {
@@ -32,11 +34,11 @@ const styles = {
     arrow: { paddingLeft: '8px' },
 };
 
-export default function EventCard({ data, onClick }: EventCardProps) {
+export default function EventCard({ data, onClick, cardStyle }: EventCardProps) {
     const { image, country, subtitle, date, title, text, height } = data;
 
     return (
-        <Box sx={{ ...styles.container, height: height ? height : '100%' }}>
+        <Box className={style.eventCard} sx={{ height: height ? height : '100%', ...cardStyle }}>
             <CardMedia sx={styles.image} component="img" src={image} />
             <Card sx={styles.cardContainer}>
                 <CardContent sx={styles.cardContent}>

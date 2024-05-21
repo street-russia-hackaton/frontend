@@ -27,7 +27,7 @@ export default function Events() {
                 <FilterEvents />
                 <Box sx={styles.cards}>
                     {EventCardData.map((data, index) => (
-                        <EventCard key={index} data={data} onClick={handleLinkClick} />
+                        <EventCard key={index} data={data} onClick={handleLinkClick} cardStyle={index === Object.keys(EventCardData).length - 1 ? { marginTop: '-30px' } : {}} />
                     ))}
                 </Box>
             </Box>
