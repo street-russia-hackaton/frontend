@@ -310,7 +310,7 @@ export const disciplines = [
 
 export const EventCardData = [
     {
-        height: '338px',
+        height: '368px',
         image: SkateboardManEvent,
         country: 'Москва',
         subtitle: 'Street art',
@@ -337,7 +337,7 @@ export const EventCardData = [
     },
 
     {
-        height: '290px',
+        height: '280px',
         image: SkateboardWomanEvent,
         country: 'Санкт-Петербург',
         subtitle: 'Hip-Hop Dance',

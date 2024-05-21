@@ -20,7 +20,7 @@ export default function Main() {
             <Intro />
             <Marquee color="#fff" background="#AA433A" content={contentArr[0]} rotate="rotate(8.1deg)" marginTop="-116px" />
             <Marquee color="#222" background="#D2D1D0" content={contentArr[1]} rotate="rotate(-4.9deg)" marginTop="-10px" />
-            {/* <Map /> */}
+            <Map />
             <AboutUs />
             <Disciplines />
             <Events />
