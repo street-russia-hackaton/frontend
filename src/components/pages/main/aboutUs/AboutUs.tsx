@@ -28,7 +28,7 @@ export default function AboutUs() {
                     <AboutUsImg key={index} id={item.id as ImgAboutUsId} img={item.img} borderColor={item.borderColor} />
                 ))}
                 <CardMedia component="img" src={AboutUsBackground} sx={styles.backgroundSecond} />
-                <SubmitBtn title="Узнать больше" width="201px" margin="69px 0 0 0 " />
+                <SubmitBtn title="Узнать больше" width="201px" margin="69px 60px 0 0 " />
             </Box>
         </Box>
     );

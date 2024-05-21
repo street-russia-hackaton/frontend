@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import { Typography, Container, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
-
-import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
-import FilterAuth from '../filterAuth/FilterAuth.tsx';
-import { useForm } from 'react-hook-form';
+import { Container, Box } from '@mui/material';
+import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon.tsx';
-import GosUslugiLogo from '../../../assets/GosUslugiLogo.svg?react';
-import SubmitBtnBlack from '../btns/SubmitBtnColor.tsx';
+import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
+import FilterAuth from '../filterAuth/FilterAuth.tsx';
+import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
+import TextPersonalData from '../textPersonalData/TextPersonalData';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
@@ -19,29 +15,28 @@ interface RegisterForm {
     name: string;
     email: string;
     password: string;
+    confirmPassword: string;
 }
 
 const styles = {
-    text: { fontSize: '16px', marginTop: '16px' },
-    line: { borderTop: '1px solid #000', marginTop: '32px', marginBottom: '32px' },
+    container: { marginTop: '32px' },
 };
 
 const schema = yup.object().shape({
     name: yup.string().required('Введите ФИО'),
     email: yup.string().email('Введите адрес почты вида Ivan@mail.ru').required('Введите адрес почты вида Ivan@mail.ru'),
-    password: yup.string().required('Введите пароль не менее 6 символов').min(6),
+    password: yup.string().required('Введите пароль не менее 6 символов').min(6, 'Введите пароль не менее 6 символов'),
+    confirmPassword: yup
+        .string()
+        .oneOf([yup.ref('password')], 'Пароли должны совпадать')
+        .required('Повторите пароль'),
 });
 
 export default function Register({ onRegister }: RegisterProps) {
-    const [isLogin, setIsLogin] = useState(true);
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-
     const {
-        // register,
         handleSubmit,
-        formState: { isValid },
+        control,
+        formState: { errors, isValid },
     } = useForm<RegisterForm>({
         resolver: yupResolver(schema),
         mode: 'onChange',
@@ -49,56 +44,33 @@ export default function Register({ onRegister }: RegisterProps) {
 
     const onSubmit = (data: RegisterForm) => {
         if (!isValid) {
-            console.error('Ошибка валидации:');
+            console.error('Ошибка валидации:', errors);
         } else {
-            console.log('вход:', data);
+            console.log('Регистрация:', data);
             onRegister(data.name, data.email, data.password);
         }
     };
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const input = [
-        { id: 'name', label: 'ФИО', placeholder: 'Введите ФИО', value: name, onChange: handleNameChange },
-        { id: 'email', label: 'Электронная почта', placeholder: 'Введите Email', value: email, onChange: handleEmailChange },
-        { id: 'password', label: 'Пароль', placeholder: 'Введите Пароль', value: password, onChange: handlePasswordChange },
-        { id: 'password', label: 'Подтвердите пароль', placeholder: 'Введите повторно пароль', value: password, onChange: handlePasswordChange },
-    ];
-
-    const toggleForm = () => {
-        setIsLogin(!isLogin);
-    };
-
     return (
         <Container maxWidth="sm">
-            <Box mt={4} textAlign="center">
+            <Box sx={styles.container}>
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-                    {input.map(({ id, label, placeholder, value, onChange }) => (
-                        <React.Fragment key={id}>
-                            <TextFieldAuth label={label} placeholder={placeholder} value={value} onChange={onChange} id={id} />
-                            {id === 'name' && <FilterAuth />}
-                        </React.Fragment>
-                    ))}
-                    <SubmitBtnBlack title="Зарегистрироваться" margin="16px 0 0 0 " />
+                    <Controller
+                        name="name"
+                        control={control}
+                        render={({ field }) => (
+                            <>
+                                <TextFieldAuth margin="16px 0 0 0" label="ФИО" placeholder="Введи ФИО" error={!!errors.name} helperText={errors.name ? errors.name.message : ''} {...field} />
+                                <FilterAuth />
+                            </>
+                        )}
+                    />
+                    <Controller name="email" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Электронная почта" placeholder="Введи электронную почту" error={!!errors.email} helperText={errors.email ? errors.email.message : ''} {...field} />} />
+                    <Controller name="password" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Пароль" placeholder="Придумай пароль, минимум 6 символов" type="password" error={!!errors.password} helperText={errors.password ? errors.password.message : ''} {...field} />} />
+                    <Controller name="confirmPassword" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Подтверди пароль" placeholder="Повтори введённый пароль" type="password" error={!!errors.confirmPassword} helperText={errors.confirmPassword ? errors.confirmPassword.message : ''} {...field} />} />
+                    <SubmitBtnColor title="Зарегистрироваться" margin="32px 0 0 0" width="553px" />
                 </form>
-                <Typography component="p" sx={styles.text}>
-                    Нажимая на эту кнопку, я даю своё согласие ВОО “Улицы России” на обработку моих персональных данных согласно &nbsp;
-                    <Link to="#" onClick={toggleForm}>
-                        152-ФЗ от 27.07.06
-                    </Link>
-                </Typography>
-                <div style={styles.line}></div>
-                <SubmitBtnWithIcon icon={<GosUslugiLogo />} title="Зарегистрироваться через госуслуги" />
+                <TextPersonalData />
             </Box>
         </Container>
     );

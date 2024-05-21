@@ -17,8 +17,8 @@ export default function SelectAuth() {
 
     return (
         <Box sx={{ display: 'flex', marginTop: '40px' }}>
-            <FilterSelect label="Выберите регион" value={selectedCity} onChange={handleCityChange} items={cities} title="Выберите регион" margin="0 20px 0 0 " />
-            <FilterSelect label="Выберите дисцеплину" value={selectedDesciplines} onChange={handleDesciplinesChange} items={disciplines} title="Выберите дисцеплину" />
+            <FilterSelect label="Выбери регион" value={selectedCity} onChange={handleCityChange} items={cities} title="Выбери регион" margin="0 20px 0 0 " />
+            <FilterSelect label="Выбери дисцеплину" value={selectedDesciplines} onChange={handleDesciplinesChange} items={disciplines} title="Выбери дисцеплину" />
         </Box>
     );
 }

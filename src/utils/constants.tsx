@@ -337,7 +337,7 @@ export const EventCardData = [
     },
 
     {
-        height: '280px',
+        height: '292px',
         image: SkateboardWomanEvent,
         country: 'Санкт-Петербург',
         subtitle: 'Hip-Hop Dance',

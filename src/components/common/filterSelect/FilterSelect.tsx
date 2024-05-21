@@ -11,22 +11,22 @@ interface SelectAuthProps {
     title?: string;
     items: { id: number; name: string }[];
     margin?: string;
+    width?: string;
 }
 
 const styles = {
-    text: { textAlign: 'start', marginTop: '24px', marginBottom: '8px', margin: '0 0 8px 0' },
-    placeholder: { textAlign: 'start', color: '#222', width: '315px', backgroundColor: '#fff', borderRadius: 0 },
-    arrow: {},
+    text: { textAlign: 'start', fontSize: '16px' },
+    placeholder: { textAlign: 'start', color: '#222', backgroundColor: '#fff', borderRadius: 0, fontSize: '16px' },
 };
 
-export default function FilterSelect({ label, value, onChange, defaultValue = '', title, items, margin }: SelectAuthProps) {
+export default function FilterSelect({ label, value, onChange, defaultValue = '', title, items, margin, width }: SelectAuthProps) {
     const [isOpenSelect, setIsOpenSelect] = useState(false);
     const toggleSelect = () => {
         setIsOpenSelect(!isOpenSelect);
     };
     return (
         <Box sx={{ '&:focus': { border: 'none' } }}>
-            {label && <Typography sx={styles.text}>{label}</Typography>}
+            {label && <Typography sx={{ ...styles.text }}>{label}</Typography>}
             <FormControl fullWidth>
                 <Select
                     value={value || ''}
@@ -38,7 +38,7 @@ export default function FilterSelect({ label, value, onChange, defaultValue = ''
                     defaultValue={defaultValue}
                     IconComponent={() => null}
                     endAdornment={<img src={SelectArrow} alt="Arrow icon" className={style.select__arrow} />}
-                    sx={{ ...styles.placeholder, margin: margin ? margin : '0' }}
+                    sx={{ ...styles.placeholder, margin: margin ? margin : '0', width: width ? width : '315px' }}
                     renderValue={(selected) => {
                         if (selected === '') {
                             return <Typography sx={styles.placeholder}>{title}</Typography>;
