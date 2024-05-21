@@ -4,11 +4,13 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { Main, About, News, New, Events, Regions } from './components/pages';
 import { ThemeProvider } from '@emotion/react';
 import theme from './vendor/theme.tsx';
+import ScrollToTop from './utils/scrollToTop.tsx';
 
 function App() {
 
     return (
         <ThemeProvider theme={theme}>
+            <ScrollToTop />
             <Routes>
             <Route path="*" element={<Navigate to='/main' />} />
                 <Route path="/main" element={<Main />} />

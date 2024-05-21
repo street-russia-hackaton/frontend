@@ -24,7 +24,7 @@ export default function Main() {
             <AboutUs />
             <Disciplines />
             <Events />
-            <NewsCarousel title="Новости" margin="0 0 6px -60px" width="340px" height="160px" padding="0 0 12px 60px" background={BackgroundTitle} />
+            <NewsCarousel title="Новости" margin="0 0 6px -60px" width='340px' height='160px' padding='0 0 12px 60px' background={BackgroundTitle}/>
             <Benefits />
             <Faq />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />

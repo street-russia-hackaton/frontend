@@ -15,7 +15,7 @@ const styles = {
         gridTemplateColumns: 'repeat(3, 1fr)',
         p: '40px 0 40px 0',
         width: '100%',
-        gap: '20px'
+        gap: '20px',
     },
     listItem: {
         p: 0,
@@ -28,7 +28,7 @@ interface DataProps {
     title: string;
 }
 
-export default function NewsGrid({title}: DataProps) {
+export default function NewsGrid({ title }: DataProps) {
     const navigate = useNavigate();
     const display = useScreenResize();
 
@@ -54,7 +54,7 @@ export default function NewsGrid({title}: DataProps) {
     }
 
     const handleCardClick = (id: number) => {
-        navigate(`/regional/${id}`);
+        navigate(`/news/${id}`);
     };
 
     useEffect(() => {
@@ -66,17 +66,18 @@ export default function NewsGrid({title}: DataProps) {
             <Box sx={{ display: 'flex', flexDirection: 'column', p: { sm: '0' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
                 <Title title={title} background="none" margin="0 0 24px 0" width="100%" height="100%" padding="0" color="#fff" />
                 <FilterEvents />
-                <List sx={{ ...styles.cardContainer, }}>
-                    {newsCardData.slice(0, cardCounter).map((data, index) => (
-                        <ListItem key={index} sx={{ ...styles.listItem }}>
-                            <NewsCard data={data} onClick={() => handleCardClick(index)} />
+                <List sx={{ ...styles.cardContainer }}>
+                    {newsCardData.slice(0, cardCounter).map((data) => (
+                        <ListItem key={data.id} sx={{ ...styles.listItem }}>
+                            <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
                         </ListItem>
                     ))}
                 </List>
-                {/* {newsCardData.length > cardCounter && <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} icon />} */}
-            <Box sx={{display: 'flex', justifyContent: 'center',}}>
-            <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} />
-            </Box>
+                {newsCardData.length > cardCounter && (
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} icon />
+                    </Box>
+                )}
             </Box>
         </Container>
     );

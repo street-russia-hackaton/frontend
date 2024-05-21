@@ -40,16 +40,16 @@ export default function NewsCarousel({title, color, margin, width, height, paddi
     const navigate = useNavigate();
 
     const handleCardClick = (id: number) => {
-        navigate(`/regional/${id}`);
+        navigate(`/news/${id}`);
     };
     return (
-        <Container component="section" sx={{ background: `url(${Background}) no-repeat right -5% bottom 60%`, p: { sm: container ? container : '120px 0 60px' }, m: '0', width: '100%', maxWidth: {lg: '100%'} }}>
+        <Container component="section" sx={{overflow: 'hidden', background: `url(${Background}) no-repeat right -5% bottom 60%`, p: { sm: container ? container : '120px 0 60px' }, m: '0', width: '100%', maxWidth: {lg: '100%'} }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', p: { sm: '0' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
             <Title title={title} background={background} color={color} margin={margin} width={width} height={height} padding={padding} />
             <List sx={{ ...styles.list}}>
-                {newsCardData.map((data, index) => (
-                    <ListItem key={index} sx={{ ...styles.listItem}}>
-                    <NewsCard data={data} onClick={() => handleCardClick(index)} />
+                {newsCardData.map((data) => (
+                    <ListItem key={data.id} sx={{ ...styles.listItem}}>
+                    <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
                     </ListItem>
                 ))}
             </List>
