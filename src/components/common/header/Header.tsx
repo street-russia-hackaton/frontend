@@ -14,7 +14,8 @@ import { useNavigate } from 'react-router-dom';
 import ListItemLink from '../links/ListItemLink';
 import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import PopupAuthForm from '../popupAuthForm/PopupAuthForm';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import PopupSubscribe from '../popupSubscribe/popupSubscribe';
 
 interface HeaderProps {
     backgroundColor?: string;
@@ -31,10 +32,6 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
         setAnchorElUser(null);
     };
 
-    const handleSubscription = () => {
-        navigate('/subscription', { replace: false });
-    };
-
     const handleProfile = () => {
         navigate('/profile', { replace: false });
     };
@@ -44,14 +41,20 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
         setIsLogin(false);
     };
 
-    const [openPopup, setOpenPopup] = React.useState(false);
+    const [openAuthPopup, setOpenAuthPopup] = React.useState(false);
+    const [openSubscribePopup, setOpenSubscribePopup] = React.useState(false);
 
-    const handleOpenPopup = () => {
-        setOpenPopup(true);
+    const handleOpenAuthPopup = () => {
+        setOpenAuthPopup(true);
+    };
+
+    const handleOpenSubscribePopup = () => {
+        setOpenSubscribePopup(true);
     };
 
     const handleClosePopup = () => {
-        setOpenPopup(false);
+        setOpenAuthPopup(false);
+        setOpenSubscribePopup(false);
     };
 
     return (
@@ -60,7 +63,7 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
                 <Container sx={{ width: '91%', height: '100%', maxWidth: { lg: 1312 }, p: { xs: 0, lg: 0 } }}>
                     <Toolbar disableGutters sx={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
                         <Link to="/main">
-                        <img src={Logo} alt="Логотип." />
+                            <img src={Logo} alt="Логотип." />
                         </Link>
 
                         <List sx={{ display: 'flex', gap: '32px', justifyContent: 'center', width: 'auto', p: 0 }}>
@@ -71,13 +74,14 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
                         </List>
 
                         <Box sx={{ display: 'flex', gap: '20px' }}>
-                            <SubmitBtnWithIcon width="138px" title="Поддержать" height="40" fontSize="16px" disabled={false} onClick={handleSubscription} />
+                            <SubmitBtnWithIcon width="138px" title="Поддержать" height="40" fontSize="16px" disabled={false} onClick={handleOpenSubscribePopup} />
+                            <PopupSubscribe open={openSubscribePopup} onClose={handleClosePopup} onClick={handleClosePopup} />
 
                             <Box sx={{}}>
-                                <IconButton onClick={handleOpenPopup} sx={{ p: 0 }}>
+                                <IconButton onClick={handleOpenAuthPopup} sx={{ p: 0 }}>
                                     <img src={ProfileIcon} alt="Profile" />
                                 </IconButton>
-                                <PopupAuthForm open={openPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
+                                <PopupAuthForm open={openAuthPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
 
                                 <Menu
                                     sx={{ mt: '45px' }}
@@ -107,7 +111,7 @@ function Header({ backgroundColor, backdropFilter }: HeaderProps) {
                     </Toolbar>
                 </Container>
             </AppBar>
-            <Toolbar sx={{ height: 72, background: '#222', border: 'none'}}/>
+            <Toolbar sx={{ height: 72, background: '#222', border: 'none' }} />
         </>
     );
 }

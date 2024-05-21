@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Popup from '../popup/Popup';
-import NavAuthTitle from '../navAuthTitle/navAuthTitle';
+import NavAuthTitle from '../navPopupTitle/navPopupTitle';
 import Login from '../login/Login';
-import Register from '../register';
+import Register from '../register/Register';
 
 interface PopupProps {
     open: boolean;
@@ -11,24 +11,24 @@ interface PopupProps {
 }
 
 export default function PopupAuthForm({ open, onClose, onClick }: PopupProps) {
-    const [showLogin, setShowLogin] = useState(false);
-    const [showRegister, setShowRegister] = useState(false);
+    const [showLogin, setShowLogin] = useState(true);
 
     const handleLoginClick = () => {
         setShowLogin(true);
-        setShowRegister(false);
     };
 
     const handleRegisterClick = () => {
-        setShowRegister(true);
         setShowLogin(false);
     };
 
+    const tabs = [
+        { label: 'Войти', onClick: handleLoginClick },
+        { label: 'Регистрация', onClick: handleRegisterClick },
+    ];
     return (
         <Popup open={open} onClose={onClose} onClick={onClick}>
-            <NavAuthTitle onRegister={handleRegisterClick} onLogin={handleLoginClick} />
-            {showLogin && <Login onLogin={() => {}} />}
-            {showRegister && <Register onRegister={() => {}} />}
+            <NavAuthTitle tabs={tabs} />
+            {showLogin ? <Login onLogin={() => {}} /> : <Register onRegister={() => {}} />}
         </Popup>
     );
 }

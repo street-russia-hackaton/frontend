@@ -14,7 +14,7 @@ interface TextFieldAuthProps {
 }
 const styles = {
     container: { display: 'flex', flexDirection: 'column', alignItems: 'start', width: '553px' },
-    label: { color: '#fff', fontSize: '16px' },
+    label: { color: '#fff', fontSize: '16px', marginBottom: '8px' },
     text: {
         display: 'flex',
         justifyContent: 'center',
