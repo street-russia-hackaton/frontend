@@ -33,3 +33,10 @@ export interface CardBenefit {
     title: string;
     text: string[];
 }
+
+export interface PopupProps {
+    open: boolean;
+    onClose: () => void;
+    onClick: () => void;
+    children?: React.ReactNode;
+}

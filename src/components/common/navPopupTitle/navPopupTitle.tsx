@@ -29,7 +29,7 @@ export default function NavPopupTitle({ tabs, margin }: NavPopupTitleProps) {
 
     return (
         <ThemeProvider theme={theme}>
-            <Tabs value={value} onChange={handleChange} aria-label="auth navigation">
+            <Tabs value={value} onChange={handleChange} aria-label="auth navigation" sx={{ '&.MuiButtonBase-root-MuiTab-root': { width: '100%' } }}>
                 {tabs.map((tab, index) => (
                     <Tab key={index} label={tab.label} sx={{ ...styles.title, margin: margin ? margin : '0 0 0 47px' }} />
                 ))}

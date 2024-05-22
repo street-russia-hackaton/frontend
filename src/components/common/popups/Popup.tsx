@@ -1,14 +1,7 @@
 import { Box, CardMedia, Modal } from '@mui/material';
-
 import CloseIcon from '../../../assets/images/CloseIcon.svg';
 import { useEffect, useState } from 'react';
-
-interface PopupProps {
-    open: boolean;
-    onClose: () => void;
-    onClick: () => void;
-    children?: React.ReactNode;
-}
+import { PopupProps } from '../../../types/types';
 
 const styles = {
     container: {
