@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
 import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
 import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
+import { useEffect, useState } from 'react';
 
 interface LoginProps {
     onLogin: (email: string, password: string) => void;
@@ -19,6 +20,11 @@ const schema = yup.object().shape({
     email: yup.string().email('Введите адрес почты вида Ivan@mail.ru').required('Введите адрес почты вида Ivan@mail.ru'),
     password: yup.string().required('Введите пароль не менее 6 символов').min(6, 'Введите пароль не менее 6 символов'),
 });
+
+const styles = {
+    container: { marginTop: '32px' },
+    text: { fontSize: '16px', marginTop: '16px', fontFamily: 'Roboto', textAlign: 'start' },
+};
 
 export default function Login({ onLogin }: LoginProps) {
     const {
@@ -39,10 +45,11 @@ export default function Login({ onLogin }: LoginProps) {
         }
     };
 
-    const styles = {
-        container: { marginTop: '32px' },
-        text: { fontSize: '16px', marginTop: '16px', fontFamily: 'Roboto', textAlign: 'start' },
-    };
+    const [isCompleted, setIsCompleted] = useState(false);
+
+    useEffect(() => {
+        setIsCompleted(isValid);
+    }, [isValid]);
 
     return (
         <Container maxWidth="sm">
@@ -53,7 +60,7 @@ export default function Login({ onLogin }: LoginProps) {
                     <Typography component="p" sx={styles.text}>
                         Если ты являешься членом организации, можешь найти свой пароль на почте, которую указывал при вступлении.
                     </Typography>
-                    <SubmitBtnColor title="Войти" margin="16px 0 0 0" />
+                    <SubmitBtnColor title="Войти" margin="16px 0 0 0" disabled={!isCompleted} />
                     <TextPersonalData />
                 </form>
             </Box>

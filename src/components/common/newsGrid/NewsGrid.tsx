@@ -7,7 +7,7 @@ import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import { useState, useEffect } from 'react';
 import { MIN_LAPTOP_DISPLAY } from '../../../utils/constants';
 import useScreenResize from '../../../utils/screenResize';
-import FilterEvents from '../filterEvents/FilterEvents';
+import FilterEvents from '../filters/FilterEvents';
 
 const styles = {
     cardContainer: {

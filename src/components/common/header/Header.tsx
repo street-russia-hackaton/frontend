@@ -13,9 +13,9 @@ import Logo from '../../../assets/images/logo-white.png';
 import { useNavigate } from 'react-router-dom';
 import ListItemLink from '../links/ListItemLink';
 import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
-import PopupAuthForm from '../popupAuthForm/PopupAuthForm';
+import PopupAuthForm from '../popups/PopupAuthForm';
 import { Link } from 'react-router-dom';
-import PopupSubscribe from '../popupSubscribe/popupSubscribe';
+import PopupSubscribe from '../popups/popupSubscribe';
 
 interface HeaderProps {
     backgroundColor?: string;
