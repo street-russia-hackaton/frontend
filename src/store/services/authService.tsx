@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { RootState } from '../store'
 
 // const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:5000/' : import.meta.env.VITE_SERVER_URL;
 const baseUrl ='http://127.0.0.1:5000/';
@@ -8,7 +9,7 @@ export const authApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl,
         prepareHeaders: (headers, { getState }) => {
-            const token = getState().auth.userToken;
+            const token = (getState() as RootState).auth.userToken;
             if (token) {
                 headers.set('authorization', `Bearer ${token}`);
                 return headers;
