@@ -40,7 +40,6 @@ export default function Login({ onLogin }: LoginProps) {
         if (!isValid) {
             console.error('Ошибка валидации:', errors);
         } else {
-            console.log('вход:', data);
             onLogin(data.email, data.password);
         }
     };

@@ -3,12 +3,7 @@ import Popup from './Popup';
 import NavAuthTitle from '../navPopupTitle/navPopupTitle';
 import Login from '../forms/Login';
 import Register from '../forms/Register';
-
-interface PopupProps {
-    open: boolean;
-    onClose: () => void;
-    onClick: () => void;
-}
+import { PopupProps } from '../../../types/types';
 
 export default function PopupAuthForm({ open, onClose, onClick }: PopupProps) {
     const [showLogin, setShowLogin] = useState(true);

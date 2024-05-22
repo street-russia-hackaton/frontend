@@ -13,7 +13,7 @@ interface TextFieldAuthProps {
     helperText?: string;
 }
 const styles = {
-    container: { display: 'flex', flexDirection: 'column', alignItems: 'start', width: '553px' },
+    container: { display: 'flex', flexDirection: 'column', alignItems: 'start' },
     label: { color: '#fff', fontSize: '16px', marginBottom: '8px' },
     text: {
         display: 'flex',
@@ -34,6 +34,9 @@ export default function TextFieldAuth({ label, placeholder, value, onChange, onB
             sx={{
                 ...styles.container,
                 margin: margin ? margin : '0',
+                '&.MuiInputBase-root-MuiOutlinedInput-root': {
+                    borderRadius: 0,
+                },
             }}
         >
             <InputLabel sx={styles.label}>{label}</InputLabel>

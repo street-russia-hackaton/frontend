@@ -47,7 +47,6 @@ export default function Register({ onRegister }: RegisterProps) {
         if (!isValid) {
             console.error('Ошибка валидации:', errors);
         } else {
-            console.log('Регистрация:', data);
             onRegister(data.name, data.email, data.password);
         }
     };

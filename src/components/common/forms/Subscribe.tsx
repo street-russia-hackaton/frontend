@@ -21,7 +21,10 @@ interface SubscribeForm {
 const schema = yup.object().shape({
     sum: yup.number().typeError('Введите сумму цифрами').required('Введите сумму цифрами'),
     email: yup.string().email('Введите адрес почты вида Ivan@mail.ru').required('Введите адрес почты вида Ivan@mail.ru'),
-    phonenumber: yup.string().required('Введите в формате +79839774316').min(12, 'Введите в формате +79839774316'),
+    phonenumber: yup
+        .string()
+        .matches(/^\+7\d{10}$/, 'Номер телефона должен быть в формате +7XXXXXXXXXX')
+        .required('Введите номер телефона'),
 });
 
 const styles = {
@@ -36,6 +39,9 @@ export default function Subscribe({ onSubscribe }: SubscribeProps) {
         control,
         formState: { errors, isValid },
     } = useForm<SubscribeForm>({
+        defaultValues: {
+            phonenumber: '+7',
+        },
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
@@ -44,7 +50,6 @@ export default function Subscribe({ onSubscribe }: SubscribeProps) {
         if (!isValid) {
             console.error('Ошибка валидации:', errors);
         } else {
-            console.log('вход:', data);
             onSubscribe(data.sum, data.email, data.phonenumber);
         }
     };
@@ -69,7 +74,7 @@ export default function Subscribe({ onSubscribe }: SubscribeProps) {
                         Деньги будут списываться ежемесячно, поэтому выбери наиболее комфортную для себя сумму.
                     </Typography>
                     <Controller name="email" control={control} render={({ field }) => <TextFieldAuth label="Электронная почта" placeholder="Введи электронную почту" {...field} error={!!errors.email} helperText={errors.email ? errors.email.message : ''} margin="16px 0 0 0" />} />
-                    <Controller name="phonenumber" control={control} render={({ field }) => <TextFieldAuth label="Номер телефона" placeholder="Введите в формате +79839774316" type="phonenumber" {...field} error={!!errors.phonenumber} helperText={errors.phonenumber ? errors.phonenumber.message : ''} margin="16px 0 0 0" />} />
+                    <Controller name="phonenumber" control={control} render={({ field }) => <TextFieldAuth label="Номер телефона" placeholder="Введи номер телефона" type="text" {...field} error={!!errors.phonenumber} helperText={errors.phonenumber ? errors.phonenumber.message : ''} margin="16px 0 0 0" />} />
                     <Box sx={styles.checkboxText}>
                         <CheckboxIcon onChange={handleCheckboxChange} />
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
