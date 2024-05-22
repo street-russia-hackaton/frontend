@@ -5,7 +5,7 @@ import Footer from '../../common/footer/Footer';
 import AboutUs from './aboutUs/AboutUs';
 import Disciplines from './disciplines/Disciplines';
 import Map from './map/Map';
-import NewsCarousel from '../../common/newsCarousel/NewsCarousel';
+import NewsCarousel from '../../common/news/NewsCarousel';
 import Events from './events/Events';
 import BackgroundTitle from '../../../assets/images/background-news-title.svg';
 import Faq from './faq/Faq';

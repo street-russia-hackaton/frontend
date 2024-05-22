@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../common/header/Header';
 import Footer from '../../common/footer/Footer';
-import NewsCarousel from '../../common/newsCarousel/NewsCarousel';
+import NewsCarousel from '../../common/news/NewsCarousel';
 import { Container } from '@mui/material';
 import BreadcrumbsComponent from '../../common/breadcrumbs/Breadcrumbs';
-import NewComponent from '../../common/newComponent/NewComponent';
+import NewComponent from '../../common/news/NewComponent';
 import { useParams, Link } from 'react-router-dom';
 import { newsCardData } from '../../../utils/constants';
 import Benefits from '../main/benefits/Benefits';
