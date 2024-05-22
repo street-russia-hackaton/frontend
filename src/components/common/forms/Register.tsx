@@ -3,9 +3,10 @@ import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
-import FilterAuth from '../filterAuth/FilterAuth.tsx';
+import FilterAuth from '../filters/FilterAuth.tsx';
 import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
-import TextPersonalData from '../textPersonalData/TextPersonalData';
+import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
+import { useEffect, useState } from 'react';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
@@ -51,6 +52,12 @@ export default function Register({ onRegister }: RegisterProps) {
         }
     };
 
+    const [isCompleted, setIsCompleted] = useState(false);
+
+    useEffect(() => {
+        setIsCompleted(isValid);
+    }, [isValid]);
+
     return (
         <Container maxWidth="sm">
             <Box sx={styles.container}>
@@ -68,7 +75,7 @@ export default function Register({ onRegister }: RegisterProps) {
                     <Controller name="email" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Электронная почта" placeholder="Введи электронную почту" error={!!errors.email} helperText={errors.email ? errors.email.message : ''} {...field} />} />
                     <Controller name="password" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Пароль" placeholder="Придумай пароль, минимум 6 символов" type="password" error={!!errors.password} helperText={errors.password ? errors.password.message : ''} {...field} />} />
                     <Controller name="confirmPassword" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Подтверди пароль" placeholder="Повтори введённый пароль" type="password" error={!!errors.confirmPassword} helperText={errors.confirmPassword ? errors.confirmPassword.message : ''} {...field} />} />
-                    <SubmitBtnColor title="Зарегистрироваться" margin="32px 0 0 0" width="553px" />
+                    <SubmitBtnColor title="Зарегистрироваться" margin="32px 0 0 0" width="553px" disabled={!isCompleted} />
                 </form>
                 <TextPersonalData />
             </Box>

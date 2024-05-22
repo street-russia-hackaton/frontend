@@ -4,65 +4,67 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
 import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
-import CheckboxIcon from '../checkboxIcon/CheckboxIcon';
+import CheckboxIcon from '../checkboxIcon/CheckboxIcon.tsx';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import DonateBtn from '../btns/DonateBtn';
+import { useEffect, useState } from 'react';
 
-interface DonateProps {
-    onDonate: (sum: string, email: string, password: string) => void;
+interface SubscribeProps {
+    onSubscribe: (sum: number, email: string, password: string) => void;
 }
 
-interface DonateForm {
-    sum: string;
+interface SubscribeForm {
+    sum: number;
     email: string;
     phonenumber: string;
 }
 
 const schema = yup.object().shape({
-    sum: yup.string().required('Введите сумму'),
+    sum: yup.number().typeError('Введите сумму цифрами').required('Введите сумму цифрами'),
     email: yup.string().email('Введите адрес почты вида Ivan@mail.ru').required('Введите адрес почты вида Ivan@mail.ru'),
     phonenumber: yup.string().required('Введите в формате +79839774316').min(12, 'Введите в формате +79839774316'),
 });
 
-export default function Donate({ onDonate }: DonateProps) {
+const styles = {
+    container: { marginTop: '32px' },
+    text: { fontSize: '16px', marginTop: '8px', textAlign: 'start', color: '#D2D1D0' },
+    checkboxText: { display: 'flex', alignItems: 'center', marginTop: '24px' },
+};
+
+export default function Subscribe({ onSubscribe }: SubscribeProps) {
     const {
         handleSubmit,
         control,
         formState: { errors, isValid },
-    } = useForm<DonateForm>({
+    } = useForm<SubscribeForm>({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
-    const onSubmit = (data: DonateForm) => {
+    const onSubmit = (data: SubscribeForm) => {
         if (!isValid) {
             console.error('Ошибка валидации:', errors);
         } else {
             console.log('вход:', data);
-            onDonate(data.sum, data.email, data.phonenumber);
+            onSubscribe(data.sum, data.email, data.phonenumber);
         }
     };
 
     const [isChecked, setIsChecked] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(false);
+
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
 
-    const styles = {
-        container: { marginTop: '32px' },
-        text: { fontSize: '16px', marginTop: '8px', textAlign: 'start', color: '#D2D1D0' },
-        checkboxText: { display: 'flex', alignItems: 'center', marginTop: '24px' },
-    };
-
-    const sum = [{ text: '50p' }, { text: '500p' }, { text: '1000p' }, { text: '2000p' }, { text: 'Другая сумма' }];
+    useEffect(() => {
+        setIsCompleted(isValid);
+    }, [isValid]);
 
     return (
         <Container maxWidth="sm">
             <Box sx={styles.container}>
                 <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-                    <DonateBtn sum={sum} />
-                    <Controller name="sum" control={control} render={({ field }) => <TextFieldAuth label="Введи сумму" placeholder="Введите желаемую сумму доната" {...field} error={!!errors.sum} helperText={errors.sum ? errors.sum.message : ''} margin="16px 0 0 0" />} />
+                    <Controller name="sum" control={control} render={({ field }) => <TextFieldAuth label="Введи сумму" placeholder="Введи желаемую сумму доната" {...field} error={!!errors.sum} helperText={errors.sum ? errors.sum.message : ''} margin="16px 0 0 0" />} />
                     <Typography component="p" sx={styles.text}>
                         Деньги будут списываться ежемесячно, поэтому выбери наиболее комфортную для себя сумму.
                     </Typography>
@@ -79,7 +81,7 @@ export default function Donate({ onDonate }: DonateProps) {
                             </Link>
                         </Box>
                     </Box>
-                    <SubmitBtnColor title="Поддержать организацию" margin="24px 0 0 0" disabled={!isChecked} />
+                    <SubmitBtnColor title="Поддержать организацию" margin="24px 0 0 0" disabled={!isChecked || !isCompleted} />
                 </form>
             </Box>
         </Container>

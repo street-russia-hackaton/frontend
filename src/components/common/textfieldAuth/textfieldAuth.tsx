@@ -3,7 +3,7 @@ import { TextField, InputLabel, Box, FormControl, FormHelperText } from '@mui/ma
 interface TextFieldAuthProps {
     label: string;
     placeholder: string;
-    value: string;
+    value: string | number;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur: () => void;
     name: string;

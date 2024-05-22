@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Popup from '../popup/Popup';
+import Popup from './Popup';
 import NavAuthTitle from '../navPopupTitle/navPopupTitle';
-import Subscribe from '../subscribe/Subscribe';
-import Donate from '../donate/Donate';
+import Subscribe from '../forms/Subscribe';
+import Donate from '../forms/Donate';
 
 interface PopupProps {
     open: boolean;
