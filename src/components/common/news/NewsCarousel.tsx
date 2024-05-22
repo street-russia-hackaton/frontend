@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, Container, List, ListItem } from '@mui/material';
 import Title from '../titleMainPage/titleMainPage';
 import Background from '../../../assets/images/background-news-main.svg';
-import NewsCard from '../newsCard/NewsCard';
+import NewsCard from './NewsCard';
 import { newsCardData } from '../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
 
