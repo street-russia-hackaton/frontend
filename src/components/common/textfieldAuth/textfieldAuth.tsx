@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { TextField, InputLabel, Box, FormControl, FormHelperText } from '@mui/material';
 
 interface TextFieldAuthProps {
@@ -12,6 +13,7 @@ interface TextFieldAuthProps {
     error?: boolean;
     helperText?: string;
 }
+
 const styles = {
     container: { display: 'flex', flexDirection: 'column', alignItems: 'start' },
     label: { color: '#fff', fontSize: '16px', marginBottom: '8px' },
@@ -28,7 +30,7 @@ const styles = {
     },
 };
 
-export default function TextFieldAuth({ label, placeholder, value, onChange, onBlur, name, type = 'text', margin, error, helperText }: TextFieldAuthProps) {
+const TextFieldAuth = forwardRef<HTMLInputElement, TextFieldAuthProps>(({ label, placeholder, value, onChange, onBlur, name, type = 'text', margin, error, helperText }, ref) => {
     return (
         <Box
             sx={{
@@ -50,6 +52,7 @@ export default function TextFieldAuth({ label, placeholder, value, onChange, onB
                     type={type}
                     fullWidth
                     sx={styles.text}
+                    inputRef={ref}
                     InputProps={{
                         style: {
                             fontSize: '16px',
@@ -61,4 +64,6 @@ export default function TextFieldAuth({ label, placeholder, value, onChange, onB
             </FormControl>
         </Box>
     );
-}
+});
+
+export default TextFieldAuth;
