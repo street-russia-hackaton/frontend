@@ -10,7 +10,7 @@ import 'dayjs/locale/ru';
 dayjs.locale('ru');
 
 const styles = {
-    container: { position: 'relative', margin: '0' },
+    container: { position: 'relative', margin: '0', width: '93vw' },
     title: { textAlign: 'start', margin: '8px 0 0 75px', textTransform: 'capitalize' },
     calendarContainer: { display: 'flex', justifyContent: 'center' },
     arrow: { position: 'absolute', top: '75%', transform: 'translateY(-50%)' },

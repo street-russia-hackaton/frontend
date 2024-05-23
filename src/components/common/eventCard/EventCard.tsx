@@ -19,7 +19,7 @@ const styles = {
     icon: { paddingRight: '6px' },
     subtitle: { paddingTop: '2px', whiteSpace: 'nowrap' },
     date: { paddingTop: '8px', color: '#fff' },
-    title: { paddingTop: '16px', color: '#fff', textTransform: 'uppercase', fontSize: '20px', width: '250px', fontFamily: 'Benzin' },
+    title: { paddingTop: '16px', color: '#fff', textTransform: 'uppercase', fontSize: '20px', width: '260px', fontFamily: 'Benzin' },
     text: {
         paddingTop: '8px',
         color: '#fff',
