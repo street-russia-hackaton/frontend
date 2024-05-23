@@ -1,4 +1,4 @@
-import { Box, Container, List, ListItem } from '@mui/material';
+import { Box, List, ListItem } from '@mui/material';
 import NewsCard from './NewsCard';
 import { newsCardData } from '../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,7 @@ const styles = {
     },
 };
 
-export default function NewsGrid() {
+export default function NewsGrid({filteredCards}) {
     const navigate = useNavigate();
     const display = useScreenResize();
 
@@ -54,14 +54,14 @@ export default function NewsGrid() {
 
     return (
         <>
-            <List sx={{ ...styles.cardContainer }}>
-                {newsCardData.slice(0, cardCounter).map((data) => (
+            {filteredCards.length !== 0 && <List sx={{ ...styles.cardContainer }}>
+                {filteredCards.slice(0, cardCounter).map((data) => (
                     <ListItem key={data.id} sx={{ ...styles.listItem }}>
                         <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
                     </ListItem>
                 ))}
-            </List>
-            {newsCardData.length > cardCounter && (
+            </List>}
+            {filteredCards.length > cardCounter && (
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} icon />
                 </Box>

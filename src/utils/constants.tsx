@@ -130,7 +130,8 @@ export const DesciplineCardData: DesciplineCard[] = [
 export const newsCardData = [
     {
         id: 1,
-        tag: 'Street art',
+        tag: 'Street Art',
+        city: '',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -159,6 +160,7 @@ export const newsCardData = [
     {
         id: 2,
         tag: 'Community',
+        city: 'Челябинск',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -171,6 +173,7 @@ export const newsCardData = [
     {
         id: 3,
         tag: 'Workout',
+        city: '',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -182,7 +185,8 @@ export const newsCardData = [
     },
     {
         id: 4,
-        tag: 'Street art',
+        tag: 'Street Art',
+        city: '',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -211,6 +215,7 @@ export const newsCardData = [
     {
         id: 5,
         tag: 'Community',
+        city: 'Челябинск',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -223,6 +228,7 @@ export const newsCardData = [
     {
         id: 6,
         tag: 'Workout',
+        city: 'Челябинск',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -234,7 +240,8 @@ export const newsCardData = [
     },
     {
         id: 7,
-        tag: 'Street art',
+        tag: 'Street Art',
+        city: '',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -263,6 +270,7 @@ export const newsCardData = [
     {
         id: 8,
         tag: 'Community',
+        city: 'Челябинск',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -275,6 +283,7 @@ export const newsCardData = [
     {
         id: 9,
         tag: 'Workout',
+        city: '',
         date: '12.05.2024',
         duration: '5',
         views: '1321',
@@ -287,25 +296,28 @@ export const newsCardData = [
 ];
 
 export const cities = [
-    { id: 0, name: 'Владивосток' },
-    { id: 1, name: 'Москва' },
-    { id: 2, name: 'Санкт-Петербург' },
-    { id: 3, name: 'Екатеринбург' },
-    { id: 4, name: 'Казань' },
+    { id: 0, name: 'Все' },
+    { id: 1, name: 'Владивосток' },
+    { id: 2, name: 'Москва' },
+    { id: 3, name: 'Санкт-Петербург' },
+    { id: 4, name: 'Екатеринбург' },
+    { id: 5, name: 'Казань' },
+    { id: 6, name: 'Челябинск' },
 ];
 
 export const disciplines = [
-    { id: 0, name: 'Street Art' },
-    { id: 1, name: 'Parkour' },
-    { id: 2, name: 'Workout' },
-    { id: 3, name: 'Freerun' },
-    { id: 4, name: 'Hip-hop dance' },
-    { id: 5, name: 'Tricking' },
-    { id: 6, name: 'Rap' },
-    { id: 7, name: 'Breaking' },
-    { id: 8, name: 'Bmx' },
-    { id: 9, name: 'Skateboarding' },
-    { id: 10, name: 'Scoot' },
+    { id: 0, name: 'Все' },
+    { id: 1, name: 'Street Art' },
+    { id: 2, name: 'Parkour' },
+    { id: 3, name: 'Workout' },
+    { id: 4, name: 'Freerun' },
+    { id: 5, name: 'Hip-hop dance' },
+    { id: 6, name: 'Tricking' },
+    { id: 7, name: 'Rap' },
+    { id: 8, name: 'Breaking' },
+    { id: 9, name: 'Bmx' },
+    { id: 10, name: 'Skateboarding' },
+    { id: 11, name: 'Scoot' },
 ];
 
 export const EventCardData = [
@@ -427,4 +439,4 @@ export const curators = [
         position: 'Председатель',
         imageSrc: CuratorImg,
     },
-]
+];
