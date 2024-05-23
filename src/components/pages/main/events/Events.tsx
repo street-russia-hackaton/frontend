@@ -6,6 +6,7 @@ import FilterEvents from '../../../common/filters/FilterEvents';
 import EventCard from '../../../common/eventCard/EventCard';
 import { EventCardData } from '../../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const styles = {
     mainContainer: { height: '100%' },
@@ -14,6 +15,7 @@ const styles = {
 };
 
 export default function Events() {
+    const [filteredEvents, setFilteredCEvents] = useState<any>(EventCardData);
     const navigate = useNavigate();
 
     const handleLinkClick = () => {
@@ -24,9 +26,9 @@ export default function Events() {
             <Title title="Мероприятия" background={EventsBackgroundTitle} margin="0 0 0 0" width="574px" height="236px" padding="0 0 12px 90px " />
             <Box sx={styles.container}>
                 <Calendar />
-                <FilterEvents />
+                <FilterEvents setFilteredCards={setFilteredCEvents} cardList={EventCardData}/>
                 <Box sx={styles.cards}>
-                    {EventCardData.map((data, index) => (
+                    {filteredEvents.map((data, index) => (
                         <EventCard key={index} data={data} onClick={handleLinkClick} cardStyle={index === Object.keys(EventCardData).length - 1 ? { marginTop: '-30px' } : {}} />
                     ))}
                 </Box>
