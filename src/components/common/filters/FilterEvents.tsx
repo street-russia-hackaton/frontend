@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import FilterSelect from '../filterSelect/FilterSelect';
 import { Box, SelectChangeEvent } from '@mui/material';
 import { cities, disciplines } from '../../../utils/constants';
+import { CardEvent } from '../../../types/types';
 
 interface StateProps {
-    setFilteredCards: (evt: any) => void;
-    cardList: any;
+    setFilteredCards: (evt: CardEvent[]) => void;
+    cardList: CardEvent[];
 }
 
-export default function SelectAuth({ setFilteredCards, cardList }: StateProps) {
+export default function FilterEvents({ setFilteredCards, cardList }: StateProps) {
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [selectedDesciplines, setSelectedDesciplines] = useState<string>('');
 
@@ -20,30 +21,30 @@ export default function SelectAuth({ setFilteredCards, cardList }: StateProps) {
         setSelectedDesciplines(evt.target.value);
     };
 
-    //универсальная функция фильтрации списка по 2-м селектам
-    const getfilteredCards = (list: any, primaryKey: string, secondaryKey: string, primaryOption: string, secondaryOption: string) => {
+    // Универсальная функция фильтрации списка по 2-м селектам
+    const getfilteredCards = (list: CardEvent[], primaryKey: keyof CardEvent, secondaryKey: keyof CardEvent, primaryOption: string, secondaryOption: string): CardEvent[] => {
         let primaryList;
         let secondaryList;
         if (primaryOption === '' || primaryOption === 'Все') {
             primaryList = list;
         } else {
-            primaryList = list.filter((item: any) => item[`${primaryKey}`] === primaryOption);
+            primaryList = list.filter((item) => item[primaryKey] === primaryOption);
         }
         if (secondaryOption === '' || secondaryOption === 'Все') {
             secondaryList = list;
         } else {
-            secondaryList = list.filter((item: any) => item[`${secondaryKey}`] === secondaryOption);
+            secondaryList = list.filter((item) => item[secondaryKey] === secondaryOption);
         }
         console.log(primaryList);
         console.log(secondaryList);
-        const resultArray = primaryList.filter((item: any) => {
-            return secondaryList.some((item2: any) => item2.id === item.id);
+        const resultArray = primaryList.filter((item) => {
+            return secondaryList.some((item2) => item2.id === item.id);
         });
         return resultArray;
     };
 
     useEffect(() => {
-        setFilteredCards(getfilteredCards(cardList, 'city', 'tag', selectedCity, selectedDesciplines));
+        setFilteredCards(getfilteredCards(cardList, 'country', 'subtitle', selectedCity, selectedDesciplines));
     }, [selectedDesciplines, selectedCity]);
 
     return (
