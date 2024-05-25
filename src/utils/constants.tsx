@@ -20,6 +20,7 @@ import FenixCampEvent from '../assets/images/FenixCampEvent.svg';
 import SkateboardWomanEvent from '../assets/images/SkateboardWomanEvent.svg';
 import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 import CuratorImg from '../assets/images/CuratorImg.png';
+import CuratorImgVyacheslav from '../assets/images/CuratorImgVyacheslav.svg';
 import StreetArtGorkiyPark from '../assets/images/StreetArtGorkiyPark.svg';
 import BasketChampionatImg from '../assets/images/BasketChampionatImg.svg';
 import FenixBattleImg from '../assets/images/FenixBattleImg.svg';
@@ -329,9 +330,15 @@ export const disciplines = [
 export const EventCardData = [
     {
         height: '368px',
+        id: 0,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
         image: SkateboardManEvent,
-        country: 'Москва',
-        subtitle: 'Street art',
+        imageFullSrc: SkateboardManEvent,
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: (
             <>
@@ -356,9 +363,15 @@ export const EventCardData = [
 
     {
         height: '292px',
+        id: 1,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: SkateboardWomanEvent,
         image: SkateboardWomanEvent,
-        country: 'Санкт-Петербург',
-        subtitle: 'Hip-Hop Dance',
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
         date: '12-15 октября 2024 г',
         title: (
             <>
@@ -368,12 +381,18 @@ export const EventCardData = [
         ),
         text: <>Творческо-спортивные сборы по скейт катанию.</>,
     },
-    { height: '264px', image: FenixCampEvent, country: 'Санкт-Петербург', subtitle: 'Hip-Hop Dance', date: '12-15 октября 2024 г', title: <>FENIX CAMP 2024</>, text: <>Творческо-спортивные сборы по хип-хопу, брейкингу, стрит-арту (граффити) и музыке (диджеинг)</> },
+    { height: '264px', id: 2, register: '1321', address: ' ул. Лужники, 24; метро Воробьевы горы', timeWeek: 'ПН-ПТ 10.00-21.00 ', timeDayOff: 'СБ-ВС 11.00-22.00', imageFullSrc: FenixCampEvent, image: FenixCampEvent, city: 'Санкт-Петербург', tag: 'Hip-Hop Dance', date: '12-15 октября 2024 г', title: <>FENIX CAMP 2024</>, text: <>Творческо-спортивные сборы по хип-хопу, брейкингу, стрит-арту (граффити) и музыке (диджеинг)</> },
     {
         height: '362px',
+        id: 3,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: EducationForumEvent,
         image: EducationForumEvent,
-        country: 'Москва',
-        subtitle: 'Street art',
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: (
             <>
@@ -394,9 +413,15 @@ export const EventCardData = [
 export const EventPageCardData = [
     {
         height: '362px',
+        id: 0,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: StreetArtGorkiyPark,
         image: StreetArtGorkiyPark,
-        country: 'Москва',
-        subtitle: 'Street art',
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: (
             <>
@@ -418,27 +443,45 @@ export const EventPageCardData = [
 
     {
         height: '290px',
+        id: 1,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: BasketChampionatImg,
         image: BasketChampionatImg,
-        country: 'Санкт-Петербург',
-        subtitle: 'Hip-Hop Dance',
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
         date: '12-15 октября 2024 г',
         title: <>Баскетбольный чемпионат</>,
         text: <>Открываем приём заявок на Массовый турнир Moscow Open 2024, который пройдёт 2 июня (воскресенье) на легендарной площадке «Под мостом».В Массовом турнире примут участие следующие категории: сентябрь-октябрь 2024 г.</>,
     },
     {
         height: '290px',
+        id: 2,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: FenixBattleImg,
         image: FenixBattleImg,
-        country: 'Санкт-Петербург',
-        subtitle: 'Hip-Hop Dance',
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
         date: '12-15 октября 2024 г',
         title: <>FENIX BATTLE 10 лет Фениксу</>,
         text: <>Юбилейный 10-й баттл школы хип-хоп танца Феникс и торжественная церемония награждения сентябрь-октябрь 2024 г.</>,
     },
     {
         height: '362px',
+        id: 3,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: StreetDanceCompetition,
         image: StreetDanceCompetition,
-        country: 'Москва',
-        subtitle: 'Street art',
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: (
             <>
@@ -449,36 +492,60 @@ export const EventPageCardData = [
     },
     {
         height: '362px',
+        id: 4,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: AboutUsImgWoman,
         image: AboutUsImgWoman,
-        country: 'Москва',
-        subtitle: 'Street art',
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: <>Соревнование по тенису</>,
         text: <>Соревнование юниоров по тенису пройдет в центральном парке. Присоединяйтесь!</>,
     },
     {
         height: '290px',
+        id: 5,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: StreetFashionWeek,
         image: StreetFashionWeek,
-        country: 'Санкт-Петербург',
-        subtitle: 'Hip-Hop Dance',
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
         date: '12-15 мая 2024 г',
         title: <>Street fashion week</>,
         text: <>Жаркие танцевальные выходные прошли в Дмитрове. 2 и 3 октябрья Подмосковный город стал эпицентром хип-хоп культуры.</>,
     },
     {
         height: '290px',
+        id: 6,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: AboutUsImgMan,
         image: AboutUsImgMan,
-        country: 'Санкт-Петербург',
-        subtitle: 'Hip-Hop Dance',
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
         date: '12-15 мая 2024 г',
         title: <>Street Fashion week</>,
         text: <>Жаркие танцевальные выходные прошли в Дмитрове. 2 и 3 октябрья Подмосковный город стал эпицентром хип-хоп культуры.</>,
     },
     {
         height: '362x',
+        id: 7,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: PilatesFitnesVorobievyGory,
         image: PilatesFitnesVorobievyGory,
-        country: 'Москва',
-        subtitle: 'Street art',
+        city: 'Москва',
+        tag: 'Street art',
         date: '12-15 мая 2024 г',
         title: <>Дружеская встреча на Воробьевых горах: Фитнес, Бег, Пилатес</>,
         text: <>Море рационального перемещения, в виде соревнований по прохождению заданной трассы на время, излюбленные всеми паркур-челленджи, еда и напитки в кругу единомышленников, а ещё вас ждут призы от наших спонсоров и денежный призовой фонд.</>,
@@ -538,5 +605,18 @@ export const curators = [
         text: 'Председатель Общероссийской общественной организации уличной культуры и спорта «Улицы России», генеральный директор международной конкурс-премии «КАРДО», директор общественной организации «ОФФБИТС», член экспертного совета Комитета Государственной Думы Российской Федерации по молодежной политике, советник ректора Северо-Кавказского федерального университета по общественным проекта, эксперт Государственного Совета Российской Федерации по направлению «Молодёжная политика».',
         position: 'Председатель',
         imageSrc: CuratorImg,
+    },
+    {
+        id: 2,
+        link: '#',
+        name: 'Вячеслав Груднев',
+        text: (
+            <>
+                Заместитель Председателя по GR политике и административному управлению ОООУКС «Улицы России»
+                <br />
+                Эксперт Всероссийского конкурса молодежных проектов Федерального агентства по делам молодежи', position: 'Заместитель Председателя по GR политике и административному управлению
+            </>
+        ),
+        imageSrc: CuratorImgVyacheslav,
     },
 ];

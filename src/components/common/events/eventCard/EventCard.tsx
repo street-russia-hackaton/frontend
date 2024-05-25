@@ -1,8 +1,8 @@
 import style from './EventCard.module.scss';
 import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
-import ArrowRightWithoutRound from '../../../assets/images/ArrowRightWithoutRound.svg?react';
-import LocationIcon from '../../../assets/images/LocationIcon.svg?react';
-import { CardEvent } from '../../../types/types';
+import ArrowRightWithoutRound from '../../../../assets/images/ArrowRightWithoutRound.svg?react';
+import LocationIcon from '../../../../assets/images/LocationIcon.svg?react';
+import { CardEvent } from '../../../../types/types';
 
 interface EventCardProps {
     data: CardEvent;
@@ -35,23 +35,23 @@ const styles = {
 };
 
 export default function EventCard({ data, onClick, cardStyle }: EventCardProps) {
-    const { image, country, subtitle, date, title, text, height } = data;
+    const { image, city, tag, date, title, text, height } = data;
 
     return (
         <Box className={style.eventCard} sx={{ height: height ? height : '100%', ...cardStyle }}>
-            <CardMedia sx={styles.image} component="img" src={image} />
+            <CardMedia sx={styles.image} component="img" src={image} onClick={onClick} />
             <Card sx={styles.cardContainer}>
                 <CardContent sx={styles.cardContent}>
-                    <Box sx={{ display: 'flex', flexDirection: subtitle.length <= 10 ? 'row' : 'column' }}>
+                    <Box sx={{ display: 'flex', flexDirection: tag.length <= 10 ? 'row' : 'column' }}>
                         <Box sx={{ ...styles.textContainer, marginRight: '12px' }}>
                             <LocationIcon style={styles.icon} />
                             <Typography component="p" sx={styles.subtitle}>
-                                {country}
+                                {city}
                             </Typography>
                         </Box>
-                        <Box sx={{ ...styles.textContainer, backgroundColor: '#AA433A', marginTop: subtitle.length <= 10 ? '0' : '12px' }}>
+                        <Box sx={{ ...styles.textContainer, backgroundColor: '#AA433A', marginTop: tag.length <= 10 ? '0' : '12px' }}>
                             <Typography component="p" sx={{ ...styles.subtitle, color: '#fff' }}>
-                                {subtitle}
+                                {city}
                             </Typography>
                         </Box>
                     </Box>
@@ -66,7 +66,12 @@ export default function EventCard({ data, onClick, cardStyle }: EventCardProps) 
                     </Typography>
                 </CardContent>
                 <CardContent sx={{ padding: '0' }}>
-                    <Box onClick={onClick}>
+                    <Box
+                        onClick={() => {
+                            console.log('Read more clicked');
+                            onClick();
+                        }}
+                    >
                         <Typography component="p" sx={styles.linkText}>
                             Подробнее <ArrowRightWithoutRound style={styles.arrow} />
                         </Typography>

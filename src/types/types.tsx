@@ -16,8 +16,8 @@ export interface DesciplineCard {
 
 export interface CardEvent {
     image: string;
-    country: string;
-    subtitle: string;
+    city: string;
+    tag: string;
     date: string;
     title: string | JSX.Element;
     text: string | JSX.Element;
