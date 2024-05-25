@@ -409,6 +409,88 @@ export const EventCardData = [
         ),
         eventOff: true,
     },
+    {
+        height: '362px',
+        id: 3,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: EducationForumEvent,
+        image: EducationForumEvent,
+        city: 'Москва',
+        tag: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Образователь
+                <br />
+                ный форум уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
+        text: (
+            <>
+                Образовательный форум
+                <br /> уличной культуры и спорта УЛИЦЫ КОМИ
+            </>
+        ),
+        eventOff: true,
+    },
+    { height: '264px', id: 2, register: '1321', address: ' ул. Лужники, 24; метро Воробьевы горы', timeWeek: 'ПН-ПТ 10.00-21.00 ', timeDayOff: 'СБ-ВС 11.00-22.00', imageFullSrc: FenixCampEvent, image: FenixCampEvent, city: 'Санкт-Петербург', tag: 'Hip-Hop Dance', date: '12-15 октября 2024 г', title: <>FENIX CAMP 2024</>, text: <>Творческо-спортивные сборы по хип-хопу, брейкингу, стрит-арту (граффити) и музыке (диджеинг)</> },
+
+    {
+        height: '292px',
+        id: 1,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        imageFullSrc: SkateboardWomanEvent,
+        image: SkateboardWomanEvent,
+        city: 'Санкт-Петербург',
+        tag: 'Hip-Hop Dance',
+        date: '12-15 октября 2024 г',
+        title: (
+            <>
+                Скейт <br />
+                соревнования
+            </>
+        ),
+        text: <>Творческо-спортивные сборы по скейт катанию.</>,
+    },
+
+    {
+        height: '368px',
+        id: 0,
+        register: '1321',
+        address: ' ул. Лужники, 24; метро Воробьевы горы',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: SkateboardManEvent,
+        imageFullSrc: SkateboardManEvent,
+        city: 'Москва',
+        tag: 'Street art',
+        date: '12-15 мая 2024 г',
+        title: (
+            <>
+                Паркур соревнования
+                <br />
+                на скорость
+                <br />
+                «Забег
+                <br /> за подарками»
+            </>
+        ),
+        text: (
+            <>
+                Море рационального перемещения, в виде соревнований по прохождению заданной трассы на время,
+                <br />
+                излюбленные всеми паркур-челленджи, еда и напитки в кругу единомышленников, а ещё вас
+                <br />
+                ждут призы от наших спонсоров и денежный призовой фонд.
+            </>
+        ),
+    },
 ];
 
 export const EventPageCardData: CardEvent[] = [
