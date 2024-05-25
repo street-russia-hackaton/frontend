@@ -11,6 +11,8 @@ import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import HeartIcon from '../../../assets/images/HeartIcon.svg?react';
 import EventIdInfo from './EventIdInfo';
 import { useState } from 'react';
+import BackgroundImg from '../../../assets/images/background-newsgrid.svg?react';
+import Partners from '../partners/Partners';
 
 const styles = {
     text: { fontFamily: 'Bahnschrift', fontWeight: '400', lineHeight: 1.5, color: '#fff', p: 0 },
@@ -43,7 +45,7 @@ export default function EventComponent() {
     };
 
     return (
-        <Container component="section" sx={{ p: { sm: '0 0 60px' }, m: '0', width: '100%', maxWidth: { lg: '100%' } }}>
+        <Container component="section" sx={{ p: { sm: '0 ' }, m: '0', width: '100%', maxWidth: { lg: '100%' } }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', p: { sm: '0' }, m: '0 auto', maxWidth: { lg: '1320px' } }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -75,12 +77,18 @@ export default function EventComponent() {
                         </Box>
                     </Box>
                 </Box>
-                <TitleMainPage title="Кураторы" color="#fff" padding="0" />
-                <Box sx={{ display: 'flex', gap: '20px' }}>
-                    {curators.map((curator, index) => (
-                        <CuratorCard key={index} data={curator} />
-                    ))}
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Box>
+                        <TitleMainPage title="Кураторы" color="#fff" padding="0" />
+                        <Box sx={{ display: 'flex', gap: '20px' }}>
+                            {curators.map((curator, index) => (
+                                <CuratorCard key={index} data={curator} />
+                            ))}
+                        </Box>
+                    </Box>
+                    <BackgroundImg />
                 </Box>
+                <Partners />
             </Box>
         </Container>
     );
