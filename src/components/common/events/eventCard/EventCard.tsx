@@ -11,7 +11,7 @@ interface EventCardProps {
 }
 
 const styles = {
-    container: { display: 'flex', maxWidth: '630px', marginTop: '64px' },
+    container: { display: 'flex', maxWidth: '630px', marginTop: '64px', position: 'relative' },
     image: { height: '100%', width: '315px' },
     cardContainer: { display: 'flex', flexDirection: 'column', backgroundColor: 'transparent', marginLeft: '20px', justifyContent: 'space-between', boxShadow: 'none' },
     cardContent: { padding: '0' },
@@ -32,6 +32,7 @@ const styles = {
     },
     linkText: { color: '#fff', display: 'flex', alignItems: 'center' },
     arrow: { paddingLeft: '8px' },
+    eventOffText: { backgroundColor: '#fff', width: '230px', height: '30px', color: '#D2D1D0', position: 'absolute', margin: '16px', textAlign: 'center' },
 };
 
 export default function EventCard({ data, onClick, cardStyle }: EventCardProps) {
@@ -40,6 +41,11 @@ export default function EventCard({ data, onClick, cardStyle }: EventCardProps) 
     return (
         <Box className={style.eventCard} sx={{ height: height ? height : '100%', ...cardStyle }}>
             <CardMedia sx={styles.image} component="img" src={image} onClick={onClick} />
+            {data.eventOff && (
+                <Typography component="p" sx={styles.eventOffText}>
+                    Мероприятие завершено
+                </Typography>
+            )}
             <Card sx={styles.cardContainer}>
                 <CardContent sx={styles.cardContent}>
                     <Box sx={{ display: 'flex', flexDirection: tag.length <= 10 ? 'row' : 'column' }}>

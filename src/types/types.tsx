@@ -32,6 +32,7 @@ export interface CardEvent {
     aboutSubtitle?: string;
     aboutText?: string;
     aboutInfo?: string | undefined;
+    eventOff?: boolean;
 }
 
 export interface SelectFaq {

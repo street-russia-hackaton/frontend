@@ -407,6 +407,7 @@ export const EventCardData = [
                 <br /> уличной культуры и спорта УЛИЦЫ КОМИ
             </>
         ),
+        eventOff: true,
     },
 ];
 
