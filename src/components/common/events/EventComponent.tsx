@@ -4,15 +4,15 @@ import RegisterEventPersonIcon from '../../../assets/images/RegisterEventPersonI
 import TitleSecondary from '../titleSecondary/titleSecondary';
 import ShareWithFriends from '../shareWithFriends/ShareWithFriends';
 import CuratorCard from '../curatorCard/CuratorCard';
-import { EventPageCardData, curators } from '../../../utils/constants';
+import { curators } from '../../../utils/constants';
 import TitleMainPage from '../titleMainPage/titleMainPage';
 import SubmitBtn from '../btns/SubmitBtn';
 import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import HeartIcon from '../../../assets/images/HeartIcon.svg?react';
 import EventIdInfo from './EventIdInfo';
-import { useState } from 'react';
 import BackgroundImg from '../../../assets/images/background-newsgrid.svg?react';
 import Partners from '../partners/Partners';
+import { CardEvent } from '../../../types/types';
 
 const styles = {
     text: { fontFamily: 'Bahnschrift', fontWeight: '400', lineHeight: 1.5, color: '#fff', p: 0 },
@@ -22,40 +22,19 @@ const styles = {
     arrow: { paddingRight: '8px' },
 };
 
-// interface DataProps {
-//     id: number;
-//     imageFullSrc: string;
-//     tag: string;
-//     date: string;
-//     city: string | undefined;
-//     register: string;
-//     address: string;
-//     timeWeek: string;
-//     timeDayOff: string;
-//     title: JSX.Element;
-//     text: JSX.Element;
-// }
-
-export default function EventComponent() {
-    const [selectedEvent, setSelectedEvent] = useState(EventPageCardData[0]);
-    console.log(selectedEvent);
-
-    const handleCardClick = (eventIndex: number) => {
-        setSelectedEvent(EventPageCardData[eventIndex]);
-    };
-
+export default function EventComponent({ selectedEvent }: { selectedEvent: CardEvent }) {
     return (
         <Container component="section" sx={{ p: { sm: '0 ' }, m: '0', width: '100%', maxWidth: { lg: '100%' } }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', p: { sm: '0' }, m: '0 auto', maxWidth: { lg: '1320px' } }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Title title="Баскетбольный чемпионат" background="none" margin="0 0 12px 0" width="100%" height="100%" padding="0" color="#fff" />
+                        <Title title={selectedEvent.title} background="none" margin="0 0 12px 0" width="100%" height="100%" padding="0" color="#fff" />
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: '20px', p: { sm: '0' }, m: '0 0 64px 0' }}>
-                            <Typography sx={{ ...styles.text, ...styles.small, ...styles.tag }}>Street art</Typography>
-                            <Typography sx={{ ...styles.text, ...styles.small, ...styles.tag, background: '#fff', color: '#222' }}>Санкт-Петергбург</Typography>
+                            <Typography sx={{ ...styles.text, ...styles.small, ...styles.tag }}>{selectedEvent.tag}</Typography>
+                            <Typography sx={{ ...styles.text, ...styles.small, ...styles.tag, background: '#fff', color: '#222' }}>{selectedEvent.city}</Typography>
                             <Typography sx={{ ...styles.text, ...styles.small, display: 'flex', alignItems: 'center' }}>
                                 <RegisterEventPersonIcon style={styles.arrow} />
-                                222 зарегистрированно
+                                {selectedEvent.register} зарегистрировано
                             </Typography>
                         </Box>
                     </Box>
@@ -66,9 +45,25 @@ export default function EventComponent() {
                 </Box>
                 <CardMedia component="img" alt="Изображение" height="435" image={selectedEvent.imageFullSrc} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', p: { sm: '0' }, m: '64px 0' }}>
-                    <Typography variant="body2" sx={{ ...styles.text, ...styles.subtitle, maxWidth: '762px' }}>
-                        {selectedEvent.text}
-                    </Typography>
+                    <Box>
+                        <TitleSecondary title="О мероприятии" margin="0  0 32px  0" />
+                        <Typography variant="body2" sx={{ ...styles.text, ...styles.subtitle, maxWidth: '762px' }}>
+                            {selectedEvent.aboutTitle}
+                        </Typography>
+                        <Typography variant="body2" sx={{ ...styles.text, ...styles.subtitle, maxWidth: '762px' }}>
+                            {selectedEvent.aboutSubtitle}
+                        </Typography>
+                        {selectedEvent && selectedEvent.aboutText && (
+                            <ul>
+                                {selectedEvent.aboutText.split('\n').map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
+                            </ul>
+                        )}
+                        <Typography variant="body2" sx={{ ...styles.text, ...styles.subtitle, maxWidth: '762px' }}>
+                            {selectedEvent.aboutInfo}
+                        </Typography>
+                    </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', p: { sm: '0' }, m: '0' }}>
                         <TitleSecondary title="Инфо" />
                         <EventIdInfo address={selectedEvent.address} timeWeek={selectedEvent.timeWeek} timeDayOff={selectedEvent.timeDayOff} date={selectedEvent.date} />

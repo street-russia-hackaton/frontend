@@ -68,7 +68,6 @@ export default function EventCard({ data, onClick, cardStyle }: EventCardProps) 
                 <CardContent sx={{ padding: '0' }}>
                     <Box
                         onClick={() => {
-                            console.log('Read more clicked');
                             onClick();
                         }}
                     >

@@ -28,6 +28,10 @@ export interface CardEvent {
     title: JSX.Element;
     text: JSX.Element;
     height?: string;
+    aboutTitle?: string;
+    aboutSubtitle?: string;
+    aboutText?: string;
+    aboutInfo?: string | undefined;
 }
 
 export interface SelectFaq {

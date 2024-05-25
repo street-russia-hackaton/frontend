@@ -3,30 +3,7 @@ import IconCalendar from '../../../assets/images/IconCalendar.svg?react';
 import LocationIcon from '../../../assets/images/LocationWhiteIcon.svg?react';
 import TimeWhiteIcon from '../../../assets/images/TimeWhiteIcon.svg?react';
 import VkIcon from '../../../assets/images/VkIconWithoutBackground.svg?react';
-import DisabledIcon from '../../../assets/images/DisabledIcon.svg?react';
-import PublicTioletIcon from '../../../assets/images/PublicTioletIcon.svg?react';
-import FastfoodIcon from '../../../assets/images/FastfoodIcon.svg?react';
-import PawIcon from '../../../assets/images/PawIcon.svg?react';
-
-// interface EventInfoProps {
-//     height: string;
-//     id: number;
-//     register: string;
-//     address: string;
-//     timeWeek: string;
-//     timeDayOff: string;
-//     imageFullSrc: string;
-//     image: string;
-//     city: string;
-//     tag: string;
-//     date: string;
-//     title: JSX.Element;
-//     text: JSX.Element;
-// }
-
-// interface EventProps {
-//     event: EventInfoProps;
-// }
+import InfoIcons from '../infoIcons/InfiIcons';
 
 interface EventInfoProps {
     date: string;
@@ -44,7 +21,7 @@ const font = {
 
 const styles = {
     container: { display: 'flex', alignItems: 'center', gap: '16px', p: { sm: '0' }, m: '0' },
-    iconsContainer: { display: 'flex', width: '250px', justifyContent: 'space-between', marginTop: '24px' },
+    iconsContainer: { marginTop: '24px' },
     text: { ...font },
     subtitle: { ...font, letterSpacing: '0.02em' },
     infoText: { ...font, fontSize: '16px', p: '8px 0 0', lineHeight: 0.7, display: 'inline' },
@@ -56,10 +33,7 @@ export default function EventIdInfo({ date, address, timeWeek, timeDayOff }: Eve
     return (
         <Box>
             <Box sx={styles.iconsContainer}>
-                <DisabledIcon />
-                <PublicTioletIcon />
-                <FastfoodIcon />
-                <PawIcon />
+                <InfoIcons />
             </Box>
             <Box sx={styles.container}>
                 <IconCalendar />
