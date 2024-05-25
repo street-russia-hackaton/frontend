@@ -28,7 +28,7 @@ import StreetDanceCompetition from '../assets/images/StreetDanceCompetition.svg'
 import StreetFashionWeek from '../assets/images/StreetFashionWeek.svg';
 import PilatesFitnesVorobievyGory from '../assets/images/PilatesFitnesVorobievyGory.svg';
 
-import { DesciplineCard } from '../types/types';
+import { CardEvent, DesciplineCard } from '../types/types';
 
 export const MIN_LAPTOP_DISPLAY = 1024;
 
@@ -410,7 +410,7 @@ export const EventCardData = [
     },
 ];
 
-export const EventPageCardData = [
+export const EventPageCardData: CardEvent[] = [
     {
         height: '362px',
         id: 0,

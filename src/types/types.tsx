@@ -15,13 +15,19 @@ export interface DesciplineCard {
 }
 
 export interface CardEvent {
+    id: number;
+    imageFullSrc: string;
     image: string;
-    city: string;
     tag: string;
     date: string;
-    title: string | JSX.Element;
-    text: string | JSX.Element;
-    height: string;
+    city: string;
+    register: string;
+    address: string;
+    timeWeek: string;
+    timeDayOff: string;
+    title: JSX.Element;
+    text: JSX.Element;
+    height?: string;
 }
 
 export interface SelectFaq {
