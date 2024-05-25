@@ -6,9 +6,10 @@ import FilterEvents from '../../../common/filters/FilterEvents';
 import EventCard from '../../../common/events/eventCard/EventCard';
 import { EventCardData } from '../../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CardEvent } from '../../../../types/types';
-import Pagination from '../../../common/pagination/Pagination';
+
+import EventPagination from '../../../common/events/EventPagination';
 
 const styles = {
     mainContainer: { height: '100%' },
@@ -18,27 +19,7 @@ const styles = {
 
 export default function Events() {
     const navigate = useNavigate();
-    const [activeStep, setActiveStep] = useState(0);
-    const [pageSize] = useState(4); //
-    const [filteredEvents, setFilteredEvents] = useState<CardEvent[]>([]);
-
-    useEffect(() => {
-        const start = activeStep * pageSize;
-        const end = start + pageSize;
-        setFilteredEvents(EventCardData.slice(start, end));
-    }, [activeStep, pageSize]);
-
-    const handleBack = () => {
-        setActiveStep((prevStep) => Math.max(prevStep - 1, 0));
-    };
-
-    const handleNext = () => {
-        setActiveStep((prevStep) => Math.min(prevStep + 1, Math.ceil(EventCardData.length / pageSize) - 1));
-    };
-
-    const handleShowAll = () => {
-        navigate('/events');
-    };
+    const [filteredEvents, setFilteredEvents] = useState<CardEvent[]>(EventCardData);
 
     const handleLinkClick = () => {
         navigate('/events/id');
@@ -56,7 +37,7 @@ export default function Events() {
                     ))}
                 </Box>
             </Box>
-            <Pagination activeStep={activeStep} handleBack={handleBack} handleNext={handleNext} handleShowAll={handleShowAll} />
+            <EventPagination filteredEvents={filteredEvents} setFilteredEvents={setFilteredEvents} />
         </Box>
     );
 }
