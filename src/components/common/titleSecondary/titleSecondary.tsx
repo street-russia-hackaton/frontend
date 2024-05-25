@@ -11,6 +11,7 @@ const styles = {
         fontSize: '24px',
         textTransform: 'uppercase',
         letterSpacing: '0.02em',
+        color: '#fff',
     },
 };
 

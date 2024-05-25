@@ -40,3 +40,14 @@ export interface PopupProps {
     onClick: () => void;
     children?: React.ReactNode;
 }
+
+export interface CardUser {
+    id: number;
+    firstName: string;
+    lastName: string;
+    patronimicName: string;
+    role: string;
+    email: string;
+    tel: string;
+    imageSrc: string;
+}

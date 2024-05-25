@@ -20,6 +20,7 @@ import FenixCampEvent from '../assets/images/FenixCampEvent.svg';
 import SkateboardWomanEvent from '../assets/images/SkateboardWomanEvent.svg';
 import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 import CuratorImg from '../assets/images/CuratorImg.png';
+import userImg from '../assets/images/UserImg.png';
 
 import { DesciplineCard } from '../types/types';
 
@@ -438,5 +439,18 @@ export const curators = [
         text: 'Председатель Общероссийской общественной организации уличной культуры и спорта «Улицы России», генеральный директор международной конкурс-премии «КАРДО», директор общественной организации «ОФФБИТС», член экспертного совета Комитета Государственной Думы Российской Федерации по молодежной политике, советник ректора Северо-Кавказского федерального университета по общественным проекта, эксперт Государственного Совета Российской Федерации по направлению «Молодёжная политика».',
         position: 'Председатель',
         imageSrc: CuratorImg,
+    },
+];
+
+export const userData = [
+    {
+        id: 1,
+        firstName: 'Валерий',
+        lastName: 'Пупкин',
+        patronimicName: 'Юрьевич',
+        role: '',
+        email: 'pupkin.valera00@mail.ru',
+        tel: '+79834561527',
+        imageSrc: userImg,
     },
 ];

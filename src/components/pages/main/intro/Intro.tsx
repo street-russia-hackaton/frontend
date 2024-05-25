@@ -7,8 +7,6 @@ import Video from '../../../../assets/video/video-main.mp4';
 import { useState } from 'react';
 import PopupJoin from '../../../common/popups/PopupJoin';
 
-//TODO: переход по якорной ссылке вступить, стиль бегущих строк
-
 export default function Intro() {
     const [openJoinPopup, setOpenJoinPopup] = useState(false);
 
