@@ -1,3 +1,4 @@
 import Events from './Events';
+import EventsIdPage from './EventsIdPage';
 
-export default Events;
+export { Events, EventsIdPage };

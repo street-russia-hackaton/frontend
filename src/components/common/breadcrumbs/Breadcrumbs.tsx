@@ -9,6 +9,7 @@ const breadcrumbNameMap: { [key: string]: string } = {
     '/news/:id': 'Новость',
     '/about': 'О нас',
     '/events': 'Все мероприятия',
+    '/events/:id': 'Мероприятие',
     '/regional': 'Региональные отделения',
 };
 

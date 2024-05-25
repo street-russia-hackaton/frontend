@@ -3,7 +3,7 @@ import Title from '../../../common/titleMainPage/titleMainPage';
 import EventsBackgroundTitle from '../../../../assets/images/EventsBackgroundTitle.svg';
 import Calendar from '../../../common/calendar/Calendar';
 import FilterEvents from '../../../common/filters/FilterEvents';
-import EventCard from '../../../common/eventCard/EventCard';
+import EventCard from '../../../common/events/eventCard/EventCard';
 import { EventCardData } from '../../../../utils/constants';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
