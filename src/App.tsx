@@ -1,4 +1,3 @@
-import './App.module.scss';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Main, About, News, New, Events, Regions, Profile, EventsIdPage } from './components/pages';
 import { ThemeProvider } from '@emotion/react';

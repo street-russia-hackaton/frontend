@@ -18,7 +18,7 @@ export default function NewsPagination({ setFilteredEvents, newsCardData }: Even
         const start = activeStep * pageSize;
         const end = start + pageSize;
         setFilteredEvents(newsCardData.slice(start, end));
-    }, [activeStep, pageSize, setFilteredEvents, newsCardData]);
+    }, [activeStep, pageSize]);
 
     const handleBack = () => {
         setActiveStep((prevStep) => Math.max(prevStep - 1, 0));
