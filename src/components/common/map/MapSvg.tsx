@@ -1,10 +1,7 @@
+import { useState, useEffect, useRef, MouseEventHandler } from 'react';
+import { Link } from 'react-router-dom';
 import style from './MapSvg.module.scss';
 import { mapData } from '../../pages/main/map/mapConstant';
-import { Link } from 'react-router-dom';
-import * as React from 'react';
-
-//TODO: добавить типизацию, убрать ошибки добавления стилей по движению курсора,
-// добавить склонения обьектов и событий по колличеству
 
 const objects = ['парк', 'рампы', 'площадка'];
 const events = ['контест', 'соревнование'];
@@ -12,8 +9,8 @@ const cities = ['Вологда', 'Невологда', 'Супервологд�
 const noObjects = ['0 объектов', 'В этом регионе пока нет наших отделений.'];
 
 export default function MapSvg({ offset = { x: -250, y: 300 } }) {
-    const [target, setTarget] = React.useState<boolean | HTMLElement>(false);
-    const [data, setData] = React.useState<{ region: string; object: string; event: string; city: any; noCity: string }>({
+    const [target, setTarget] = useState<boolean | HTMLElement>(false);
+    const [data, setData] = useState<{ region: string; object: string; event: string; city: string[] | null; noCity: string }>({
         region: '',
         object: '',
         event: '',
@@ -21,11 +18,11 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
         noCity: '',
     });
 
-    const element = React.useRef({});
+    const element = useRef<HTMLDivElement>(null);
 
-    React.useEffect(() => {
-        function handler(e: MouseEvent<HTMLButtonElement>) {
-            if (element.current != null || undefined) {
+    useEffect(() => {
+        function handler(e: MouseEvent) {
+            if (element.current) {
                 const x = e.clientX + offset.x;
                 const y = e.clientY + offset.y;
                 element.current.style.transform = `translate(${x}px, ${y}px)`;
@@ -36,34 +33,45 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
         return () => document.removeEventListener('mousemove', handler);
     }, [offset.x, offset.y]);
 
-    const handleMouseEnter = (e: MouseEvent<HTMLButtonElement>) => {
-        !!e.target.closest('g').dataset.here ? (e.target.style.fill = '#AA433A') : (e.target.style.fill = '#D2D1D0');
-        const p = e.target.closest('g').dataset.name;
-        const obj = e.target.closest('g').dataset.objects;
-        const evt = e.target.closest('g').dataset.events;
-        const ct = e.target.closest('g').dataset.cities;
-        setTarget(true);
-        console.log(ct);
-        !!e.target.closest('g').dataset.here
-            ? setData({
-                  region: p,
-                  object: `${obj}`,
-                  event: `${evt}`,
-                  city: ct.split(','),
-                  noCity: '',
-              })
-            : setData({
-                  region: p,
-                  object: '',
-                  event: '',
-                  city: null,
-                  noCity: noObjects[1],
-              });
+    const handleMouseEnter: MouseEventHandler<HTMLAnchorElement> = (e) => {
+        const target = e.target as SVGElement;
+        const g = target.closest('g');
+        if (g) {
+            const here = g.dataset.here === 'true';
+            const p = g.dataset.name || '';
+            const obj = g.dataset.objects || '';
+            const evt = g.dataset.events || '';
+            const ct = g.dataset.cities || '';
+            setTarget(true);
+            console.log(ct);
+            if (here) {
+                setData({
+                    region: p,
+                    object: obj,
+                    event: evt,
+                    city: ct ? ct.split(',') : null,
+                    noCity: '',
+                });
+            } else {
+                setData({
+                    region: p,
+                    object: '',
+                    event: '',
+                    city: null,
+                    noCity: noObjects[1],
+                });
+            }
+            target.style.fill = here ? '#AA433A' : '#D2D1D0';
+        }
     };
 
-    const handleMouseLeave = (e: MouseEvent<HTMLButtonElement>) => {
-        !!element.current ? (element.current.style.display = 'none') : '';
-        !!e.target.closest('g').dataset.here ? (e.target.style.fill = '#D2D1D0') : (e.target.style.fill = '#f3f3f3');
+    const handleMouseLeave: MouseEventHandler<HTMLAnchorElement> = (e) => {
+        const target = e.target as SVGElement;
+        if (element.current) {
+            element.current.style.display = 'none';
+        }
+        const here = target.closest('g')?.dataset.here === 'true';
+        target.style.fill = here ? '#D2D1D0' : '#f3f3f3';
         setTarget(false);
     };
 
@@ -87,7 +95,7 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
             {target && (
                 <div className={style.info} ref={element}>
                     <h4 className={style.info__region}>{data.region}</h4>
-                    {!!data.city ? (
+                    {data.city ? (
                         <p className={style.info__text}>
                             {data.object} объекта, {data.event} события
                         </p>
@@ -95,9 +103,8 @@ export default function MapSvg({ offset = { x: -250, y: 300 } }) {
                         <p className={style.info__text}>0 объектов</p>
                     )}
                     <p className={style.info__text}>{data.noCity}</p>
-                    {!!data.city && (
+                    {data.city && (
                         <ul className={style.info__text}>
-                            {' '}
                             Города:
                             {data.city.map((item: string) => (
                                 <li key={item} className={style.info__text}>
