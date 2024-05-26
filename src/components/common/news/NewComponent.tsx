@@ -7,6 +7,8 @@ import TitleSecondary from '../titleSecondary/titleSecondary';
 import ShareWithFriends from '../shareWithFriends/ShareWithFriends';
 import CuratorCard from '../curatorCard/CuratorCard';
 import { curators } from '../../../utils/constants';
+import Partners from '../partners/Partners';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     text: { fontFamily: 'Bahnschrift', fontWeight: '400', lineHeight: 1.5, color: '#fff', p: 0 },
@@ -16,20 +18,8 @@ const styles = {
     arrow: { paddingRight: '8px' },
 };
 
-interface DataProps {
-    id: number;
-    imageSrc: string;
-    imageFullSrc: string;
-    tag: string;
-    date: string;
-    duration: string;
-    views: string;
-    title: string;
-    text: string;
-}
-
 interface NewsProps {
-    data: DataProps;
+    data: CardNew;
 }
 
 export default function NewComponent({ data }: NewsProps) {
@@ -64,13 +54,12 @@ export default function NewComponent({ data }: NewsProps) {
                         <Typography sx={{ ...styles.text, ...styles.subtitle, marginBottom: '16px' }}>Автор публикации</Typography>
                         <CuratorCard data={curators[0]} />
                         <Box sx={{ p: { sm: '0' }, m: '64px 0 0' }}>
-                        <ShareWithFriends title="Расскажи друзьям" linkVk='#' linkTg='#' />
+                            <ShareWithFriends title="Расскажи друзьям" linkVk="#" linkTg="#" />
                         </Box>
                     </Box>
                 </Box>
                 <Box sx={{ p: { sm: '0' }, m: '0' }}>
-                    <TitleSecondary title="партнёры" margin="0 0 40px" />
-                    <Box sx={{ p: { sm: '0' }, m: '0', border: '1px solid #fff', height: '60px' }}></Box>
+                    <Partners />
                 </Box>
             </Box>
         </Container>

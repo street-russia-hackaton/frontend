@@ -15,13 +15,37 @@ export interface DesciplineCard {
 }
 
 export interface CardEvent {
+    id: number;
+    imageFullSrc: string;
     image: string;
-    country: string;
-    subtitle: string;
+    tag: string;
     date: string;
-    title: string | JSX.Element;
-    text: string | JSX.Element;
-    height: string;
+    city: string;
+    register: string;
+    address: string;
+    timeWeek: string;
+    timeDayOff: string;
+    title: JSX.Element;
+    text: JSX.Element;
+    height?: string;
+    aboutTitle?: string;
+    aboutSubtitle?: string;
+    aboutText?: string;
+    aboutInfo?: string | undefined;
+    eventOff?: boolean;
+}
+export interface CardNew {
+    id: number;
+    tag?: string;
+    city?: string;
+    date?: string;
+    duration?: string;
+    views?: string;
+    title?: string;
+    text?: JSX.Element;
+    subtitle?: string;
+    imageSrc?: string;
+    imageFullSrc?: string;
 }
 
 export interface SelectFaq {

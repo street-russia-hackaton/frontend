@@ -1,6 +1,5 @@
-import './App.module.scss';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Main, About, News, New, Events, Regions, Profile } from './components/pages';
+import { Main, About, News, New, Events, Regions, Profile, EventsIdPage } from './components/pages';
 import { ThemeProvider } from '@emotion/react';
 import theme from './vendor/theme.tsx';
 import ScrollToTop from './utils/scrollToTop.tsx';
@@ -17,6 +16,7 @@ function App() {
                 <Route path="/news" element={<News />} />
                 <Route path="/news/:id" element={<New />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/events/:id" element={<EventsIdPage />} />
                 <Route path="/regional" element={<Regions />} />
                 <Route path="/profile" element={<Profile />} />
                 {/* <Route element={<ProtectedRoute />}>

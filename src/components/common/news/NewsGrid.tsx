@@ -6,6 +6,7 @@ import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import { useState, useEffect } from 'react';
 import { MIN_LAPTOP_DISPLAY } from '../../../utils/constants';
 import useScreenResize from '../../../utils/screenResize';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     cardContainer: {
@@ -22,7 +23,11 @@ const styles = {
     },
 };
 
-export default function NewsGrid({filteredCards}) {
+interface NewsGridProps {
+    filteredCards: CardNew[];
+}
+
+export default function NewsGrid({ filteredCards }: NewsGridProps) {
     const navigate = useNavigate();
     const display = useScreenResize();
 
@@ -54,13 +59,15 @@ export default function NewsGrid({filteredCards}) {
 
     return (
         <>
-            {filteredCards.length !== 0 && <List sx={{ ...styles.cardContainer }}>
-                {filteredCards.slice(0, cardCounter).map((data) => (
-                    <ListItem key={data.id} sx={{ ...styles.listItem }}>
-                        <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
-                    </ListItem>
-                ))}
-            </List>}
+            {filteredCards.length !== 0 && (
+                <List sx={{ ...styles.cardContainer }}>
+                    {filteredCards.slice(0, cardCounter).map((data) => (
+                        <ListItem key={data.id ?? 0} sx={{ ...styles.listItem }}>
+                            <NewsCard data={data} onClick={() => handleCardClick(data.id ?? 0)} />
+                        </ListItem>
+                    ))}
+                </List>
+            )}
             {filteredCards.length > cardCounter && (
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} icon />

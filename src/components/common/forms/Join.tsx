@@ -9,6 +9,7 @@ import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
 import { useEffect, useState } from 'react';
 import CheckboxIcon from '../checkboxIcon/CheckboxIcon.tsx';
 import { Link } from 'react-router-dom';
+import PopupSuccessJoin from '../popups/PopupSuccessJoin.tsx';
 
 interface JoinProps {
     onJoin: (name: string, email: string, phonenumber: string, link: string, pasportSeries: string, pasportNumber: string, issuedBy: string, whenIssued: string) => void;
@@ -41,8 +42,8 @@ const schema = yup.object().shape({
         .string()
         .matches(/^https:\/\/.+$/, 'Ссылка должна начинаться с "https://"')
         .required('Введите ссылку'),
-    pasportSeries: yup.string().required('Введите серию паспорта'),
-    pasportNumber: yup.string().required('Введите номер паспорта'),
+    pasportSeries: yup.string().matches(/^\d+$/, 'Введите только цифры').required('Введите серию паспорта').min(4, 'Введите не менее 4 символов'),
+    pasportNumber: yup.string().matches(/^\d+$/, 'Введите только цифры').required('Введите номер паспорта').min(4, 'Введите не менее 4 символов'),
     issuedBy: yup.string().required('Введи полностью, кем выдан паспорт'),
     whenIssued: yup.string().required('Введи дату выдачи паспорта'),
 });
@@ -69,6 +70,15 @@ export default function Register({ onJoin }: JoinProps) {
     };
     const [isChecked, setIsChecked] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
+    const [openSuccessJoinPopup, setOpenSuccessJoinPopup] = useState(false);
+
+    const handleOpenSuccessJoinPopup = () => {
+        setOpenSuccessJoinPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setOpenSuccessJoinPopup(false);
+    };
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -110,7 +120,8 @@ export default function Register({ onJoin }: JoinProps) {
                     </Box>
                 </Box>
                 <Typography component="p">«Улицы России»</Typography>
-                <SubmitBtnColor title="Присоединиться" margin="32px 0 0 0" width="553px" disabled={!isCompleted} />
+                <SubmitBtnColor title="Присоединиться" margin="32px 0 0 0" width="553px" disabled={!isCompleted || !isChecked} onClick={handleOpenSuccessJoinPopup} />
+                <PopupSuccessJoin open={openSuccessJoinPopup} onClose={handleClosePopup} onClick={handleClosePopup} />
                 <TextPersonalData />
             </Box>
         </Container>

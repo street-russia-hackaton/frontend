@@ -89,7 +89,7 @@ export default function Footer({ backgroundColor, backdropFilter }: FooterProps)
     };
 
     return (
-        <Container component="footer" sx={{ width: '100%', maxWidth: { lg: '100%' }, height: '567px', p: { xs: 0, lg: 0 }, display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: 'none', transition: 'none', backgroundColor: '#222' }}>
+        <Container component="footer" sx={{ width: '100%', maxWidth: { lg: '100%' }, height: '100%', p: { xs: 0, lg: 0 }, display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: 'none', transition: 'none', backgroundColor: '#222' }}>
             <Box sx={{ width: '100%', backgroundColor: backgroundColor || '#222', backdropFilter: backdropFilter || 'none' }}>
                 <Box sx={{ margin: '0 auto', p: '60px 0', width: '91%', height: '100%', maxWidth: { lg: 1312 }, display: 'flex', flexDirection: 'column', gap: '80px' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -30,16 +29,16 @@ interface DataProps {
     id: number;
     imageSrc: string;
     name: string;
-    text: string;
+    text: string | JSX.Element;
     link: string;
-    position: string;
+    position?: string;
 }
 
 interface CuratorProps {
     data: DataProps;
 }
 
-export default function CuratorCard({ data}: CuratorProps) {
+export default function CuratorCard({ data }: CuratorProps) {
     const navigate = useNavigate();
 
     const handleCardClick = (id: number) => {
@@ -50,22 +49,24 @@ export default function CuratorCard({ data}: CuratorProps) {
         <Card sx={{ position: 'relative', width: 426, height: 660, display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(255,255,255, 0.27)', backdropFilter: 'blur(10px)' }}>
             <CardMedia component="img" alt="Изображение новости." height="300" image={data.imageSrc} />
             <CardContent sx={{ p: '24px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <Typography variant="h4" sx={{ ...styles.overflow, ...styles.text, ...styles.h4, WebkitLineClamp: '3', }}>
+                <Typography variant="h4" sx={{ ...styles.overflow, ...styles.text, ...styles.h4, WebkitLineClamp: '3' }}>
                     {data.name}
                 </Typography>
-                <Typography variant="body2" sx={{...styles.overflow, ...styles.text, ...styles.small, ...styles.position, marginBottom: '16px', WebkitLineClamp: '2', }}>
+                <Typography variant="body2" sx={{ ...styles.overflow, ...styles.text, ...styles.small, ...styles.position, marginBottom: '16px', WebkitLineClamp: '2' }}>
                     {data.position}
                 </Typography>
-                <Typography variant="body2" sx={{ ...styles.overflow, ...styles.text, ...styles.subtitle, WebkitLineClamp: '4', }}>
+                <Typography variant="body2" sx={{ ...styles.overflow, ...styles.text, ...styles.subtitle, WebkitLineClamp: '4' }}>
                     {data.text}
                 </Typography>
                 <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'end' }}>
-                <Link href={data.link} sx={{height: '30px'}} ><IconVk/></Link>
-                <CardActions onClick={() => handleCardClick(data.id)} sx={{ p: 0 }}>
-                        <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center'}}>
+                    <Link href={data.link} sx={{ height: '30px' }}>
+                        <IconVk />
+                    </Link>
+                    <CardActions onClick={() => handleCardClick(data.id)} sx={{ p: 0 }}>
+                        <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center' }}>
                             Подробнее <ArrowRightWithoutRound style={styles.arrow} />
                         </Typography>
-                </CardActions>
+                    </CardActions>
                 </Box>
             </CardContent>
         </Card>

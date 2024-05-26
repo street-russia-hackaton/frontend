@@ -22,14 +22,14 @@ const styles = {
 export default function NavPopupTitle({ tabs, margin }: NavPopupTitleProps) {
     const [value, setValue] = useState(0);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleChange = (_: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
         tabs[newValue].onClick();
     };
 
     return (
         <ThemeProvider theme={theme}>
-            <Tabs value={value} onChange={handleChange} aria-label="auth navigation" sx={{ '&.MuiButtonBase-root-MuiTab-root': { width: '100%' } }}>
+            <Tabs value={value} onChange={handleChange} aria-label="auth navigation" sx={{ '& .MuiButtonBase-root': { maxWidth: '100vw' } }}>
                 {tabs.map((tab, index) => (
                     <Tab key={index} label={tab.label} sx={{ ...styles.title, margin: margin ? margin : '0 0 0 47px' }} />
                 ))}

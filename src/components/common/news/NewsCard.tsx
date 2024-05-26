@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -6,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import ArrowRightWithoutRound from '../../../assets/images/ArrowRightWithoutRound.svg?react';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     overflow: { display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden' },
@@ -24,19 +24,8 @@ const styles = {
     arrow: { paddingLeft: '8px' },
 };
 
-interface DataProps {
-    id: number;
-    imageSrc: string;
-    tag: string;
-    date: string;
-    duration: string;
-    views: string;
-    title: string;
-    subtitle: string;
-}
-
 interface NewsProps {
-    data: DataProps;
+    data: CardNew;
     onClick: () => void;
 }
 
@@ -57,9 +46,9 @@ export default function NewsCard({ data, onClick }: NewsProps) {
                     {data.subtitle}
                 </Typography>
                 <CardActions onClick={onClick} sx={{ p: 0, marginTop: 'auto' }}>
-                        <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center'}}>
-                            Подробнее <ArrowRightWithoutRound style={styles.arrow} />
-                        </Typography>
+                    <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center' }}>
+                        Подробнее <ArrowRightWithoutRound style={styles.arrow} />
+                    </Typography>
                 </CardActions>
             </CardContent>
         </Card>
