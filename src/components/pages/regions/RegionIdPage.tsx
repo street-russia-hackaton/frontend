@@ -12,6 +12,7 @@ import Partners from '../../common/partners/Partners';
 import BackgroundKomi from '../../../assets/images/KomiBackground.svg';
 import MapKomi from '../../../assets/images/MapKomi.svg';
 import MapKomiOutline from '../../../assets/images/MapKomiOutline.svg';
+import RegionNav from './RegionNav';
 
 const styles = {
     image: { width: '650px', height: '401px' },
@@ -53,7 +54,7 @@ export default function RegionIdPage() {
                 </Box>
                 <Partners />
             </Box>
-
+            <RegionNav />
             <Benefits />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
         </Box>
