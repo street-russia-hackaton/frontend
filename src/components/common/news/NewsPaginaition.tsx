@@ -34,7 +34,7 @@ export default function NewsPagination({ setFilteredEvents, newsCardData }: Even
 
     return (
         <Box>
-            <Pagination activeStep={activeStep} handleBack={handleBack} handleNext={handleNext} handleShowAll={handleShowAll} title="Больше новостей" width="225px" />
+            <Pagination activeStep={activeStep} handleBack={handleBack} handleNext={handleNext} handleShowAll={handleShowAll} title="Больше новостей" width="225px" margin="70px 0 0" />
         </Box>
     );
 }

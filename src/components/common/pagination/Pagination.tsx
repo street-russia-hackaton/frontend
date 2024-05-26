@@ -10,6 +10,7 @@ interface PaginationProps {
     handleShowAll: () => void;
     title?: string;
     width: string;
+    margin?: string;
 }
 
 const styles = {
@@ -22,9 +23,9 @@ const styles = {
     stepper: { backgroundColor: 'transparent' },
 };
 
-export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll, title, width }: PaginationProps) {
+export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll, title, width, margin }: PaginationProps) {
     return (
-        <Box sx={styles.container}>
+        <Box sx={{ ...styles.container, margin: margin ? margin : '0' }}>
             <MobileStepper
                 sx={{
                     ...styles.stepper,

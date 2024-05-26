@@ -10,19 +10,15 @@ import Benefits from '../main/benefits/Benefits';
 
 export default function New() {
     const params = useParams();
-    const prodId = params.id ? params.id.toString() : '';
-
-    const foundCard = newsCardData.find(function (el) {
-        const currentNew = el.id == prodId;
-        return currentNew;
-    });
+    const prodId = params.id ? parseInt(params.id) : 0;
+    const foundCard = newsCardData.find((el) => el.id === prodId);
 
     return (
         <>
             <Header backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
             <Container sx={{ p: { sm: '0' }, m: '0', width: '100%', maxWidth: { lg: '100%' } }}>
                 <BreadcrumbsComponent />
-                <NewComponent data={foundCard} />
+                {foundCard && <NewComponent data={foundCard} />}
             </Container>
             <NewsCarousel title="Возможно тебе будет интересно" color="#fff" width="100%" height="auto" padding="0 0 64px 0" container="60px 0 60px" />
             <Benefits />

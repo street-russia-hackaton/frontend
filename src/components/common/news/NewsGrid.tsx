@@ -6,6 +6,7 @@ import SubmitBtnWithIcon from '../btns/SubmitBtnWithIcon';
 import { useState, useEffect } from 'react';
 import { MIN_LAPTOP_DISPLAY } from '../../../utils/constants';
 import useScreenResize from '../../../utils/screenResize';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     cardContainer: {
@@ -22,20 +23,8 @@ const styles = {
     },
 };
 
-interface DataProps {
-    id: number;
-    imageSrc: string;
-    tag: string;
-    date: string;
-    duration: string;
-    views: string;
-    title: string;
-    subtitle: string;
-    text?: JSX.Element;
-}
-
 interface NewsGridProps {
-    filteredCards: DataProps[];
+    filteredCards: CardNew[];
 }
 
 export default function NewsGrid({ filteredCards }: NewsGridProps) {
@@ -73,8 +62,8 @@ export default function NewsGrid({ filteredCards }: NewsGridProps) {
             {filteredCards.length !== 0 && (
                 <List sx={{ ...styles.cardContainer }}>
                     {filteredCards.slice(0, cardCounter).map((data) => (
-                        <ListItem key={data.id} sx={{ ...styles.listItem }}>
-                            <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
+                        <ListItem key={data.id ?? 0} sx={{ ...styles.listItem }}>
+                            <NewsCard data={data} onClick={() => handleCardClick(data.id ?? 0)} />
                         </ListItem>
                     ))}
                 </List>

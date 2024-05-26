@@ -35,7 +35,7 @@ export default function EventPagination({ setFilteredEvents }: EventPaginationPr
 
     return (
         <Box>
-            <Pagination activeStep={activeStep} handleBack={handleBack} handleNext={handleNext} handleShowAll={handleShowAll} title="Смотреть все" width="185px" />
+            <Pagination activeStep={activeStep} handleBack={handleBack} handleNext={handleNext} handleShowAll={handleShowAll} title="Смотреть все" width="185px" margin="70px 60px 0" />
         </Box>
     );
 }

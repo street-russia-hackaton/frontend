@@ -8,6 +8,7 @@ import ShareWithFriends from '../shareWithFriends/ShareWithFriends';
 import CuratorCard from '../curatorCard/CuratorCard';
 import { curators } from '../../../utils/constants';
 import Partners from '../partners/Partners';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     text: { fontFamily: 'Bahnschrift', fontWeight: '400', lineHeight: 1.5, color: '#fff', p: 0 },
@@ -17,22 +18,8 @@ const styles = {
     arrow: { paddingRight: '8px' },
 };
 
-interface DataProps {
-    id: number;
-    tag: string;
-    city: string;
-    date: string;
-    duration: string;
-    views: string;
-    title: string;
-    subtitle: string;
-    text: JSX.Element;
-    imageSrc: string;
-    imageFullSrc: string;
-}
-
 interface NewsProps {
-    data: DataProps;
+    data: CardNew;
 }
 
 export default function NewComponent({ data }: NewsProps) {
