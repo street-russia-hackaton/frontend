@@ -57,7 +57,7 @@ export default function EventCard({ data, onClick, cardStyle }: EventCardProps) 
                         </Box>
                         <Box sx={{ ...styles.textContainer, backgroundColor: '#AA433A', marginTop: tag.length <= 10 ? '0' : '12px' }}>
                             <Typography component="p" sx={{ ...styles.subtitle, color: '#fff' }}>
-                                {city}
+                                {tag}
                             </Typography>
                         </Box>
                     </Box>

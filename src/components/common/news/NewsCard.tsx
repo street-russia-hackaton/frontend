@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -32,7 +31,8 @@ interface DataProps {
     duration: string;
     views: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    text?: JSX.Element;
 }
 
 interface NewsProps {
@@ -57,9 +57,9 @@ export default function NewsCard({ data, onClick }: NewsProps) {
                     {data.subtitle}
                 </Typography>
                 <CardActions onClick={onClick} sx={{ p: 0, marginTop: 'auto' }}>
-                        <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center'}}>
-                            Подробнее <ArrowRightWithoutRound style={styles.arrow} />
-                        </Typography>
+                    <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center' }}>
+                        Подробнее <ArrowRightWithoutRound style={styles.arrow} />
+                    </Typography>
                 </CardActions>
             </CardContent>
         </Card>

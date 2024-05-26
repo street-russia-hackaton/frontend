@@ -1,17 +1,16 @@
-import React from 'react';
 import Header from '../../common/header/Header';
 import Footer from '../../common/footer/Footer';
 import NewsCarousel from '../../common/news/NewsCarousel';
 import { Container } from '@mui/material';
 import BreadcrumbsComponent from '../../common/breadcrumbs/Breadcrumbs';
 import NewComponent from '../../common/news/NewComponent';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { newsCardData } from '../../../utils/constants';
 import Benefits from '../main/benefits/Benefits';
 
 export default function New() {
     const params = useParams();
-    const prodId = params.id;
+    const prodId = params.id ? params.id.toString() : '';
 
     const foundCard = newsCardData.find(function (el) {
         const currentNew = el.id == prodId;
