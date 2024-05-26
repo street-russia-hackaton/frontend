@@ -20,6 +20,7 @@ const styles = {
 
 export default function Events() {
     const [filteredEvents, setFilteredEvents] = useState<CardEvent[]>(EventCardData.slice(0, 4));
+    console.log(filteredEvents);
 
     const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ export default function Events() {
                 </Box>
                 <FilterEvents setFilteredCards={setFilteredEvents} cardList={EventPageCardData} />
                 <Box sx={styles.cards}>
-                    {filteredEvents.map((data, index) => (
+                    {EventPageCardData.map((data, index) => (
                         <EventCard key={index} data={data} onClick={handleLinkClick} cardStyle={index % 4 === 3 ? { marginTop: '0' } : {}} />
                     ))}
                 </Box>
