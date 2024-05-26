@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import ArrowRightWithoutRound from '../../../assets/images/ArrowRightWithoutRound.svg?react';
+import { CardNew } from '../../../types/types';
 
 const styles = {
     overflow: { display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden' },
@@ -23,20 +24,8 @@ const styles = {
     arrow: { paddingLeft: '8px' },
 };
 
-interface DataProps {
-    id: number;
-    imageSrc: string;
-    tag: string;
-    date: string;
-    duration: string;
-    views: string;
-    title: string;
-    subtitle?: string;
-    text?: JSX.Element;
-}
-
 interface NewsProps {
-    data: DataProps;
+    data: CardNew;
     onClick: () => void;
 }
 

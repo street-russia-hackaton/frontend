@@ -35,7 +35,7 @@ export interface CardEvent {
     eventOff?: boolean;
 }
 export interface CardNew {
-    id?: number;
+    id: number;
     tag?: string;
     city?: string;
     date?: string;
