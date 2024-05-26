@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 import FilterSelect from '../filterSelect/FilterSelect';
 import { Box, SelectChangeEvent } from '@mui/material';
 import { cities, disciplines } from '../../../utils/constants';
-import { CardEvent } from '../../../types/types';
+import { CardNew } from '../../../types/types';
 import NotFound from '../notFound/NotFound';
 
 interface StateProps {
-    setFilteredCards: (evt: CardEvent[]) => void;
-    cardList: CardEvent[];
+    setFilteredCards: (evt: CardNew[]) => void;
+    cardList: CardNew[];
 }
 
-export default function FilterEvents({ setFilteredCards, cardList }: StateProps) {
+export default function FilterNews({ setFilteredCards, cardList }: StateProps) {
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [selectedDesciplines, setSelectedDesciplines] = useState<string>('');
-    const [filteredResult, setFilteredResult] = useState<CardEvent[]>([]);
+    const [filteredResult, setFilteredResult] = useState<CardNew[]>([]);
 
     const handleCityChange = (evt: SelectChangeEvent<string>) => {
         setSelectedCity(evt.target.value);
@@ -23,7 +23,7 @@ export default function FilterEvents({ setFilteredCards, cardList }: StateProps)
         setSelectedDesciplines(evt.target.value);
     };
 
-    const getfilteredCards = (list: CardEvent[], primaryKey: keyof CardEvent, secondaryKey: keyof CardEvent, primaryOption: string, secondaryOption: string): CardEvent[] => {
+    const getfilteredCards = (list: CardNew[], primaryKey: keyof CardNew, secondaryKey: keyof CardNew, primaryOption: string, secondaryOption: string): CardNew[] => {
         let primaryList;
         let secondaryList;
 
@@ -43,7 +43,7 @@ export default function FilterEvents({ setFilteredCards, cardList }: StateProps)
         }
 
         const resultArray = primaryList.filter((item) => {
-            return secondaryList.some((item2) => item2.image === item.image);
+            return secondaryList.some((item2) => item2.id === item.id);
         });
 
         return resultArray;

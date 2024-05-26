@@ -43,7 +43,7 @@ export default function FaqSelect({ select }: FaqSelectProps) {
     return (
         <Accordion
             expanded={clickIcon}
-            onChange={(evt, isExpanded) => handleChange(isExpanded)}
+            onChange={(_, isExpanded) => handleChange(isExpanded)}
             sx={{
                 ...styles.container,
                 '& .MuiButtonBase-root ': {

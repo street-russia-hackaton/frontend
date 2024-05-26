@@ -35,7 +35,7 @@ export default function BreadcrumbsComponent({ margin }: BreadcrumbsComponentPro
             <LinkRouter style={{ color: '#D2D1D0' }} underline="hover" color="inherit" to="/main">
                 Главная страница
             </LinkRouter>
-            {pathnames.map((value, index) => {
+            {pathnames.map((_, index) => {
                 const last = index === pathnames.length - 1;
                 const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 

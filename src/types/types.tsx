@@ -34,6 +34,19 @@ export interface CardEvent {
     aboutInfo?: string | undefined;
     eventOff?: boolean;
 }
+export interface CardNew {
+    id?: number;
+    tag?: string;
+    city?: string;
+    date?: string;
+    duration?: string;
+    views?: string;
+    title?: string;
+    text?: JSX.Element;
+    subtitle?: string;
+    imageSrc?: string;
+    imageFullSrc?: string;
+}
 
 export interface SelectFaq {
     title: string;

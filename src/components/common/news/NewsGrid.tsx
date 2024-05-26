@@ -22,7 +22,23 @@ const styles = {
     },
 };
 
-export default function NewsGrid({filteredCards}) {
+interface DataProps {
+    id: number;
+    imageSrc: string;
+    tag: string;
+    date: string;
+    duration: string;
+    views: string;
+    title: string;
+    subtitle: string;
+    text?: JSX.Element;
+}
+
+interface NewsGridProps {
+    filteredCards: DataProps[];
+}
+
+export default function NewsGrid({ filteredCards }: NewsGridProps) {
     const navigate = useNavigate();
     const display = useScreenResize();
 
@@ -54,13 +70,15 @@ export default function NewsGrid({filteredCards}) {
 
     return (
         <>
-            {filteredCards.length !== 0 && <List sx={{ ...styles.cardContainer }}>
-                {filteredCards.slice(0, cardCounter).map((data) => (
-                    <ListItem key={data.id} sx={{ ...styles.listItem }}>
-                        <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
-                    </ListItem>
-                ))}
-            </List>}
+            {filteredCards.length !== 0 && (
+                <List sx={{ ...styles.cardContainer }}>
+                    {filteredCards.slice(0, cardCounter).map((data) => (
+                        <ListItem key={data.id} sx={{ ...styles.listItem }}>
+                            <NewsCard data={data} onClick={() => handleCardClick(data.id)} />
+                        </ListItem>
+                    ))}
+                </List>
+            )}
             {filteredCards.length > cardCounter && (
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <SubmitBtnWithIcon title="Загрузить ещё" width="201px" onClick={handleShowMore} icon />

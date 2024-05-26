@@ -8,6 +8,8 @@ interface PaginationProps {
     handleBack: () => void;
     handleNext: () => void;
     handleShowAll: () => void;
+    title?: string;
+    width: string;
 }
 
 const styles = {
@@ -20,7 +22,7 @@ const styles = {
     stepper: { backgroundColor: 'transparent' },
 };
 
-export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll }: PaginationProps) {
+export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll, title, width }: PaginationProps) {
     return (
         <Box sx={styles.container}>
             <MobileStepper
@@ -45,7 +47,7 @@ export default function PaginationComponent({ activeStep, handleBack, handleNext
                 <ArrowLeft onClick={handleBack} />
                 <ArrowRight onClick={handleNext} />
             </Box>
-            <SubmitBtn title="Смотреть все" width="185px" onClick={handleShowAll} />
+            <SubmitBtn title={title} width={width} onClick={handleShowAll} />
         </Box>
     );
 }

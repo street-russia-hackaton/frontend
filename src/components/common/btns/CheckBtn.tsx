@@ -19,7 +19,7 @@ const theme = createTheme({
 export default function DonateBtn({ sum }: DonateBtnProps) {
     const [alignment, setAlignment] = React.useState('web');
 
-    const handleChange = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
+    const handleChange = (_: React.MouseEvent<HTMLElement>, newAlignment: string) => {
         setAlignment(newAlignment);
     };
 
