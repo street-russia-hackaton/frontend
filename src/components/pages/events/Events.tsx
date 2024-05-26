@@ -24,7 +24,6 @@ export default function Events() {
     const navigate = useNavigate();
 
     const handleLinkClick = () => {
-        console.log('Navigating to /events/:id');
         navigate('/events/:id');
     };
     return (

@@ -1,44 +1,31 @@
 import { Box, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { regionalDepartments } from '../../../utils/constants';
 
-export default function RegionList() {
-    const regionalDepartments = [
-        { letter: 'А', departments: ['Республика Адыгея', 'Республика Алтай', 'Алтайский край', 'Амурская область', 'Архангельская область', 'Астраханская область'] },
-        { letter: 'Б', departments: ['Республика Башкортостан', 'Белгородская область', 'Белгородская область', 'Республика Бурятия'] },
-        { letter: 'В', departments: ['Владимирская область', 'Волгоградская область', 'Вологодская область', 'Воронежская область'] },
-        { letter: 'Д', departments: ['Республика Дагестан'] },
-        { letter: 'Е', departments: ['Еврейская АО'] },
-        { letter: 'З', departments: ['Забайкальский край '] },
-        { letter: 'И', departments: ['Ивановская область', 'Иркутская область', 'Республика Ингушетия'] },
-        { letter: 'К', departments: ['Кабардино-Балкарская Республика', 'Кабардино-Балкарская Республика', 'Кабардино-Балкарская Республика', 'Калужская область', 'Камчатский край', 'Карачаево-Черкесская Республика', 'Республика Карелия', 'Кемеровская область'] },
-        { letter: '', departments: ['Кировская область', 'Республика Коми', 'Костромская область', 'Краснодарский край', 'Республика Крым', 'Курганская область', 'Курская область'] },
-        { letter: 'Л', departments: ['Ленинградская область', 'Липецкая область '] },
-        { letter: 'М', departments: ['Магаданская область', 'Республика Марий Эл', 'Республика Мордовия', 'Москва', 'Московская область', 'Мурманская область'] },
-        { letter: 'Н', departments: ['Ненецкий АО', 'Нижегородская область', 'Новгородская область', 'Новосибирская область'] },
-        { letter: 'О', departments: ['Омская область', 'Оренбургская область', 'Орловская область'] },
-        { letter: 'П', departments: ['Пензенская область', 'Пермский край', 'Приморский край', 'Псковская область'] },
-        { letter: 'Р', departments: ['Ростовская область ', 'Рязанская область'] },
-        { letter: 'С', departments: ['Самарская область', 'Санкт-Петербург', 'Саратовская область', 'Республика Саха (Якутия)', 'Республика Северная Осетия-Алания'] },
-        { letter: '', departments: ['Сахалинская область', 'Свердловская область', 'Севастополь', 'Смоленская область', 'Ставропольский край'] },
-        { letter: 'Т', departments: ['Тамбовская область', 'Республика Татарстан', 'Тверская область', 'Томская область', 'Тульская область', 'Тюменская область'] },
-        { letter: 'У', departments: ['Удмуртская Республика', 'Ульяновская область'] },
-        { letter: 'Х', departments: ['Хабаровский край', 'Республика Хакасия', 'Ханты-Мансийский АО'] },
-        { letter: 'Ч', departments: ['Челябинская область', 'Чеченская Республика', 'Чувашская Республика', 'Чукотский АО'] },
-        { letter: 'Я', departments: ['Ямало-Ненецкий АО', 'Ярославская область'] },
-    ];
+interface RegionListProps {
+    onClick: () => void;
+}
+
+const styles = {
+    container: { margin: '64px 0 120px', display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '32px' },
+    letter: { fontFamily: 'Benzin', marginBottom: '20px' },
+    text: { listStyle: 'none', padding: '0', margin: '0' },
+    department: { textDecoration: 'none', color: '#fff' },
+};
+
+export default function RegionList({ onClick }: RegionListProps) {
     return (
-        <Box sx={{ margin: '64px 0 120px', display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '32px' }}>
+        <Box sx={styles.container}>
             {regionalDepartments.map(({ letter, departments }) => (
                 <Box key={letter}>
-                    <Typography component="p" sx={{ fontFamily: 'Benzin', marginBottom: '20px' }}>
+                    <Typography component="p" sx={styles.letter}>
                         {letter}
                     </Typography>
-                    <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
+                    <ul style={styles.text}>
                         {departments.map((department, index) => (
                             <li key={index} style={{ marginTop: '16px' }}>
-                                <Link to={`#${department}`} style={{ textDecoration: 'none', color: '#fff' }}>
+                                <Box onClick={onClick} style={styles.department}>
                                     {department}
-                                </Link>
+                                </Box>
                             </li>
                         ))}
                     </ul>
