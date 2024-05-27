@@ -11,12 +11,14 @@ export default function About() {
     return (
         <Box sx={{ position: 'relative', overflow: 'hidden' }}>
             <Header backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
-            <Box sx={{ position: 'absolute', top: 30, right: 0 }}>
-                <CardMedia component="img" src={BackgroundAboutPage} sx={{ width: '454px', zIndex: -10 }} />
+            <Box sx={{ margin: '0 60px' }}>
+                <Box sx={{ position: 'absolute', top: 30, right: 0, zIndex: -10 }}>
+                    <CardMedia component="img" src={BackgroundAboutPage} sx={{ width: '454px' }} />
+                </Box>
+                <BreadcrumbsComponent margin="0" />
+                <TitleMainPage title="История" color="#fff" width="50vw" padding="0" height="54px" />
+                <AboutNav />
             </Box>
-            <BreadcrumbsComponent margin="0" />
-            <TitleMainPage title="История" color="#fff" width="50vw" padding="0" height="54px" />
-            <AboutNav />
             <Benefits />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
         </Box>

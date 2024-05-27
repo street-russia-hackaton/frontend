@@ -4,13 +4,14 @@ import ArrowLeft from '../../../assets/images/ArrowLeft.svg?react';
 import SubmitBtn from '../btns/SubmitBtn';
 
 interface PaginationProps {
-    activeStep: number;
+    activeStep?: number;
     handleBack: () => void;
     handleNext: () => void;
-    handleShowAll: () => void;
+    handleShowAll?: () => void;
     title?: string;
-    width: string;
+    width?: string;
     margin?: string;
+    showButton?: boolean;
 }
 
 const styles = {
@@ -23,7 +24,7 @@ const styles = {
     stepper: { backgroundColor: 'transparent' },
 };
 
-export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll, title, width, margin }: PaginationProps) {
+export default function PaginationComponent({ activeStep, handleBack, handleNext, handleShowAll, title, width, margin, showButton = true }: PaginationProps) {
     return (
         <Box sx={{ ...styles.container, margin: margin ? margin : '0' }}>
             <MobileStepper
@@ -45,10 +46,10 @@ export default function PaginationComponent({ activeStep, handleBack, handleNext
                 backButton={null}
             />
             <Box>
-                <ArrowLeft onClick={handleBack} />
+                <ArrowLeft onClick={handleBack} style={{ marginRight: '20px' }} />
                 <ArrowRight onClick={handleNext} />
             </Box>
-            <SubmitBtn title={title} width={width} onClick={handleShowAll} />
+            {showButton && <SubmitBtn title={title} width={width} onClick={handleShowAll} />}
         </Box>
     );
 }
