@@ -12,7 +12,7 @@ import Partners from '../../common/partners/Partners';
 import BackgroundKomi from '../../../assets/images/KomiBackground.svg';
 import MapKomi from '../../../assets/images/MapKomi.svg';
 import MapKomiOutline from '../../../assets/images/MapKomiOutline.svg';
-import RegionNav from './RegionNav';
+import RegionNav from '../../common/regions/RegionNav';
 
 const styles = {
     image: { width: '650px', height: '401px' },

@@ -1,8 +1,9 @@
 import { Box } from '@mui/material';
-import NavTitle from '../../common/navPopupTitle/navPopupTitle';
+import NavTitle from '../navPopupTitle/navPopupTitle';
 import { useState } from 'react';
 import RegionEvent from './RegionEvent';
 import RegionNew from './RegionNew';
+import RegionObject from './RegionObject';
 
 export default function RegionNav() {
     const [selectedTab, setSelectedTab] = useState('Объекты');
@@ -12,7 +13,7 @@ export default function RegionNav() {
     };
 
     const tabs = [
-        { label: 'Объекты', onClick: () => handleTabChange('Объекты') },
+        { label: 'Объекты (6)', onClick: () => handleTabChange('Объекты') },
         { label: 'Новости (6)', onClick: () => handleTabChange('Новости') },
         { label: 'Мероприятия (8)', onClick: () => handleTabChange('Мероприятия') },
     ];
@@ -20,7 +21,7 @@ export default function RegionNav() {
     return (
         <Box sx={{ marginTop: '64px' }}>
             <NavTitle tabs={tabs} margin="0 0 0 80px" />
-            {selectedTab === 'Объекты' && <RegionNew />}
+            {selectedTab === 'Объекты' && <RegionObject />}
             {selectedTab === 'Новости' && <RegionNew />}
             {selectedTab === 'Мероприятия' && <RegionEvent />}
         </Box>

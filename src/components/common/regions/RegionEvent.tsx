@@ -1,12 +1,12 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
-import SubmitBtn from '../../common/btns/SubmitBtn';
+import SubmitBtn from '../btns/SubmitBtn';
 import { EventCardData, EventPageCardData } from '../../../utils/constants';
-import FilterEvents from '../../common/filters/FilterEvents';
-import Calendar from '../../common/calendar/Calendar';
+import FilterEvents from '../filters/FilterEvents';
+import Calendar from '../calendar/Calendar';
 import { CardEvent } from '../../../types/types';
 import { useNavigate } from 'react-router-dom';
-import EventCard from '../../common/events/eventCard/EventCard';
+import EventCard from '../events/eventCard/EventCard';
 
 const styles = {
     cards: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 40px ' },
