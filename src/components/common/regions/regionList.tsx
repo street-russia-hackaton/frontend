@@ -9,7 +9,7 @@ const styles = {
     container: { margin: '64px 0 120px', display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '32px' },
     letter: { fontFamily: 'Benzin', marginBottom: '20px' },
     text: { listStyle: 'none', padding: '0', margin: '0' },
-    department: { textDecoration: 'none', color: '#fff' },
+    department: { textDecoration: 'none', color: '#fff', cursor: 'pointer' },
 };
 
 export default function RegionList({ onClick }: RegionListProps) {

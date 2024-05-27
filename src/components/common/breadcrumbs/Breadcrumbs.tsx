@@ -8,6 +8,7 @@ const breadcrumbNameMap: { [key: string]: string } = {
     '/news': 'Все новости',
     '/news/:id': 'Новость',
     '/about': 'О нас',
+    '/about/:id': 'Валентин Работенко',
     '/events': 'Все мероприятия',
     '/events/:id': 'Баскетбольный Чемпионат',
     '/regional': 'Региональные отделения',
