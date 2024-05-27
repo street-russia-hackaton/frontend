@@ -76,9 +76,8 @@ export default function EventComponent({ selectedEvent }: { selectedEvent: CardE
                     <Box>
                         <TitleMainPage title="Кураторы" color="#fff" padding="0" />
                         <Box sx={{ display: 'flex', gap: '20px' }}>
-                            {curators.map((curator, index) => (
-                                <CuratorCard key={index} data={curator} />
-                            ))}
+                            <CuratorCard key={0} data={curators[0]} />
+                            <CuratorCard key={1} data={curators[1]} />
                         </Box>
                     </Box>
                     <BackgroundImg />

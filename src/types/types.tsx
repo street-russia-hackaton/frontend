@@ -90,3 +90,28 @@ export interface CardObject {
     timeDayOff: string;
     title: string;
 }
+
+export interface CardDocFilmAbout {
+    id?: number;
+    image: string;
+    tag: string;
+    city?: string;
+    title: string;
+    text: string;
+}
+
+export interface AboutDepartment {
+    id?: number;
+    link?: string;
+    name: string;
+    text: JSX.Element;
+    position: string;
+    imageSrc: string;
+}
+
+export interface CardPartnerAbout {
+    id?: number;
+    image: string;
+    title: string;
+    text: string;
+}

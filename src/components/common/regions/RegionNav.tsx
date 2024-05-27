@@ -20,7 +20,7 @@ export default function RegionNav() {
 
     return (
         <Box sx={{ marginTop: '64px' }}>
-            <NavTitle tabs={tabs} margin="0 0 0 80px" />
+            <NavTitle tabs={tabs} marginTab="0 0 0 80px" />
             {selectedTab === 'Объекты' && <RegionObject />}
             {selectedTab === 'Новости' && <RegionNew />}
             {selectedTab === 'Мероприятия' && <RegionEvent />}
