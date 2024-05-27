@@ -28,6 +28,8 @@ import FenixBattleImg from '../assets/images/FenixBattleImg.svg';
 import StreetDanceCompetition from '../assets/images/StreetDanceCompetition.svg';
 import StreetFashionWeek from '../assets/images/StreetFashionWeek.svg';
 import PilatesFitnesVorobievyGory from '../assets/images/PilatesFitnesVorobievyGory.svg';
+import AnastasiyaYanchecko from '../assets/images/AnastasiyaYanchecko.svg';
+import KlichSkateParkRegionImg from '../assets/images/KlichSkateParkRegionImg.svg';
 
 import { CardEvent, DesciplineCard } from '../types/types';
 
@@ -709,7 +711,116 @@ export const curators = [
                 Эксперт Всероссийского конкурса молодежных проектов Федерального агентства по делам молодежи', position: 'Заместитель Председателя по GR политике и административному управлению
             </>
         ),
+        position: 'Председатель',
         imageSrc: CuratorImgVyacheslav,
+    },
+    {
+        id: 3,
+        link: '#',
+        name: 'Анастасия Янченко',
+        text: (
+            <>
+                Заместитель Председателя по GR политике и административному управлению ОООУКС «Улицы России»
+                <br />
+                Эксперт Всероссийского конкурса молодежных проектов Федерального агентства по делам молодежи', position: 'Заместитель Председателя по GR политике и административному управлению
+            </>
+        ),
+        position: 'Ставропольский край',
+        imageSrc: AnastasiyaYanchecko,
+    },
+];
+
+export const regionalDepartments = [
+    { letter: 'А', departments: ['Республика Адыгея', 'Республика Алтай', 'Алтайский край', 'Амурская область', 'Архангельская область', 'Астраханская область'] },
+    { letter: 'Б', departments: ['Республика Башкортостан', 'Белгородская область', 'Белгородская область', 'Республика Бурятия'] },
+    { letter: 'В', departments: ['Владимирская область', 'Волгоградская область', 'Вологодская область', 'Воронежская область'] },
+    { letter: 'Д', departments: ['Республика Дагестан'] },
+    { letter: 'Е', departments: ['Еврейская АО'] },
+    { letter: 'З', departments: ['Забайкальский край '] },
+    { letter: 'И', departments: ['Ивановская область', 'Иркутская область', 'Республика Ингушетия'] },
+    { letter: 'К', departments: ['Кабардино-Балкарская Республика', 'Кабардино-Балкарская Республика', 'Кабардино-Балкарская Республика', 'Калужская область', 'Камчатский край', 'Карачаево-Черкесская Республика', 'Республика Карелия', 'Кемеровская область'] },
+    { letter: '', departments: ['Кировская область', 'Республика Коми', 'Костромская область', 'Краснодарский край', 'Республика Крым', 'Курганская область', 'Курская область'] },
+    { letter: 'Л', departments: ['Ленинградская область', 'Липецкая область '] },
+    { letter: 'М', departments: ['Магаданская область', 'Республика Марий Эл', 'Республика Мордовия', 'Москва', 'Московская область', 'Мурманская область'] },
+    { letter: 'Н', departments: ['Ненецкий АО', 'Нижегородская область', 'Новгородская область', 'Новосибирская область'] },
+    { letter: 'О', departments: ['Омская область', 'Оренбургская область', 'Орловская область'] },
+    { letter: 'П', departments: ['Пензенская область', 'Пермский край', 'Приморский край', 'Псковская область'] },
+    { letter: 'Р', departments: ['Ростовская область ', 'Рязанская область'] },
+    { letter: 'С', departments: ['Самарская область', 'Санкт-Петербург', 'Саратовская область', 'Республика Саха (Якутия)', 'Республика Северная Осетия-Алания'] },
+    { letter: '', departments: ['Сахалинская область', 'Свердловская область', 'Севастополь', 'Смоленская область', 'Ставропольский край'] },
+    { letter: 'Т', departments: ['Тамбовская область', 'Республика Татарстан', 'Тверская область', 'Томская область', 'Тульская область', 'Тюменская область'] },
+    { letter: 'У', departments: ['Удмуртская Республика', 'Ульяновская область'] },
+    { letter: 'Х', departments: ['Хабаровский край', 'Республика Хакасия', 'Ханты-Мансийский АО'] },
+    { letter: 'Ч', departments: ['Челябинская область', 'Чеченская Республика', 'Чувашская Республика', 'Чукотский АО'] },
+    { letter: 'Я', departments: ['Ямало-Ненецкий АО', 'Ярославская область'] },
+];
+
+export const objectCardData = [
+    {
+        id: 0,
+        address: ' г. Сыктывкар, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Сыктывкар',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 1,
+        address: ' г. Москва, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Москва',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 2,
+        address: ' г. Москва, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        videoSrc: 'https://www.youtube.com/embed/izgsppAKtjE?si=ntK09MJDetFF4lC8',
+        city: 'Москва',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 3,
+        address: ' г. Санкт-Петербург, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Санкт-Петербург',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 4,
+        address: ' г. Санкт-Петербург, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        videoSrc: 'https://www.youtube.com/embed/Q3Fj7r8wfKE?si=HeUIBba1clyF_hxf',
+        city: 'Санкт-Петербург',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 5,
+        address: ' г. Сыктывкар, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Сыктывкар',
+        tag: 'Workout',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
     },
 ];
 

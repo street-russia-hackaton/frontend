@@ -20,12 +20,10 @@ const styles = {
 
 export default function Events() {
     const [filteredEvents, setFilteredEvents] = useState<CardEvent[]>(EventCardData.slice(0, 4));
-    console.log(filteredEvents);
 
     const navigate = useNavigate();
 
     const handleLinkClick = () => {
-        console.log('Navigating to /events/:id');
         navigate('/events/:id');
     };
     return (

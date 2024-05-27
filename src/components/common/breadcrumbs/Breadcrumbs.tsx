@@ -9,8 +9,9 @@ const breadcrumbNameMap: { [key: string]: string } = {
     '/news/:id': 'Новость',
     '/about': 'О нас',
     '/events': 'Все мероприятия',
-    '/events/:id': 'Мероприятие',
+    '/events/:id': 'Баскетбольный Чемпионат',
     '/regional': 'Региональные отделения',
+    '/regional/:id': 'Республика Коми',
 };
 
 interface LinkRouterProps extends LinkProps {

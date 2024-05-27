@@ -34,6 +34,7 @@ export interface CardEvent {
     aboutInfo?: string | undefined;
     eventOff?: boolean;
 }
+
 export interface CardNew {
     id: number;
     tag?: string;
@@ -75,4 +76,17 @@ export interface CardUser {
     tel: string;
     region: string;
     imageSrc: string;
+}
+
+export interface CardObject {
+    id?: number;
+    image?: string;
+    videoSrc?: string;
+    tag: string;
+    secondTag: string;
+    city: string;
+    address: string;
+    timeWeek: string;
+    timeDayOff: string;
+    title: string;
 }
