@@ -8,6 +8,7 @@ import { Box, CardMedia } from '@mui/material';
 import BackgroundAboutPage from '../../../assets/images/BackgroundAboutPAge.svg';
 import AboutDepartment from '../../common/about/AboutDepartment';
 import AboutRegionDepartment from '../../common/about/AboutRegionDepartment';
+import AboutPartnersNav from '../../common/about/AboutPartnersNav';
 
 export default function About() {
     return (
@@ -22,6 +23,8 @@ export default function About() {
                 <AboutNav />
                 <AboutDepartment />
                 <AboutRegionDepartment />
+                <TitleMainPage title="Партнеры" color="#fff" width="50vw" padding="0" height="54px" margin="120px 0 0 0" />
+                <AboutPartnersNav />
             </Box>
             <Benefits />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />

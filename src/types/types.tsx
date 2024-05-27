@@ -96,3 +96,10 @@ export interface AboutDepartment {
     position: string;
     imageSrc: string;
 }
+
+export interface CardPartnerAbout {
+    id?: number;
+    image: string;
+    title: string;
+    text: string;
+}
