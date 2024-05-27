@@ -34,6 +34,7 @@ export interface CardEvent {
     aboutInfo?: string | undefined;
     eventOff?: boolean;
 }
+
 export interface CardNew {
     id: number;
     tag?: string;
@@ -63,4 +64,17 @@ export interface PopupProps {
     onClose: () => void;
     onClick: () => void;
     children?: React.ReactNode;
+}
+
+export interface CardObject {
+    id?: number;
+    image?: string;
+    videoSrc?: string;
+    tag: string;
+    secondTag: string;
+    city: string;
+    address: string;
+    timeWeek: string;
+    timeDayOff: string;
+    title: string;
 }

@@ -28,6 +28,7 @@ import StreetDanceCompetition from '../assets/images/StreetDanceCompetition.svg'
 import StreetFashionWeek from '../assets/images/StreetFashionWeek.svg';
 import PilatesFitnesVorobievyGory from '../assets/images/PilatesFitnesVorobievyGory.svg';
 import AnastasiyaYanchecko from '../assets/images/AnastasiyaYanchecko.svg';
+import KlichSkateParkRegionImg from '../assets/images/KlichSkateParkRegionImg.svg';
 
 import { CardEvent, DesciplineCard } from '../types/types';
 
@@ -751,4 +752,73 @@ export const regionalDepartments = [
     { letter: 'Х', departments: ['Хабаровский край', 'Республика Хакасия', 'Ханты-Мансийский АО'] },
     { letter: 'Ч', departments: ['Челябинская область', 'Чеченская Республика', 'Чувашская Республика', 'Чукотский АО'] },
     { letter: 'Я', departments: ['Ямало-Ненецкий АО', 'Ярославская область'] },
+];
+
+export const objectCardData = [
+    {
+        id: 0,
+        address: ' г. Сыктывкар, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Сыктывкар',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 1,
+        address: ' г. Москва, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Москва',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 2,
+        address: ' г. Москва, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        videoSrc: 'https://www.youtube.com/embed/izgsppAKtjE?si=ntK09MJDetFF4lC8',
+        city: 'Москва',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 3,
+        address: ' г. Санкт-Петербург, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Санкт-Петербург',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 4,
+        address: ' г. Санкт-Петербург, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        videoSrc: 'https://www.youtube.com/embed/Q3Fj7r8wfKE?si=HeUIBba1clyF_hxf',
+        city: 'Санкт-Петербург',
+        tag: 'Street art',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+    {
+        id: 5,
+        address: ' г. Сыктывкар, ул. Лужники, 24',
+        timeWeek: 'ПН-ПТ 10.00-21.00 ',
+        timeDayOff: 'СБ-ВС 11.00-22.00',
+        image: KlichSkateParkRegionImg,
+        city: 'Сыктывкар',
+        tag: 'Workout',
+        secondTag: 'Hip-hop Dance',
+        title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
 ];
