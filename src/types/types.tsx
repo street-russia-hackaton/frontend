@@ -87,3 +87,12 @@ export interface CardDocFilmAbout {
     title: string;
     text: string;
 }
+
+export interface AboutDepartment {
+    id?: number;
+    link?: string;
+    name: string;
+    text: JSX.Element;
+    position: string;
+    imageSrc: string;
+}

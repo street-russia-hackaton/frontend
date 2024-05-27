@@ -6,6 +6,8 @@ import AboutNav from '../../common/about/AboutNav';
 import Benefits from '../main/benefits/Benefits';
 import { Box, CardMedia } from '@mui/material';
 import BackgroundAboutPage from '../../../assets/images/BackgroundAboutPAge.svg';
+import AboutDepartment from '../../common/about/AboutDepartment';
+import AboutRegionDepartment from '../../common/about/AboutRegionDepartment';
 
 export default function About() {
     return (
@@ -18,6 +20,8 @@ export default function About() {
                 <BreadcrumbsComponent margin="0" />
                 <TitleMainPage title="История" color="#fff" width="50vw" padding="0" height="54px" />
                 <AboutNav />
+                <AboutDepartment />
+                <AboutRegionDepartment />
             </Box>
             <Benefits />
             <Footer backgroundColor="rgba(255,255,255, 0.27)" backdropFilter="blur(10px)" />
