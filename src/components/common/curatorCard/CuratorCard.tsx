@@ -41,8 +41,8 @@ interface CuratorProps {
 export default function CuratorCard({ data }: CuratorProps) {
     const navigate = useNavigate();
 
-    const handleCardClick = (id: number) => {
-        navigate(`/about/${id}`);
+    const handleCardClick = () => {
+        navigate('/about/:id');
     };
 
     return (
@@ -62,7 +62,7 @@ export default function CuratorCard({ data }: CuratorProps) {
                     <Link href={data.link} sx={{ height: '30px' }}>
                         <IconVk />
                     </Link>
-                    <CardActions onClick={() => handleCardClick(data.id)} sx={{ p: 0 }}>
+                    <CardActions onClick={() => handleCardClick()} sx={{ p: 0 }}>
                         <Typography component="p" sx={{ ...styles.text, ...styles.small, textTransform: 'capitalize', display: 'flex', alignItems: 'center' }}>
                             Подробнее <ArrowRightWithoutRound style={styles.arrow} />
                         </Typography>
