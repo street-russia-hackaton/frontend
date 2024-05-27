@@ -15,7 +15,7 @@ import SubmitBtn from '../../common/btns/SubmitBtn';
 import EventPagination from '../../common/events/EventPagination';
 
 const styles = {
-    cards: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 40px ' },
+    cards: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0 40px ' },
 };
 
 export default function Events() {
@@ -48,7 +48,7 @@ export default function Events() {
                     <TitleMainPage title="Возможно тебе будет интересно" color="#fff" width="65vw" padding="0" height="54px" />
                     <Box sx={styles.cards}>
                         {filteredEvents.map((data, index) => (
-                            <EventCard key={index} data={data} onClick={handleLinkClick} cardStyle={index === filteredEvents.length - 1 ? { marginTop: '-30px' } : {}} />
+                            <EventCard key={index} data={data} onClick={handleLinkClick} cardStyle={index === ( filteredEvents.length - 1 && index !== 2 ) ? { marginTop: '-30px' } : {}} />
                         ))}
                     </Box>
                 </Box>

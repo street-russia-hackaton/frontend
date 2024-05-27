@@ -1,0 +1,16 @@
+.container {
+    width: 427px;
+    height: 400px;
+
+    &__button {
+        opacity: 0;
+        transition: 0.2s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &:hover ~ &__button {
+        opacity: 1;
+    }
+}

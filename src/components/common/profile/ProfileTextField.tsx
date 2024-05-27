@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { TextField, InputLabel, Box, FormControl, FormHelperText } from '@mui/material';
+import { TextField, InputLabel, Box, FormControl } from '@mui/material';
 
 interface TextFieldProps {
     label: string;
@@ -12,7 +12,7 @@ interface TextFieldProps {
     margin: string;
     error?: boolean;
     helperText?: string;
-    borderBottom?: boolean | string;
+    borderBottom?: string;
 }
 
 const styles = {
@@ -48,7 +48,7 @@ const ProfileTextField = forwardRef<HTMLInputElement, TextFieldProps>(({ label, 
                     name={name}
                     type={type}
                     fullWidth
-                    sx={{...styles.text, borderBottom: borderBottom ? borderBottom : 'none',}}
+                    sx={{...styles.text, borderBottom: borderBottom}}
                     inputRef={ref}
                     InputProps={{
                         style: {

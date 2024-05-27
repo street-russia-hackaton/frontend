@@ -716,12 +716,24 @@ export const curators = [
 export const userData = [
     {
         id: 1,
+        firstName: 'Иван',
+        lastName: 'Иванов',
+        patronimicName: '',
+        role: '',
+        email: 'ivanov@mail.ru',
+        tel: '',
+        region: 'Москва',
+        imageSrc: '',
+    },
+    {
+        id: 2,
         firstName: 'Валерий',
         lastName: 'Пупкин',
         patronimicName: 'Юрьевич',
-        role: '',
+        role: 'Куратор',
         email: 'pupkin.valera00@mail.ru',
         tel: '+79834561527',
+        region: 'Москва',
         imageSrc: userImg,
     },
 ];

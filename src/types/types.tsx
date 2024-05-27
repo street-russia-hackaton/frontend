@@ -73,5 +73,6 @@ export interface CardUser {
     role: string;
     email: string;
     tel: string;
+    region: string;
     imageSrc: string;
 }
