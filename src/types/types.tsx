@@ -66,6 +66,18 @@ export interface PopupProps {
     children?: React.ReactNode;
 }
 
+export interface CardUser {
+    id: number;
+    firstName: string;
+    lastName: string;
+    patronimicName: string;
+    role: string;
+    email: string;
+    tel: string;
+    region: string;
+    imageSrc: string;
+}
+
 export interface CardObject {
     id?: number;
     image?: string;

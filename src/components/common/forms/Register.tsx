@@ -7,6 +7,8 @@ import FilterAuth from '../filters/FilterAuth.tsx';
 import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
 import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { userData } from '../../../utils/constants';
 
 interface RegisterProps {
     onRegister: (name: string, email: string, password: string) => void;
@@ -34,6 +36,8 @@ const schema = yup.object().shape({
 });
 
 export default function Register({ onRegister }: RegisterProps) {
+    const navigate = useNavigate();
+
     const {
         handleSubmit,
         control,
@@ -48,6 +52,14 @@ export default function Register({ onRegister }: RegisterProps) {
             console.error('Ошибка валидации:', errors);
         } else {
             onRegister(data.name, data.email, data.password);
+        }
+    };
+
+    const onButtonClick = () => {
+        if (!isValid) {
+            console.error('Ошибка валидации:', errors);
+        } else {
+            navigate('/profile', { state: userData[0], replace: false });
         }
     };
 
@@ -74,7 +86,7 @@ export default function Register({ onRegister }: RegisterProps) {
                     <Controller name="email" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Электронная почта" placeholder="Введи электронную почту" error={!!errors.email} helperText={errors.email ? errors.email.message : ''} {...field} />} />
                     <Controller name="password" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Пароль" placeholder="Придумай пароль, минимум 6 символов" type="password" error={!!errors.password} helperText={errors.password ? errors.password.message : ''} {...field} />} />
                     <Controller name="confirmPassword" control={control} render={({ field }) => <TextFieldAuth margin="16px 0 0 0" label="Подтверди пароль" placeholder="Повтори введённый пароль" type="password" error={!!errors.confirmPassword} helperText={errors.confirmPassword ? errors.confirmPassword.message : ''} {...field} />} />
-                    <SubmitBtnColor title="Зарегистрироваться" margin="32px 0 0 0" width="553px" disabled={!isCompleted} />
+                    <SubmitBtnColor onClick={onButtonClick} title="Зарегистрироваться" margin="32px 0 0 0" width="553px" disabled={!isCompleted} />
                 </form>
                 <TextPersonalData />
             </Box>
