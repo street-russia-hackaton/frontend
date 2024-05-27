@@ -6,6 +6,8 @@ import TextFieldAuth from '../textfieldAuth/textfieldAuth.tsx';
 import SubmitBtnColor from '../btns/SubmitBtnColor.tsx';
 import TextPersonalData from '../textPersonalData/TextPersonalData.tsx';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { userData } from '../../../utils/constants';
 
 interface LoginProps {
     onLogin: (email: string, password: string) => void;
@@ -27,6 +29,8 @@ const styles = {
 };
 
 export default function Login({ onLogin }: LoginProps) {
+    const navigate = useNavigate();
+
     const {
         handleSubmit,
         control,
@@ -41,6 +45,15 @@ export default function Login({ onLogin }: LoginProps) {
             console.error('Ошибка валидации:', errors);
         } else {
             onLogin(data.email, data.password);
+            navigate('/profile', { replace: false });
+        }
+    };
+
+    const onButtonClick = () => {
+        if (!isValid) {
+            console.error('Ошибка валидации:', errors);
+        } else {
+            navigate('/profile', { state: userData[1], replace: false });
         }
     };
 
@@ -59,7 +72,7 @@ export default function Login({ onLogin }: LoginProps) {
                     <Typography component="p" sx={styles.text}>
                         Если ты являешься членом организации, можешь найти свой пароль на почте, которую указывал при вступлении.
                     </Typography>
-                    <SubmitBtnColor title="Войти" margin="16px 0 0 0" disabled={!isCompleted} />
+                    <SubmitBtnColor onClick={onButtonClick} title="Войти" margin="16px 0 0 0" disabled={!isCompleted} />
                     <TextPersonalData />
                 </form>
             </Box>

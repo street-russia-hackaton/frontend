@@ -20,6 +20,7 @@ import FenixCampEvent from '../assets/images/FenixCampEvent.svg';
 import SkateboardWomanEvent from '../assets/images/SkateboardWomanEvent.svg';
 import EducationForumEvent from '../assets/images/EducationForumEvent.svg';
 import CuratorImg from '../assets/images/CuratorImg.png';
+import userImg from '../assets/images/UserImg.png';
 import CuratorImgVyacheslav from '../assets/images/CuratorImgVyacheslav.svg';
 import StreetArtGorkiyPark from '../assets/images/StreetArtGorkiyPark.svg';
 import BasketChampionatImg from '../assets/images/BasketChampionatImg.svg';
@@ -829,6 +830,7 @@ export const objectCardData = [
     },
 ];
 
+
 export const DocFilmAboutData = [
     {
         id: 0,
@@ -1062,5 +1064,29 @@ export const AboutPartnerData = [
         image: RosTeensIcon,
         title: 'Росмолодёжь',
         text: ' Федеральное агентство по делам молодёжи (Росмолодёжь) — федеральный орган исполнительной власти, координатор в сфере молодёжной политики, создающий среду с равными условиями для самореализации молодёжи. Миссия — создать среду, которая поможет молодым найти и реализовывать свои мечты и таланты в нашей стране.',
+
+export const userData = [
+    {
+        id: 1,
+        firstName: 'Иван',
+        lastName: 'Иванов',
+        patronimicName: '',
+        role: '',
+        email: 'ivanov@mail.ru',
+        tel: '',
+        region: 'Москва',
+        imageSrc: '',
+    },
+    {
+        id: 2,
+        firstName: 'Валерий',
+        lastName: 'Пупкин',
+        patronimicName: 'Юрьевич',
+        role: 'Куратор',
+        email: 'pupkin.valera00@mail.ru',
+        tel: '+79834561527',
+        region: 'Москва',
+        imageSrc: userImg,
+
     },
 ];

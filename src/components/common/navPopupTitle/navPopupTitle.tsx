@@ -18,7 +18,9 @@ const theme = createTheme({
 });
 
 const styles = {
-    title: { fontFamily: 'Benzin', color: 'rgba(255, 255, 255, 0.5)' },
+
+    title: { fontFamily: 'Benzin', fontSize: '24px', color: 'rgba(255, 255, 255, 0.5)', ':first-of-type': {margin: 0} },
+
 };
 
 export default function NavPopupTitle({ tabs, margin, marginTab, fontSize }: NavPopupTitleProps) {
@@ -33,7 +35,9 @@ export default function NavPopupTitle({ tabs, margin, marginTab, fontSize }: Nav
         <ThemeProvider theme={theme}>
             <Tabs value={value} onChange={handleChange} aria-label="auth navigation" sx={{ '& .MuiButtonBase-root': { maxWidth: '100vw', margin: marginTab ? marginTab : '0' } }}>
                 {tabs.map((tab, index) => (
+
                     <Tab key={index} label={tab.label} sx={{ ...styles.title, margin: margin ? margin : '0 0 0 47px', fontSize: fontSize ? fontSize : '24px' }} />
+
                 ))}
             </Tabs>
         </ThemeProvider>
