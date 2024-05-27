@@ -115,3 +115,9 @@ export interface CardPartnerAbout {
     title: string;
     text: string;
 }
+
+export interface CardDocumentAbout {
+    id?: number;
+    title: string;
+    date: string;
+}
