@@ -10,7 +10,7 @@ import { CardEvent } from '../../../types/types';
 import { EventCardData } from '../../../utils/constants';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RegionList from '../../common/regions/RegionList';
+import RegionList from '../../common/regions/regionList';
 
 const styles = {
     cards: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 40px ' },
