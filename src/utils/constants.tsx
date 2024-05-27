@@ -29,6 +29,7 @@ import StreetFashionWeek from '../assets/images/StreetFashionWeek.svg';
 import PilatesFitnesVorobievyGory from '../assets/images/PilatesFitnesVorobievyGory.svg';
 import AnastasiyaYanchecko from '../assets/images/AnastasiyaYanchecko.svg';
 import KlichSkateParkRegionImg from '../assets/images/KlichSkateParkRegionImg.svg';
+import DocFilmImg from '../assets/images/DocFilmImg.svg';
 
 import { CardEvent, DesciplineCard } from '../types/types';
 
@@ -820,5 +821,40 @@ export const objectCardData = [
         tag: 'Workout',
         secondTag: 'Hip-hop Dance',
         title: '«КЛИЧ» Крытый Скейт-Парк в Сыктывкаре',
+    },
+];
+
+export const DocFilmAboutData = [
+    {
+        id: 0,
+        image: DocFilmImg,
+        tag: 'Street art',
+        city: 'Челябинск',
+        title: 'Павел Кан',
+        text: ' Павел Кан – танцор, трейсер, диджей... Человек улиц с самого начала и до конца. Вы послушайте его историю, и берите в команду диджеев, которые классно изменят весь мир вокруг. 2 и 3 октябрья Подмосковный город стал эпицентром хип-хоп культуры.',
+    },
+    {
+        id: 1,
+        image: DocFilmImg,
+        tag: 'Bmx',
+        city: 'Москва',
+        title: 'Паша Знаг. Граффити и каллиграффити',
+        text: 'Юбилейный 10-й баттл школы хип-хоп танца Феникс и торжественная церемония награждения сентябрь-октябрь 2024 г.',
+    },
+    {
+        id: 2,
+        image: DocFilmImg,
+        tag: 'Parkour',
+        city: 'Санкт-Петербург',
+        title: 'Егор никулин (Скита)',
+        text: 'Павел Кан – танцор, трейсер, диджей... Человек улиц с самого начала и до конца. Вы послушайте его историю, и берите в команду диджеев, которые классно изменят весь мир вокруг. 2 и 3 октябрья Подмосковный город стал эпицентром хип-хоп культуры.',
+    },
+    {
+        id: 3,
+        image: DocFilmImg,
+        tag: 'Hip-hop dance',
+        city: 'Челябинск',
+        title: ' FENIX BATTLE 10 лет Фениксу',
+        text: 'Юбилейный 10-й баттл школы хип-хоп танца Феникс и торжественная церемония награждения сентябрь-октябрь 2024 г.',
     },
 ];

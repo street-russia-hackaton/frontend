@@ -2,19 +2,18 @@ import { useState, useEffect } from 'react';
 import FilterSelect from '../filterSelect/FilterSelect';
 import { Box, SelectChangeEvent } from '@mui/material';
 import { cities, disciplines } from '../../../utils/constants';
-import { CardObject } from '../../../types/types';
+import { CardDocFilmAbout } from '../../../types/types';
 import NotFound from '../notFound/NotFound';
-import FilterCheckboxObject from './FilterCheckboxObject';
 
 interface StateProps {
-    setFilteredCards: (evt: CardObject[]) => void;
-    cardList: CardObject[];
+    setFilteredCards: (evt: CardDocFilmAbout[]) => void;
+    cardList: CardDocFilmAbout[];
 }
 
-export default function FilterObject({ setFilteredCards, cardList }: StateProps) {
+export default function FiltersDocFilms({ setFilteredCards, cardList }: StateProps) {
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [selectedDesciplines, setSelectedDesciplines] = useState<string>('');
-    const [filteredResult, setFilteredResult] = useState<CardObject[]>([]);
+    const [filteredResult, setFilteredResult] = useState<CardDocFilmAbout[]>([]);
 
     const handleCityChange = (evt: SelectChangeEvent<string>) => {
         setSelectedCity(evt.target.value);
@@ -24,7 +23,7 @@ export default function FilterObject({ setFilteredCards, cardList }: StateProps)
         setSelectedDesciplines(evt.target.value);
     };
 
-    const getfilteredCards = (list: CardObject[], primaryKey: keyof CardObject, secondaryKey: keyof CardObject, primaryOption: string, secondaryOption: string): CardObject[] => {
+    const getfilteredCards = (list: CardDocFilmAbout[], primaryKey: keyof CardDocFilmAbout, secondaryKey: keyof CardDocFilmAbout, primaryOption: string, secondaryOption: string): CardDocFilmAbout[] => {
         let primaryList;
         let secondaryList;
 
@@ -58,14 +57,11 @@ export default function FilterObject({ setFilteredCards, cardList }: StateProps)
 
     return (
         <Box>
-            <Box sx={{ display: 'flex' }}>
-                <Box sx={{ display: 'flex', margin: '40px 20px 0 0' }}>
-                    <FilterSelect label="Выбери регион" value={selectedCity} onChange={handleCityChange} items={cities} title="Выбери регион" margin="0 20px 0 0 " />
-                    <FilterSelect label="Выбери дисцеплину" value={selectedDesciplines} onChange={handleDesciplinesChange} items={disciplines} title="Выбери дисцеплину" />
-                </Box>
-                <FilterCheckboxObject />
+            <Box sx={{ display: 'flex', marginTop: '40px' }}>
+                <FilterSelect label="Выбери регион" value={selectedCity} onChange={handleCityChange} items={cities} title="Выбери регион" margin="0 20px 0 0 " />
+                <FilterSelect label="Выбери дисцеплину" value={selectedDesciplines} onChange={handleDesciplinesChange} items={disciplines} title="Выбери дисцеплину" />
             </Box>
-            {filteredResult.length === 0 && <NotFound title="никаких объектов не найдено :( Пожалуйста, измени настройки фильтров, чтобы увидеть актуальные события.  " />}
+            {filteredResult.length === 0 && <NotFound title="никаких документальных фильмов не найдено :( Пожалуйста, измени настройки фильтров, чтобы увидеть актуальные фильмы.  " />}
         </Box>
     );
 }

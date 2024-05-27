@@ -78,3 +78,12 @@ export interface CardObject {
     timeDayOff: string;
     title: string;
 }
+
+export interface CardDocFilmAbout {
+    id?: number;
+    image: string;
+    tag: string;
+    city?: string;
+    title: string;
+    text: string;
+}
