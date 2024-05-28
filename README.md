@@ -19,7 +19,7 @@
 ### Запуск приложения в dev mode
 
 ```javascript
-клонируйте себе репозитори: git@github.com:street-russia-hackaton/frontend.git
+клонируйте репозиторий: git@github.com:street-russia-hackaton/frontend.git
 
 переходите в папку проекта: cd frontend
 
