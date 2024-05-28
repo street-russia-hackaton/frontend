@@ -19,14 +19,14 @@
 ### Запуск приложения в dev mode
 
 ```javascript
-клонируйте себе репозиторий
-git@github.com:street-russia-hackaton/frontend.git
-переходите в папку проекта
-cd frontend
-установите зависимости
-npm ci
-запустите проект
-npm run dev
+клонируйте себе репозитори: git@github.com:street-russia-hackaton/frontend.git
+
+переходите в папку проекта: cd frontend
+
+установите зависимости: npm ci
+
+запустите проект: npm run dev
+
 
 
 ```
