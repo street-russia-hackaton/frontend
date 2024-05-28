@@ -62,7 +62,7 @@ npm run build
 <img src="./src/assets/screenshots/popupDonat.jpg" alt="popupDonat" width="750" height="500">
 
 ##### Страница О нас
-<img src="./src/assets/screenshots/AboutUs.jpg" alt="AboutUs" width="750" height="500">
+<img src="./src/assets/screenshots/AboutUS.jpg" alt="AboutUs" width="750" height="500">
 
 ##### Страница Новости
 <img src="./src/assets/screenshots/News.jpg" alt="News" width="750" height="500">
