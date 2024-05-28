@@ -11,7 +11,7 @@
 
 ---
 
-- [Ольга Панкрашина](https://github.com/Olyaolya13) tg: [@@olyaolya2713](https://t.me/olyaolya2713)
+- [Ольга Панкрашина](https://github.com/Olyaolya13) tg: [@olyaolya2713](https://t.me/olyaolya2713)
 - [Мария Ионова](https://github.com/Plugopanka) tg: [@plugopanka](https://t.me/plugopanka)
 
 ---
