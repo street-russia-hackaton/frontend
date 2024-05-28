@@ -1,0 +1,11 @@
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 100%;
+    overflow: hidden;
+    width: 1440px;
+    object-fit: cover;
+}
