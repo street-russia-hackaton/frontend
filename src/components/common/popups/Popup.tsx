@@ -6,8 +6,8 @@ import { PopupProps } from '../../../types/types';
 const styles = {
     container: {
         position: 'absolute',
-        top: '47%',
-        left: '48%',
+        top: '50vh',
+        left: '50vw',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
