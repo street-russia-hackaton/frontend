@@ -9,3 +9,10 @@
     width: 1440px;
     object-fit: cover;
 }
+
+@media screen and (max-width: 900px) {
+    .logo {
+        width: 273px;
+        height: 73px;
+    }
+}

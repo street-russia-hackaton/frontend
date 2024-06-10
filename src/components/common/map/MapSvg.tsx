@@ -8,7 +8,7 @@ const events = ['контест', 'соревнование'];
 const cities = ['Вологда', 'Невологда', 'Супервологда'];
 const noObjects = ['0 объектов', 'В этом регионе пока нет наших отделений.'];
 
-export default function MapSvg({ offset = { x: -250, y: 300 } }) {
+export default function MapSvg({ offset = { x: -280, y: 200 } }) {
     const [target, setTarget] = useState<boolean | HTMLElement>(false);
     const [data, setData] = useState<{ region: string; object: string; event: string; city: string[] | null; noCity: string }>({
         region: '',
