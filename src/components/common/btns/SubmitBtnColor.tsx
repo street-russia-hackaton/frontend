@@ -31,8 +31,8 @@ export default function SubmitBtnColor({ title, width, height, backgroundColor, 
             disableElevation
             sx={{
                 ...styles.container,
-                width: width ? width : '553px',
-                height: height ? height : '54px',
+                width: {xs: '180px', md: width ? width : '553px'},
+                height: {xs: '48px', md: height ? height : '54px'},
                 backgroundColor: backgroundColor ? backgroundColor : '#2E5B97',
                 color: color ? color : '#fff',
                 '&:hover': {
@@ -51,7 +51,7 @@ export default function SubmitBtnColor({ title, width, height, backgroundColor, 
                 component="h2"
                 sx={{
                     ...styles.title,
-                    fontSize: fontSize ? fontSize : '20px',
+                    fontSize: {xs: '18px', md: fontSize ? fontSize : '20px'},
                 }}
             >
                 {title}

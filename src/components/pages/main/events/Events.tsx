@@ -14,7 +14,7 @@ import EventPagination from '../../../common/events/EventPagination';
 const styles = {
     mainContainer: { height: '100%' },
     container: { margin: '0 60px' },
-    cards: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 40px ' },
+    cards: { display: 'grid', gridTemplateColumns: {xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}, gap: '32px 40px ' },
 };
 
 export default function Events() {

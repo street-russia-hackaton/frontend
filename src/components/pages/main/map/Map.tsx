@@ -16,17 +16,16 @@ const styles = {
 };
 
 export default function Map() {
-
     return (
-        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: { sm: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
-            <Typography variant="h2" sx={{ ...styles.h, fontSize: '36px', mb: '20px' }}>
+        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: { xs: '162px 0 100px', md: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
+            <Typography variant="h2" sx={{ ...styles.h, maxWidth: { xs: '310px', md: '100%' }, fontSize: { xs: '20px', md: '36px' }, mb: '20px', position: 'relative', zIndex: 1 }}>
                 улицы начинаются с{' '}
                 <Box component="span" sx={{ color: '#2E5B97', position: 'relative' }}>
                     <img src={Background} alt="Фон для текста." className={style.bgImg} />
                     тебя
                 </Box>
             </Typography>
-            <Typography variant="h3" sx={{ ...styles.h, fontSize: '24px', mb: '32px' }}>
+            <Typography variant="h3" sx={{ ...styles.h, fontSize: { xs: '16px', md: '24px' }, mb: { xs: '40px', md: '32px' } }}>
                 найди{' '}
                 <Box component="span" sx={{ color: '#AA433A' }}>
                     свой
