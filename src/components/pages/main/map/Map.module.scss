@@ -7,14 +7,19 @@
     z-index: -1;
 }
 
-.mapImg {
-    width: 1317px;
-    height: 670px;
+.img {
+    display: none;
+    width: 100%;
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 900px) {
     .bgImg {
         width: 94.66px;
         height: 79.69px;
+    }
+
+    .img {
+        display: block;
     }
 }

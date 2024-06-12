@@ -9,9 +9,10 @@ interface SelectAuthProps {
     onChange: (event: SelectChangeEvent<string>) => void;
     defaultValue?: string;
     title?: string;
-    items: { id: number; name: string }[];
+    items: { id: number | string; name: string; path?: string[]; isHere?: string }[] ;
     margin?: string;
     width?: string;
+    height?: string;
 }
 
 const styles = {
@@ -19,7 +20,7 @@ const styles = {
     placeholder: { textAlign: 'start', color: '#222', backgroundColor: '#fff', borderRadius: 0, fontSize: '16px' },
 };
 
-export default function FilterSelect({ label, value, onChange, defaultValue = '', title, items, margin, width }: SelectAuthProps) {
+export default function FilterSelect({ label, value, onChange, defaultValue = '', title, items, margin, width, height }: SelectAuthProps) {
     const [isOpenSelect, setIsOpenSelect] = useState(false);
     const toggleSelect = () => {
         setIsOpenSelect(!isOpenSelect);
@@ -38,7 +39,7 @@ export default function FilterSelect({ label, value, onChange, defaultValue = ''
                     defaultValue={defaultValue}
                     IconComponent={() => null}
                     endAdornment={<img src={SelectArrow} alt="Arrow icon" className={style.select__arrow} />}
-                    sx={{ ...styles.placeholder, margin: margin ? margin : '0', width: width ? width : '315px' }}
+                    sx={{ ...styles.placeholder, margin: margin ? margin : '0', width: width ? width : '315px', height: height ? height : '57px' }}
                     renderValue={(selected) => {
                         if (selected === '') {
                             return <Typography sx={styles.placeholder}>{title}</Typography>;

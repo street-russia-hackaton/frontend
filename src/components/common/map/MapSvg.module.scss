@@ -74,3 +74,21 @@
         list-style-position: inside;
     }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .svg {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .svg {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .svg {
+        display: none;
+    }
+}
