@@ -2,6 +2,9 @@ import Background from '../../../../assets/images/background-map-title.svg';
 import style from './Map.module.scss';
 import { Box, Container, Typography } from '@mui/material';
 import MapSvg from '../../../common/map/MapSvg';
+import MapImage from '../../../../assets/images/MapImage.svg';
+import FilterRegions from '../../../common/filters/FilterRegions';
+import RegionSerch from '../../../common/forms/RegionSearch';
 
 const styles = {
     h: {
@@ -17,7 +20,7 @@ const styles = {
 
 export default function Map() {
     return (
-        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: { xs: '162px 0 100px', md: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' } }}>
+        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: { xs: '162px 0 100px', md: '120px 0 60px' }, m: '0 auto', width: '91%', maxWidth: { lg: '1320px' }, height: 'auto' }}>
             <Typography variant="h2" sx={{ ...styles.h, maxWidth: { xs: '310px', md: '100%' }, fontSize: { xs: '20px', md: '36px' }, mb: '20px', position: 'relative', zIndex: 1 }}>
                 улицы начинаются с{' '}
                 <Box component="span" sx={{ color: '#2E5B97', position: 'relative' }}>
@@ -33,6 +36,8 @@ export default function Map() {
                 город
             </Typography>
             <MapSvg />
+            <RegionSerch />
+            <img src={MapImage} alt="Карта России." className={style.img} />
         </Container>
     );
 }

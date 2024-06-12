@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 interface SubmitBtnBlackProps {
     title?: string;
     width?: string;
+    mobWidth?: string;
     backgroundColor?: string;
     color?: string;
     height?: string;
@@ -24,14 +25,14 @@ const styles = {
     },
 };
 
-export default function SubmitBtnColor({ title, width, height, backgroundColor, color, fontSize, disabled, margin, onClick }: SubmitBtnBlackProps) {
+export default function SubmitBtnColor({ title, width, mobWidth, height, backgroundColor, color, fontSize, disabled, margin, onClick }: SubmitBtnBlackProps) {
     return (
         <Button
             variant="contained"
             disableElevation
             sx={{
                 ...styles.container,
-                width: {xs: '180px', md: width ? width : '553px'},
+                width: {xs: mobWidth ? mobWidth : '180px', md: width ? width : '553px'},
                 height: {xs: '48px', md: height ? height : '54px'},
                 backgroundColor: backgroundColor ? backgroundColor : '#2E5B97',
                 color: color ? color : '#fff',
@@ -43,6 +44,9 @@ export default function SubmitBtnColor({ title, width, height, backgroundColor, 
                     backgroundColor: '#2E5B97',
                 },
                 margin: margin ? margin : '0',
+                '&:disabled': {
+                    backgroundColor: '#D2D1D0',
+                },
             }}
             disabled={disabled}
             onClick={onClick}

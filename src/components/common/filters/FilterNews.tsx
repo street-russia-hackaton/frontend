@@ -61,7 +61,7 @@ export default function FilterNews({ setFilteredCards, cardList }: StateProps) {
                 <FilterSelect label="Выбери регион" value={selectedCity} onChange={handleCityChange} items={cities} title="Выбери регион" margin="0 20px 0 0 " />
                 <FilterSelect label="Выбери дисцеплину" value={selectedDesciplines} onChange={handleDesciplinesChange} items={disciplines} title="Выбери дисцеплину" />
             </Box>
-            {filteredResult.length === 0 && <NotFound title="никаких Мероприятий новостей не найдено :( Пожалуйста, измени настройки фильтров, чтобы увидеть актуальные новости.  " />}
+            {filteredResult.length === 0 && <NotFound title="никаких новостей не найдено :( Пожалуйста, измени настройки фильтров, чтобы увидеть актуальные новости.  " />}
         </Box>
     );
 }
